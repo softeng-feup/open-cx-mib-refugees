@@ -18,5 +18,6 @@
 | Identifier |       Name      | Priority | Description                                                                                               |
 |------------|:---------------:|----------|-----------------------------------------------------------------------------------------------------------|
 |    US08   |     Sign-up    | High     | As an organizer, I want to authenticate into the system to have access to my account.                                   |
-|    US09   |  Plan schedule | High     | As an organizer, I want to plan the conference schedule to close the program.                     |
-|    US10   | Group Lectures | High     | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme.                                         |
+|    US09   |  Check Preferences | High     | As an organizer, I want to check the user preferences to plan the schedule.                    |
+|    US10   |  Plan schedule | High     | As an organizer, I want to plan the conference schedule to close the program.                     |
+|    US11   | Group Lectures | High     | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme.                                         |
