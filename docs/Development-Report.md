@@ -6,7 +6,7 @@ You can find here detailed information about the project's module, from a high-l
 
 * Business modeling 
   * [Product Vision](vision.md)
-  * [Elevator Pitch]()
+  * [Elevator Pitch](elevator_pitch.md)
 * Requirements
   * [Use Case Diagram]()
   * [User stories]()
