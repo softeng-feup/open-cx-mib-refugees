@@ -1,6 +1,6 @@
-# openCX-*your module name* Development Report
+# openCX-MIB_Refugees Development Report
 
-Welcome to the documentation pages of the module *your module name* of the **openCX** project!
+Welcome to the documentation pages of the module CORE of the **openCX** project!
 
 You can find here detailed information about the project's module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
 
@@ -31,8 +31,10 @@ Please contact us!
 
 Thank you!
 
-*team members names*
-
+João Afonso Pinto Pereira 
+José João Coelho Dias
+Maria João Mendes Ribeiro
+Patricia Ferreira José
 
 
 
