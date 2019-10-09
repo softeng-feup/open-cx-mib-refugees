@@ -5,7 +5,7 @@ Welcome to the documentation pages of the module CORE of the **openCX** project!
 You can find here detailed information about the project's module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
 
 * Business modeling 
-  * [Product Vision]([a relative link](vision.md))
+  * [Product Vision](vision.md)
   * [Elevator Pitch]()
 * Requirements
   * [Use Case Diagram]()
