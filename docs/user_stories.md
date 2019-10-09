@@ -1,6 +1,7 @@
-##Open-cx-MIB-refugees User Stories
+## Open-cx-MIB-refugees User Stories
 
-###USER
+### USER
+
 | Identifier |       Name      | Priority | Description                                                                                               |
 |------------|:---------------:|----------|-----------------------------------------------------------------------------------------------------------|
 |    US01    |     Sign-up     | High     | As an attendee, I want to sign-up to create an account in the platform.                                   |
