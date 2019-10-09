@@ -8,8 +8,8 @@ You can find here detailed information about the project's module, from a high-l
   * [Product Vision](vision.md)
   * [Elevator Pitch](elevator_pitch.md)
 * Requirements
-  * [Use Case Diagram](use_case_diagram.md)
-  * [User stories](user_stories_diagram.md)
+  * [Use Case Diagram](use_case.md)
+  * [User stories](user_stories.md)
   * [Domain model](domain_model.md)
 * Architecture and Design
   * [Architectural and design decisions]()
