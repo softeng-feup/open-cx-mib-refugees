@@ -22,6 +22,3 @@
 |    US10   |  Plan schedule | High     | As an organizer, I want to plan the conference schedule to close the program.                     |
 |    US11   | Group Lectures | High     | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme.                                         |
 
-#### Use Case
-
-![use_case](use_case.pgn)
