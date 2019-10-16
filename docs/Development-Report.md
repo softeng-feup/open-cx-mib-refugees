@@ -71,7 +71,7 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 
 ### User stories
 
-#### User
+#### Attendee
 
 | Identifier |       Name      | Priority | Description                                                                                               |
 |------------|:---------------:|----------|-----------------------------------------------------------------------------------------------------------|
