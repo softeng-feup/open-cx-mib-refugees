@@ -32,8 +32,11 @@ Please contact us!
 Thank you!
 
 João Afonso Pinto Pereira 
+
 José João Coelho Dias
+
 Maria João Mendes Ribeiro
+
 Patricia Ferreira
 
 ---
