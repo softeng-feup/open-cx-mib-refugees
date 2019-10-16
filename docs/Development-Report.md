@@ -34,7 +34,7 @@ Thank you!
 João Afonso Pinto Pereira\
 José João Coelho Dias\
 Maria João Mendes Ribeiro\
-Patricia Ferreira Rocha
+Patrícia Ferreira Rocha
 
 ---
 
@@ -96,6 +96,10 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 
 ---
 
+### Mockups
+
+![mockups](images/mockups.png)
+
 ### Domain model
 
 The Conceptual Data Model describes the relationships between all entities in a UML class diagram.
@@ -105,4 +109,3 @@ On that premise, in order to organize and structure our database, a UML class di
 as well as the attributes and the relationships between them.
 
 ![class_diagram](images/class_diagram.png)
-
