@@ -37,6 +37,7 @@ Maria João Mendes Ribeiro
 Patricia Ferreira José
 
 ---
+
 ## Product Vision
 
 Our platform concerns two stages:
@@ -47,11 +48,15 @@ In the following stage, the organizers have access to the number of interested p
 
 Once the schedule is closed, the attendee has access to a schedule with the lectures he/she previously chose.
 
+---
+
 ## Elevator Pitch
 
 Mobile app for conference agenda/logistics. 
 -  Save Time
 - Get Feedback
+
+---
 
 ## Requirements
 
@@ -59,8 +64,10 @@ In this section, you should describe all kinds of requirements for your module: 
 
 Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
 
+
 ### Use case diagram
 ![use_case](images/use_case.png)
+
 
 ### User stories
 
@@ -77,8 +84,8 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 |    US07    | Check Schedule  | High     | As an attendee, I want to check my personal schedule to see when/where are the lectures I intend to go.   |
 |    US08    | Download Schedule  | High     | As an attendee, I want to download my personal schedule to check offline or print   |
 
-#### Organizer
 
+#### Organizer
 
 | Identifier |       Name      | Priority | Description                                                                                               |
 |------------|:---------------:|----------|-----------------------------------------------------------------------------------------------------------|
@@ -87,9 +94,10 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 |    US11   |  Plan schedule | High     | As an organizer, I want to plan the conference schedule to close the program.                     |
 |    US12   | Group Lectures | High     | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme.                                         |
 
+
 ### Domain model
 
-To better understand the context of the software system, it is very useful to have a simple UML class diagram with all the key concepts (names, attributes) and relationships involved of the problem domain addressed by your module.
+The Conceptual Data Model describes the relationships between all entities in a UML class diagram.
 
 #### Class diagram
 On that premise, in order to organize and structure our database, a UML class diagram was built,
