@@ -94,6 +94,8 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 |    US11   |  Plan schedule | High     | As an organizer, I want to plan the conference schedule to close the program.                     |
 |    US12   | Group Lectures | High     | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme.                                         |
 
+
+![mockups](images/mockups.png)
 ---
 
 ### Mockups
