@@ -40,6 +40,14 @@ Patrícia Ferreira Rocha
 
 ## Product Vision
 
+Mobile app for conference agenda/logistics. 
+- Save Time
+- Get Feedback
+
+---
+
+## Elevator Pitch
+
 Our platform concerns two stages:
 
 First, the attendee answers a survey with personal information such as his/her interests or preferences. Based on this information, a clustering algorithm suggests lectures that match those interests and the attendee is able to choose the ones he/she is truly interested in attending.
@@ -50,20 +58,9 @@ Once the schedule is closed, the attendee has access to a schedule with the lect
 
 ---
 
-## Elevator Pitch
-
-Mobile app for conference agenda/logistics. 
--  Save Time
-- Get Feedback
-
----
-
 ## Requirements
 
-In this section, you should describe all kinds of requirements for your module: functional and non-functional requirements.
-
-Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
-
+In this section, we describe the requirements for our module: functional and non-functional requirements.
 
 ### Use case diagram
 ![use_case](images/use_case.png)
@@ -72,12 +69,13 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 ### User stories
 [User Story Map on Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib  )
                 
-
 ---
 
 ### Mockups
 
 ![mockups](images/mockups.png)
+
+From left to right and top to bottom: sign-in, sign-up, survey, loading page, matches list, day view and calendar view.
 
 ### Domain model
 
