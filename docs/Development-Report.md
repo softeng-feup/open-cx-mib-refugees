@@ -75,7 +75,7 @@ In this section, we describe the requirements for our module: functional and non
 
 ![mockups](images/mockups.png)
 
-From left to right and top to bottom: sign-in, sign-up, survey, loading page, matches list, day view and calendar view.
+From left to right and top to bottom: sign-in, sign-up, survey, loading page, match list, day view and calendar view.
 
 ### Domain model
 
