@@ -86,3 +86,10 @@ On that premise, in order to organize and structure our database, a UML class di
 as well as the attributes and the relationships between them.
 
 ![class_diagram](images/class_diagram.png)
+
+---
+## Architecture and Design
+
+![component_diagram](images/Component.png)
+
+![deployment_diagram](images/Deployment.png)
