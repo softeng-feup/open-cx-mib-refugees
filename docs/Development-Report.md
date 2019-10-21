@@ -2,7 +2,7 @@
 
 Welcome to the documentation pages of the module CORE of the **openCX** project!
 
-You can find here detailed information about the project's module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
+You can find here detailed information about the project's module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report, organized by discipline (as of RUP):
 
 * Business modeling 
   * [Product Vision](#Product-Vision)
@@ -41,8 +41,8 @@ Patrícia Ferreira Rocha
 ## Product Vision
 
 Mobile app for conference agenda/logistics. 
-- Save Time
-- Get Feedback
+- **Save Time** by choosing the lectures you want to go within a list tailored for you
+- **Get Feedback** from the attendees to build an even better conference
 
 ---
 
