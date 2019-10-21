@@ -90,6 +90,6 @@ as well as the attributes and the relationships between them.
 ---
 ## Architecture and Design
 
-![component_diagram](images/Component.png)
+![component_diagram](images/Component.vpd.png)
 
 ![deployment_diagram](images/Deployment.png)
