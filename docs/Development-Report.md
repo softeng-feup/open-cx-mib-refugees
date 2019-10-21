@@ -2,7 +2,7 @@
 
 Welcome to the documentation pages of the module CORE of the **openCX** project!
 
-You can find here detailed information about the project's module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
+You can find here detailed information about the project's module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report, organized by discipline (as of RUP):
 
 * Business modeling 
   * [Product Vision](#Product-Vision)
@@ -40,6 +40,14 @@ Patrícia Ferreira Rocha
 
 ## Product Vision
 
+Mobile app for conference agenda/logistics. 
+- **Save Time** by choosing the lectures you want to go within a list tailored for you
+- **Get Feedback** from the attendees to build an even better conference
+
+---
+
+## Elevator Pitch
+
 Our platform concerns two stages:
 
 First, the attendee answers a survey with personal information such as his/her interests or preferences. Based on this information, a clustering algorithm suggests lectures that match those interests and the attendee is able to choose the ones he/she is truly interested in attending.
@@ -50,55 +58,24 @@ Once the schedule is closed, the attendee has access to a schedule with the lect
 
 ---
 
-## Elevator Pitch
-
-Mobile app for conference agenda/logistics. 
--  Save Time
-- Get Feedback
-
----
-
 ## Requirements
 
-In this section, you should describe all kinds of requirements for your module: functional and non-functional requirements.
-
-Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
-
+In this section, we describe the requirements for our module: functional and non-functional requirements.
 
 ### Use case diagram
 ![use_case](images/use_case.png)
 
 
 ### User stories
-
-#### User
-
-| Identifier |       Name      | Priority | Description                                                                                               |
-|------------|:---------------:|----------|-----------------------------------------------------------------------------------------------------------|
-|    US01    |     Sign-up     | High     | As an attendee, I want to sign-up to create an account in the platform.                                   |
-|    US02    |     Sign-in     | High     | As an attendee, I want to authenticate into the system to have access to my account.                      |
-|    US03    |   Fill Survey   | High     | As an attendee, I want to fill a form to provide my informations.                                         |
-|    US04    |  Cancel Survey  | High     | As an attendee, I want to cancel the survey to stop answering the form.                                   |
-|    US05    |  Submit answers | High     | As an attendee, I want to submit my answers to obtain a list of matches.                                  |
-|    US06    | Choose Lectures | High     | As an attendee, I want to choose the lectures I want to attend to provide that information to the system. |
-|    US07    | Check Schedule  | High     | As an attendee, I want to check my personal schedule to see when/where are the lectures I intend to go.   |
-|    US08    | Download Schedule  | High     | As an attendee, I want to download my personal schedule to check offline or print   |
-
-
-#### Organizer
-
-| Identifier |       Name      | Priority | Description                                                                                               |
-|------------|:---------------:|----------|-----------------------------------------------------------------------------------------------------------|
-|    US09  |     Sign-up    | High     | As an organizer, I want to authenticate into the system to have access to my account.                                   |
-|    US10   |  Check Preferences | High     | As an organizer, I want to check the user preferences to plan the schedule.                    |
-|    US11   |  Plan schedule | High     | As an organizer, I want to plan the conference schedule to close the program.                     |
-|    US12   | Group Lectures | High     | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme.                                         |
-
+[User Story Map on Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib  )
+                
 ---
 
 ### Mockups
 
 ![mockups](images/mockups.png)
+
+From left to right and top to bottom: sign-in, sign-up, survey, loading page, match list, day view and calendar view.
 
 ### Domain model
 
