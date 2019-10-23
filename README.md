@@ -1,2 +1,12 @@
 # open-cx-mib-refugees
-open-cx-mib-refugees created by GitHub Classroom
+
+Welcome to the repository of the module CORE of the **openCX** project!
+
+Our team is:
+João Afonso Pinto Pereira\
+José João Coelho Dias\
+Maria João Mendes Ribeiro\
+Patrícia Ferreira Rocha
+
+---
+You can find the **Development report** [here.](https://github.com/softeng-feup/open-cx-mib-refugees/blob/master/docs/Development-Report.md)

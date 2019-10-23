@@ -67,7 +67,7 @@ In this section, we describe the requirements for our module: functional and non
 
 
 ### User stories
-[User Story Map on Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib  )
+[User Story Map on Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
                 
 ---
 
