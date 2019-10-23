@@ -28,16 +28,15 @@ Abstract=[]
 
 for d in Items:
     person=d['PersonsString']
-    if person!='':
+    type=d['Type']
+    if not (person=='' and type!='Talk'):
          title= d['Title']
-         type1=d['Type']
+         type=d['Type']
          person=d['PersonsString']
          affiliation=d['AffiliationsString']
          abstract=d['Abstract']
          Titles.append(title)
-         Type.append(type1)
+         Type.append(type)
          Person.append(person)
          Affiliation.append(affiliation)
          Abstract.append(abstract)
-    
-
