@@ -1,3 +1,6 @@
+## Python code for CORE
+# Import dataset and create database with important parameters
+
 import requests
 #import json
 from firebase import firebase
@@ -73,4 +76,26 @@ while n < len(categories):
     firebase.post('/Program', data)
     n += 1
 
+
 db=firebase.get('/Program', None)
+
+#%% Ranking letures preference 
+
+survey_answers=[1,3,4,1,4,4,5,1] #list that python receive from fluter
+
+index_list_1 = [] 
+index_list_2 = [] 
+index_list_3 = [] 
+index_list_4 = [] 
+index_list_5 = [] 
+for i in range(0, len(survey_answers)) : 
+    if survey_answers[i] == 1 : 
+        index_list_1.append(i+1)
+    elif survey_answers[i] == 2 : 
+        index_list_2.append(i+1)
+    elif survey_answers[i] == 3 : 
+        index_list_3.append(i+1)
+    elif survey_answers[i] == 4 : 
+        index_list_4.append(i+1)
+    else :
+        index_list_5.append(i+1)
