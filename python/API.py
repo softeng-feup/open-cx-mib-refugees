@@ -83,6 +83,7 @@ db=firebase.get('/Program', None)
 
 survey_answers=[1,3,4,1,4,4,5,1] #list that python receive from fluter
 
+# preference of each lecture category
 index_list_1 = [] 
 index_list_2 = [] 
 index_list_3 = [] 
@@ -99,3 +100,26 @@ for i in range(0, len(survey_answers)) :
         index_list_4.append(i+1)
     else :
         index_list_5.append(i+1)
+
+#rank_lectures has the information of preference from 20 first lectures (0 to 1 or n/d)
+rank_lectures=[]
+for i in range(0, len(categories)):
+    if categories[i]==9:
+        rank_lectures.append("n/d")
+    for a in range(0, len(index_list_1)):
+        if categories[i]==index_list_1[a]:
+            rank_lectures.append(0)
+    for b in range(0, len(index_list_2)):
+        if categories[i]==index_list_2[b]:
+            rank_lectures.append(0.25)
+    for c in range(0, len(index_list_3)):
+        if categories[i]==index_list_3[c]:
+            rank_lectures.append(0.50)
+    for d in range(0, len(index_list_4)):
+        if categories[i]==index_list_4[d]:
+            rank_lectures.append(0.75)
+    for e in range(0, len(index_list_5)):
+        if categories[i]==index_list_5[e]:
+            rank_lectures.append(1)
+            
+    
