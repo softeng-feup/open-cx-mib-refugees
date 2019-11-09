@@ -61,8 +61,8 @@ Categories // lectures
 7. Haskell language
 8. Virtual Machine
 9. Lisp language
-10. Software checking, debugging and improvment
-11. Metaprogramming and Parsing
+10. Software checking, debugging and improvement
+11. Meta-programming and Parsing
 12. Other
 ''' 
   
