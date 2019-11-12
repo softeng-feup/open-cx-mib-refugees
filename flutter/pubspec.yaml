@@ -26,7 +26,7 @@ dependencies:
 
   grouped_buttons: ^1.0.4
 
-  starflut: ^0.6.0
+  percent_indicator: "^2.1.1"
 
 dev_dependencies:
   flutter_test:

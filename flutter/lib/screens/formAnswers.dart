@@ -1,7 +1,7 @@
 import 'package:core/screens/formQuestions.dart';
 import 'package:core/screens/startForm.dart';
+import 'package:core/screens/rankings.dart';
 import 'package:flutter/material.dart';
-import 'package:starflut/starflut.dart';
 
 class FormAnswers extends StatefulWidget {
   final List<String> answers;
@@ -10,12 +10,44 @@ class FormAnswers extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    debugPrint(answers.toString());
     return Answers();
   }
 }
 
 class Answers extends State<FormAnswers> {
+
+
+  Widget getAnswer(String number) {
+
+    String text;
+
+    switch (number) {
+      case "-1":
+        text = "NOT ANSWERED";
+        break;
+      case "0":
+        text = "Strongly disagree";
+        break;
+      case "1":
+        text = "Disagree";
+        break;
+      case "2":
+        text = "Don't know";
+        break;
+      case "3":
+        text = "Agree";
+        break;
+      case "4":
+        text = "Strongly agree";
+        break;
+      default:
+        text = number;
+        break;
+    }
+
+    return Text(text);
+  }
+
   Widget getListView() {
     var listItems = widget.answers;
 
@@ -25,7 +57,7 @@ class Answers extends State<FormAnswers> {
           return ListTile(
               leading: Icon(Icons.keyboard_arrow_right),
               title: Text("Question ${index + 1}"),
-              subtitle: Text(listItems[index]),
+              subtitle: getAnswer(listItems[index]),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   switch (index) {
@@ -35,6 +67,18 @@ class Answers extends State<FormAnswers> {
                       return SecondQuestion(answers: widget.answers);
                     case 2:
                       return ThirdQuestion(answers: widget.answers);
+                    case 3:
+                      return FourthQuestion(answers: widget.answers);
+                    case 4:
+                      return FifthQuestion(answers: widget.answers);
+                    case 5:
+                      return SixthQuestion(answers: widget.answers);
+                    case 6:
+                      return SeventhQuestion(answers: widget.answers);
+                    case 7:
+                      return EighthQuestion(answers: widget.answers);
+                    case 8:
+                      return NinethQuestion(answers: widget.answers);
                     default:
                       return FormAnswers(answers: widget.answers);
                   }
@@ -63,46 +107,6 @@ class Answers extends State<FormAnswers> {
           padding: EdgeInsets.only(top: 30, left: 20, right: 20),
           child: getListView(),
         )
-
-            /*Column(
-            children: <Widget>[
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      left: 40, right: 40, top: 30, bottom: 30),
-                  child: Text(
-                    widget.val1,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 40, right: 40, top: 30, bottom: 30),
-                child: Text(
-                  widget.val2,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 40, right: 40, top: 30, bottom: 30),
-                child: Text(
-                  widget.val3,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-            ],
-          ),*/
             ),
         bottomNavigationBar: Container(
             child: Padding(
@@ -125,7 +129,11 @@ class Answers extends State<FormAnswers> {
                 color: Colors.white,
               ),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Rankings();
+                  }));
+                },
                 child: Text("Submit", style: TextStyle(color: Colors.white)),
                 color: new Color(0xFF002A72),
               )
