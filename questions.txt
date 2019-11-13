@@ -1,5 +1,50 @@
 Categories:
 
+1. Live Software Development
+2. Web 
+3. Cybersecurity 
+4. Artificial Intelligence
+5. Internet of Things
+6. UI/UX
+7. Haskell language
+8. Virtual Machine
+9. Lisp language
+10. Software checking, debugging and improvement
+11. Meta-programming and Parsing
+12. Other
+
+Questions:
+
+1. ?????
+
+2. You're always looking for which Javascript framework offers you the
+best performance.
+
+3. You protect your info, shop safely, clean up your cache and change
+passwords frequently.
+
+4. You believe AI is a wonder of modern science that has made a lot of
+things possible that were unthinkable before.
+
+5. Your biggest wish is to have a smart home where IoT devices provide
+lighting, heating, media and security systems.
+
+6. You know how important it is to provide a positive user experience.
+
+7. You're an enthusiast of functional programming languages.
+
+8. You can't commit to a single operating system environment so virtual
+machines are a lifesaver.
+
+9. You're a pro in high-level programming languages.
+
+10. You're a master in the art of debugging.
+
+11. ?????
+=======================================================================
+
+Categories:
+
 1. Coding dojo
 2. Web
 3. Cybersecurity
