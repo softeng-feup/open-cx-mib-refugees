@@ -28,6 +28,7 @@ Items=response.json()['Items']
 Titles=[]
 Type=[]
 Person=[]
+Abstract=[]
 number = 0
 
 # define search string
@@ -48,6 +49,8 @@ for d in Items:
              person=d['PersonsString']
              Titles.append(title)
              Person.append(person)
+             abstract=d['Abstract']
+             Abstract.append(abstract)
               
 '''
 Categories // lectures 
@@ -74,10 +77,12 @@ while n < len(categories):
     category=categories[n]
     title=Titles[n]
     type=Type[n]
+    abstract=Abstract[n]
     data = {'Author': person,
             'Category': category,
             'Title': title,
-            'Type': type
+            'Type': type,
+            'Abstract': abstract
             }
     firebase.post('/Program', data)
     n += 1

@@ -13,7 +13,7 @@ firebase = firebase.FirebaseApplication('https://esof-20d6f.firebaseio.com', Non
 
 db=firebase.get('/Program', None)
 
-survey_answers=[1,3,4,1,4,4,5,1,4,1,3] #list that python receive from fluter
+survey_answers=[0,2,3,0,3,3,4,0,3,0,2] #list that python receive from fluter
 
 # preference of each lecture category
 index_list_1 = [] 
@@ -22,13 +22,13 @@ index_list_3 = []
 index_list_4 = [] 
 index_list_5 = [] 
 for i in range(0, len(survey_answers)) : 
-    if survey_answers[i] == 1 : 
+    if survey_answers[i] == 0 : 
         index_list_1.append(i+1)
-    elif survey_answers[i] == 2 : 
+    elif survey_answers[i] == 1 : 
         index_list_2.append(i+1)
-    elif survey_answers[i] == 3 : 
+    elif survey_answers[i] == 2 : 
         index_list_3.append(i+1)
-    elif survey_answers[i] == 4 : 
+    elif survey_answers[i] == 3 : 
         index_list_4.append(i+1)
     else :
         index_list_5.append(i+1)
