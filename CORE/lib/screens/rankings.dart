@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:core/screens/talk.dart';
+import 'dart:async';
+import 'package:firebase_database/firebase_database.dart';
 
 class Rankings extends StatefulWidget {
   @override
@@ -8,9 +11,36 @@ class Rankings extends StatefulWidget {
 }
 
 class _Rankings extends State<Rankings> {
+  List<Talk> _dataList;
+
+  final DatabaseReference _database = FirebaseDatabase.instance.reference().child("Program");
+
+  StreamSubscription<Event> _onTalkAddedSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataList = List();
+    _onTalkAddedSubscription = _database.onValue.listen(_onEntryAdded);
+  }
+
+  @override
+  void dispose() {
+    _onTalkAddedSubscription.cancel();
+    super.dispose();
+  }
+
+  _onEntryAdded(Event event) {
+    setState(() {
+      _dataList.add(Talk.fromSnapshot(event.snapshot));
+    });
+  }
+
+
+
   List allItems = [
     {
-      'name': 'Talk 1',
+      'name': 'Talk 2',
       'speaker': 'Jose Dias',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'rank': '97%',
@@ -73,6 +103,8 @@ class _Rankings extends State<Rankings> {
       'selected': false
     }
   ];
+
+
 
   void _showDialog(String name, String abstract) {
     // flutter defined function
