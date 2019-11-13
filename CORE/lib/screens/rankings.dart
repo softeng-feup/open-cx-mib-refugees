@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:core/screens/talk.dart';
 import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -11,32 +10,19 @@ class Rankings extends StatefulWidget {
 }
 
 class _Rankings extends State<Rankings> {
-  List<Talk> _dataList;
 
-  final DatabaseReference _database = FirebaseDatabase.instance.reference().child("Program");
+  final database = FirebaseDatabase.instance.reference().child("Program");
 
-  StreamSubscription<Event> _onTalkAddedSubscription;
+  void getData() async {
+    database.once().then((snap) {
+      Map<dynamic,dynamic> map = snap.value;
+      map.forEach((key, value) {
+        var names=snap.value[key].toString();
+          print(names);
+        });
+      });
 
-  @override
-  void initState() {
-    super.initState();
-    _dataList = List();
-    _onTalkAddedSubscription = _database.onValue.listen(_onEntryAdded);
   }
-
-  @override
-  void dispose() {
-    _onTalkAddedSubscription.cancel();
-    super.dispose();
-  }
-
-  _onEntryAdded(Event event) {
-    setState(() {
-      _dataList.add(Talk.fromSnapshot(event.snapshot));
-    });
-  }
-
-
 
   List allItems = [
     {
@@ -215,6 +201,7 @@ class _Rankings extends State<Rankings> {
 
   @override
   Widget build(BuildContext context) {
+    getData();
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
