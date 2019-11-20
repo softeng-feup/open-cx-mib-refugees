@@ -1,296 +1,867 @@
 import 'package:flutter/material.dart';
 import 'package:core/screens/rankings.dart';
 
-class Schedule extends StatelessWidget {
+class Schedule extends StatefulWidget {
+
+  List<int> items;
+
+  Schedule({Key key, this.items}) : super(key: key);
+
+
+  @override
+  State<StatefulWidget> createState() {
+    return _Schedule();
+  }
+}
+
+class _Schedule extends State<Schedule> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
           title: Text('CORE'),
-          backgroundColor: new Color(0xFF002A72),
-          leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Rankings();
-                }));
-              })),
-      body: WeekView(),
+          backgroundColor: new Color(0xFF002A72),),
+      body: WeekView(items: widget.items),
     );
   }
 }
 
-const headerHeight = 110.0;
-const hourHeight = 100.0;
-
 class WeekView extends StatelessWidget {
 
-  List<String> hours = [
-    "08:00",
-    "09:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00"
+  List<int> items;
+
+  List allItems = [];
+
+  WeekView({Key key, this.items}) : super(key: key);
+
+  List _allItems = [
+    {
+      'name': 'Talk 1',
+      'title': 'The title of talk 1',
+      'speaker': 'Jose Dias',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '17/11/2019',
+      'start_hour': '09:00',
+      'end_hour': '11:00',
+      'rank': '97%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 2',
+      'title': 'The title of talk 2',
+      'speaker': 'Joao Pereira',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '17/11/2019',
+      'start_hour': '12:00',
+      'end_hour': '13:00',
+      'rank': '93%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 3',
+      'title': 'The title of talk 3',
+      'speaker': 'Maria Ribeiro',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '17/11/2019',
+      'start_hour': '16:00',
+      'end_hour': '18:00',
+      'rank': '93%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 4',
+      'title': 'The title of talk 4',
+      'speaker': 'Patricia Rocha',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '08:00',
+      'end_hour': '09:00',
+      'rank': '86%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 5',
+      'title': 'The title of talk 5',
+      'speaker': 'Ines Vilarinho',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '09:00',
+      'end_hour': '11:00',
+      'rank': '86%',
+      'rank': '85%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 6',
+      'title': 'The title of talk 6',
+      'speaker': 'Joao Afonso',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '14:00',
+      'end_hour': '17:00',
+      'rank': '81%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 7',
+      'title': 'The title of talk 7',
+      'speaker': 'Jose Dias',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '10:00',
+      'end_hour': '11:00',
+      'rank': '75%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 8',
+      'title': 'The title of talk 8',
+      'speaker': 'Ines Vilarinho',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '19/11/2019',
+      'start_hour': '14:00',
+      'end_hour': '16:00',
+      'rank': '75%',
+      'selected': false
+    },
+    {
+      'name': 'Talk 9',
+      'title': 'The title of talk 9',
+      'speaker': 'Quim Barreiros',
+      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '19/11/2019',
+      'start_hour': '17:00',
+      'end_hour': '18:00',
+      'rank': '70%',
+      'selected': false
+    }
   ];
 
-  List<String> days = [
-    "Nov 15th",
-    "Nov 16th",
-    "Nov 17th",
+  static const d1 = '17/11/2019';
+  static const day1 = 'Nov 17';
+  static const d2 = '18/11/2019';
+  static const day2 = 'Nov 18';
+  static const d3 = '19/11/2019';
+  static const day3 = 'Nov 19';
+
+  List schedule = [
+    {
+      'h': 'Hour ',
+      'd1': day1,
+      'd2': day2,
+      'd3': day3,
+    },
+    {
+      'h': '08:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '09:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '10:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '11:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '12:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '13:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '14:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '15:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '16:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '17:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '18:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '19:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
   ];
 
 
-  Widget getDays(int i) {
-    return Container(
-      child: Center(
-          child: Text(
-              days[i],
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold
-              )
-          )
-      ),
-    );
+  void getItems() {
+    debugPrint(items.toString());
+    debugPrint(allItems.toString());
+    debugPrint(_allItems.toString());
+    for(int i=0; i<items.length; i++) {
+      allItems.add(_allItems[items[i]]);
+    }
   }
 
-  Widget getWhiteCell() {
-    return Container(
-      padding: const EdgeInsets.all(8),
-    );
+  void addTalks() {
+    getItems();
+    debugPrint(_allItems.toString());
+    for (int k = 0; k < allItems.length; k++) {
+      for (int i = 0; i < schedule.length; i++) {
+        if (allItems[k]['start_hour'] == schedule[i]['h']) {
+          switch (allItems[k]['date']) {
+            case d1:
+              schedule[i]['d1'] = allItems[k]['name'];
+              break;
+            case d2:
+              schedule[i]['d2'] = allItems[k]['name'];
+              break;
+            case d3:
+              schedule[i]['d3'] = allItems[k]['name'];
+              break;
+            default:
+              break;
+          }
+        }
+        if (allItems[k]['end_hour'] == schedule[i]['h']) {
+          switch (allItems[k]['date']) {
+            case d1:
+              schedule[i - 1]['d1'] = allItems[k]['name'];
+              break;
+            case d2:
+              schedule[i - 1]['d2'] = allItems[k]['name'];
+              break;
+            case d3:
+              schedule[i - 1]['d3'] = allItems[k]['name'];
+              break;
+            default:
+              break;
+          }
+        }
+      }
+    }
   }
 
-  Widget getGreyCell() {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.grey[100],
-    );
-  }
-
-  Widget getGreenCell() {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.green[100],
-    );
-  }
-
-  Widget getHours(int i) {
-    return Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              hours[i],
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold
-              )
+  void _showDialog(context, String title, String speaker, String abstract) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text(title),
+          content: Text('Speaker: ${speaker}\n\n${abstract}'),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      primary: false,
-      slivers: <Widget>[
-        SliverPadding(
-          padding: const EdgeInsets.all(10),
-          sliver: SliverGrid.count(
-            crossAxisSpacing: 5,
-            mainAxisSpacing: 5,
-            crossAxisCount: 4,
-            children: <Widget>[
-              getWhiteCell(),
-              getDays(0),
-              getDays(1),
-              getDays(2),
-              getHours(0),
-              getGreyCell(),
-              getGreenCell(),
-              getGreyCell(),
-              getHours(1),
-              getGreenCell(),
-              getGreenCell(),
-              getGreyCell(),
-              getHours(2),
-              getGreenCell(),
-              getGreyCell(),
-              getGreyCell(),
-              getHours(3),
-              getGreyCell(),
-              getGreyCell(),
-              getGreyCell(),
-              getHours(4),
-              getGreyCell(),
-              getGreyCell(),
-              getGreenCell(),
-              getHours(5),
-              getGreyCell(),
-              getGreyCell(),
-              getGreenCell(),
-              getHours(6),
-              getGreyCell(),
-              getGreyCell(),
-              getGreyCell(),
-              getHours(7),
-              getGreyCell(),
-              getGreyCell(),
-              getGreyCell(),
-              getHours(8),
-              getGreyCell(),
-              getGreyCell(),
-              getGreyCell(),
-              getHours(9),
-              getGreyCell(),
-              getGreyCell(),
-              getGreyCell(),
-              getHours(10),
-              getGreyCell(),
-              getGreyCell(),
-              getGreyCell(),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget buildHoursColumn(int d) {
+    addTalks();
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30, top: 20),
-      child: Text(
-        hours[d],
-        style: TextStyle(
-          color: Colors.grey,
+      padding: const EdgeInsets.all(10),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 2.0, color: Colors.black),
+          color: Colors.grey[200],
+        ),
+        width: MediaQuery.of(context).size.width,
+        child: ListView(
+          children: schedule.map((element) {
+            return getSchedule(context, element);
+          }).toList(),
         ),
       ),
     );
   }
 
-
-  Widget buildFirstDay(int d) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30, top: 20),
-      child: Text(
-        hours[d],
-        style: TextStyle(
-          color: Colors.grey,
-        ),
-      ),
-    );
-  }
-
-  Widget buildSecondDay(int d) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30, top: 20),
-      child: Text(
-        hours[d],
-        style: TextStyle(
-          color: Colors.grey,
-        ),
-      ),
-    );
-  }
-
-  Widget buildThirdDay(int d) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30, top: 20),
-      child: Text(
-        hours[d],
-        style: TextStyle(
-          color: Colors.grey,
-        ),
-      ),
-    );
-  }
-
-}
-
-class WeekViewHeaderDelegate extends SliverPersistentHeaderDelegate {
-  @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
-      child: Stack(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: Color(0xFF002A72).withOpacity(0.5),
-            ),
-            child: Center(
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Text(
-                      'MY SCHEDULE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18
+  Widget getSchedule(context, item) {
+    if (item['h'] == 'Hour ') {
+      return Container(
+          color: Colors.grey[200],
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, left: 20, right: 10, bottom: 30),
+                      child: Text(
+                        item['h'],
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.grey[200],
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 60, right: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text(
-                            "Nov 12th",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            "Nov 13th",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            "Nov 14th",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
+                      padding: EdgeInsets.only(
+                          top: 20, left: 20, right: 10, bottom: 30),
+                      child: Text(
+                        item['d1'],
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
-                  )
-                ],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.grey[200],
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, left: 20, right: 10, bottom: 30),
+                      child: Text(
+                        item['d2'],
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.grey[200],
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, left: 20, right: 10, bottom: 30),
+                      child: Text(
+                        item['d3'],
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ));
+    } else {
+      if (item['d1'] != 'Talk 0') {
+        return Container(
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  width: 2.0,
+                  color: Colors.grey[700],
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  double get maxExtent => headerHeight;
-
-  @override
-  double get minExtent => headerHeight;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return false;
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 0, left: 10, right: 10, bottom: 40),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              item['h'],
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        int index = -1;
+                        for (int i = 0; i < allItems.length; i++) {
+                          if (allItems[i]['name'] == item['d1']) {
+                            index = i;
+                            break;
+                          }
+                        }
+                        _showDialog(
+                            context,
+                            item['d1'] + " - " + allItems[index]['title'],
+                            allItems[index]['speaker'],
+                            allItems[index]['abstract']);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left:
+                                BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.green[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 10, left: 10, right: 10, bottom: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  item['d1'],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text("B035"),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d2'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d3'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ));
+      } else if (item['d2'] != 'Talk 0' && item['d2'] != day2) {
+        return Container(
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  width: 2.0,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 0, left: 10, right: 10, bottom: 40),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              item['h'],
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d1'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        int index = -1;
+                        for (int i = 0; i < allItems.length; i++) {
+                          if (allItems[i]['name'] == item['d2']) {
+                            index = i;
+                            break;
+                          }
+                        }
+                        _showDialog(
+                            context,
+                            item['d2'] + " - " + allItems[index]['title'],
+                            allItems[index]['speaker'],
+                            allItems[index]['abstract']);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left:
+                                BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.green[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 10, left: 10, right: 10, bottom: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  item['d2'],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text("B035"),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d3'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ));
+      } else if (item['d3'] != 'Talk 0' && item['d3'] != day3) {
+        return Container(
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  width: 2.0,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 0, left: 10, right: 10, bottom: 40),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              item['h'],
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d1'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d2'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        int index = -1;
+                        for (int i = 0; i < allItems.length; i++) {
+                          if (allItems[i]['name'] == item['d3']) {
+                            index = i;
+                            break;
+                          }
+                        }
+                        _showDialog(
+                            context,
+                            item['d3'] + " - " + allItems[index]['title'],
+                            allItems[index]['speaker'],
+                            allItems[index]['abstract']);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left:
+                                BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.green[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 10, left: 10, right: 10, bottom: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  item['d3'],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text("B035"),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ));
+      } else {
+        return Container(
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  width: 2.0,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 0, left: 10, right: 10, bottom: 40),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              item['h'],
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Text(
+                                item['d1'],
+                                style: TextStyle(
+                                  color: Colors.grey[200],
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Text(
+                                "B035",
+                                style: TextStyle(
+                                  color: Colors.grey[200],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d2'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                        ),
+                        color: Colors.grey[200],
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: 10, left: 10, right: 10, bottom: 55),
+                        child: Text(
+                          item['d3'],
+                          style: TextStyle(
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ));
+      }
+    }
   }
 }

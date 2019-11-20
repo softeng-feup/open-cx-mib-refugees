@@ -15,10 +15,7 @@ class FormAnswers extends StatefulWidget {
 }
 
 class Answers extends State<FormAnswers> {
-
-
   Widget getAnswer(String number) {
-
     String text;
 
     switch (number) {
@@ -41,7 +38,12 @@ class Answers extends State<FormAnswers> {
         text = "Strongly agree";
         break;
       default:
-        text = number;
+        if(number[0]=='[') {
+          text = number.substring(1,number.length-1);
+        }
+        else {
+          text = number;
+        }
         break;
     }
 
@@ -52,7 +54,7 @@ class Answers extends State<FormAnswers> {
     var listItems = widget.answers;
 
     var listView = ListView.builder(
-        itemCount: listItems.length,
+        itemCount: listItems.sublist(0,10).length,
         itemBuilder: (context, index) {
           return ListTile(
               leading: Icon(Icons.keyboard_arrow_right),
@@ -79,6 +81,8 @@ class Answers extends State<FormAnswers> {
                       return EighthQuestion(answers: widget.answers);
                     case 8:
                       return NinethQuestion(answers: widget.answers);
+                    case 9:
+                      return TenthQuestion(answers: widget.answers);
                     default:
                       return FormAnswers(answers: widget.answers);
                   }
@@ -88,9 +92,12 @@ class Answers extends State<FormAnswers> {
     return listView;
   }
 
+  GlobalKey<ScaffoldState> scaffoldState;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: scaffoldState,
         backgroundColor: Colors.white,
         appBar: AppBar(
             title: Text('CORE'),
@@ -102,13 +109,15 @@ class Answers extends State<FormAnswers> {
                     return StartForm();
                   }));
                 })),
-        body: Container(
-            child: Padding(
-          padding: EdgeInsets.only(top: 30, left: 20, right: 20),
-          child: getListView(),
-        )
-            ),
-        bottomNavigationBar: Container(
+        body: Builder(
+          builder: (context) => Container(
+              child: Padding(
+            padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+            child: getListView(),
+          )),
+        ),
+        bottomNavigationBar: Builder(
+    builder: (context) =>Container(
             child: Padding(
           padding: EdgeInsets.only(top: 20),
           child: ButtonBar(
@@ -128,17 +137,34 @@ class Answers extends State<FormAnswers> {
                 ),
                 color: Colors.white,
               ),
-              RaisedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Rankings();
-                  }));
-                },
-                child: Text("Submit", style: TextStyle(color: Colors.white)),
-                color: new Color(0xFF002A72),
-              )
+              _build(context),
             ],
-          ),
+          ),),
         )));
   }
+
+  Widget _build(BuildContext context) {
+    return RaisedButton(
+      onPressed: () {
+        bool missing_answer = false;
+        for (int i = 0; i < widget.answers.length; i++) {
+          if (widget.answers[i] == "-1") {
+            missing_answer = true;
+            break;
+          }
+        }
+        if (missing_answer == false) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) {
+                return Rankings();
+              }));
+        } else {
+          Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text("Please answer all questions"),
+          ));
+        }
+      },
+      child: Text("Submit", style: TextStyle(color: Colors.white)),
+      color: new Color(0xFF002A72),
+    );}
 }

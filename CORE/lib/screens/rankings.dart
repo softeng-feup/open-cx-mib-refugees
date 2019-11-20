@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:core/screens/schedule.dart';
 
 class Rankings extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _Rankings extends State<Rankings> {
       Map<dynamic,dynamic> map = snap.value;
       map.forEach((key, value) {
         var names=snap.value[key].toString();
-          print(names);
+          //print(names);
         });
       });
 
@@ -26,65 +27,102 @@ class _Rankings extends State<Rankings> {
 
   List allItems = [
     {
-      'name': 'Talk 2',
+      'name': 'Talk 1',
+      'title': 'The title of talk 1',
       'speaker': 'Jose Dias',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '17/11/2019',
+      'start_hour': '09:00',
+      'end_hour': '11:00',
       'rank': '97%',
       'selected': false
     },
     {
       'name': 'Talk 2',
+      'title': 'The title of talk 2',
       'speaker': 'Joao Pereira',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '17/11/2019',
+      'start_hour': '12:00',
+      'end_hour': '13:00',
       'rank': '93%',
       'selected': false
     },
     {
       'name': 'Talk 3',
+      'title': 'The title of talk 3',
       'speaker': 'Maria Ribeiro',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '17/11/2019',
+      'start_hour': '16:00',
+      'end_hour': '18:00',
       'rank': '93%',
       'selected': false
     },
     {
       'name': 'Talk 4',
+      'title': 'The title of talk 4',
       'speaker': 'Patricia Rocha',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '08:00',
+      'end_hour': '09:00',
       'rank': '86%',
       'selected': false
     },
     {
       'name': 'Talk 5',
+      'title': 'The title of talk 5',
       'speaker': 'Ines Vilarinho',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '09:00',
+      'end_hour': '11:00',
+      'rank': '86%',
       'rank': '85%',
       'selected': false
     },
     {
       'name': 'Talk 6',
+      'title': 'The title of talk 6',
       'speaker': 'Joao Afonso',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '14:00',
+      'end_hour': '17:00',
       'rank': '81%',
       'selected': false
     },
     {
       'name': 'Talk 7',
+      'title': 'The title of talk 7',
       'speaker': 'Jose Dias',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '18/11/2019',
+      'start_hour': '10:00',
+      'end_hour': '11:00',
       'rank': '75%',
       'selected': false
     },
     {
       'name': 'Talk 8',
+      'title': 'The title of talk 8',
       'speaker': 'Ines Vilarinho',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '19/11/2019',
+      'start_hour': '14:00',
+      'end_hour': '16:00',
       'rank': '75%',
       'selected': false
     },
     {
       'name': 'Talk 9',
+      'title': 'The title of talk 9',
       'speaker': 'Quim Barreiros',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'date': '19/11/2019',
+      'start_hour': '17:00',
+      'end_hour': '18:00',
       'rank': '70%',
       'selected': false
     }
@@ -206,9 +244,7 @@ class _Rankings extends State<Rankings> {
         backgroundColor: Colors.white,
         appBar: AppBar(
             title: Text('CORE'),
-            backgroundColor: new Color(0xFF002A72),
-            leading: IconButton(
-                icon: const Icon(Icons.arrow_back), onPressed: () {})),
+            backgroundColor: new Color(0xFF002A72),),
         body: Center(child: getRanking()),
         bottomNavigationBar: Container(
             margin: EdgeInsets.only(left: 100, right: 100, bottom: 20),
@@ -223,6 +259,9 @@ class _Rankings extends State<Rankings> {
                       }
                     }
                     debugPrint("Talks selected: " + items.toString());
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return Schedule(items: items);
+                    }));
                   },
                   child: Text("Done", style: TextStyle(color: Colors.white)),
                   color: new Color(0xFF002A72),
