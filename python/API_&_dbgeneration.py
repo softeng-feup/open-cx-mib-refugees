@@ -24,11 +24,17 @@ elif response.status_code == 404:
 #jprint(response.json())
 
 Items=response.json()['Items']
+Sessions=response.json()['Sessions']
 
 Titles=[]
 Type=[]
 Person=[]
 Abstract=[]
+Key=[]
+S_key=[]
+Day=[]
+Time=[]
+Num_itens=[]
 number = 0
 
 # define search string
@@ -51,7 +57,24 @@ for d in Items:
              Person.append(person)
              abstract=d['Abstract']
              Abstract.append(abstract)
-              
+             key=d['Key']
+             Key.append(key)
+             for s in Sessions:
+                 if "Items" in s:
+                     for a in s['Items']:
+                         if key==a:
+                             session_key=s['Key']
+                             S_key.append(session_key)
+                             day=s['Day']
+                             Day.append(day)
+
+    
+for s in Sessions:
+    if "Items" in s:
+        if s['Key'] in S_key:
+            num_items=len(s['Items'])
+            Num_itens.append(num_items)    
+                       
 '''
 Categories // lectures 
 
@@ -78,11 +101,16 @@ while n < len(categories):
     title=Titles[n]
     type=Type[n]
     abstract=Abstract[n]
-    data = {'Author': person,
-            'Category': category,
-            'Title': title,
-            'Type': type,
-            'Abstract': abstract
+    day=Day[n]
+    selected=bool(False)
+    data = {'id': n+1,
+            'speaker': person,
+            'category': category,
+            'title': title,
+            'type': type,
+            'abstract': abstract,
+            'selected': selected,
+            'date': day
             }
     firebase.post('/Program', data)
     n += 1
