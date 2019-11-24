@@ -5,6 +5,7 @@ import requests
 import re
 #import json
 from firebase import firebase
+from dateutil.parser import parse
 
 firebase = firebase.FirebaseApplication('https://esof-20d6f.firebaseio.com', None)
 
@@ -26,15 +27,9 @@ elif response.status_code == 404:
 Items=response.json()['Items']
 Sessions=response.json()['Sessions']
 
-Titles=[]
-Type=[]
-Person=[]
-Abstract=[]
-Key=[]
-S_key=[]
-Day=[]
-Time=[]
-Num_itens=[]
+
+my={}
+My_Items=[]
 number = 0
 
 # define search string
@@ -42,7 +37,7 @@ pattern1 = re.compile("Critique presentation ")
 pattern2 = re.compile("Panel Discussion ") 
 pattern3 = re.compile("Lightning Talks ")
 
-
+#fetch import item data from global Itens
 for d in Items:
     person=d['PersonsString']
     type=d['Type']
@@ -50,30 +45,92 @@ for d in Items:
          title=d['Title']
          if not (pattern1.search(title) or pattern2.search(title) or pattern3.search(title) or title[-20:]=="(short presentation)"):
              number += 1
-             type=d['Type']
-             Type.append(type)
-             person=d['PersonsString']
-             Titles.append(title)
-             Person.append(person)
-             abstract=d['Abstract']
-             Abstract.append(abstract)
-             key=d['Key']
-             Key.append(key)
+             my["Type"]=d['Type']
+             my['Person']=d['PersonsString']
+             my['Title']=title
+             my['Abstract']=d['Abstract']
+             my['Key']=d['Key']
              for s in Sessions:
                  if "Items" in s:
                      for a in s['Items']:
-                         if key==a:
-                             session_key=s['Key']
-                             S_key.append(session_key)
-                             day=s['Day']
-                             Day.append(day)
+                         if d['Key']==a:
+                             my['S_key']=s['Key']
+                             my['location']=s['Location']
+                             my['Day']=s['Day']
+                             my['start_time']=parse(s['Time'][:5])
+                             my['end_time']=parse(s['Time'][-5:]) 
+                             my['duration']=my['end_time']-my['start_time']
+             My_Items.append(my)
+             my={}
+             
+#start time correction (exlude day opening)
+My_Items[21]['start_time']=parse('09:00')
+My_Items[26]['start_time']=parse('09:00')
+My_Items[21]['duration']=My_Items[21]['end_time']-My_Items[21]['start_time']
+My_Items[26]['duration']=My_Items[26]['end_time']-My_Items[26]['start_time']
 
-    
+#end time correction (exclud day closing)
+My_Items[40]['end_time']=parse('17:00')
+My_Items[30]['end_time']=parse('17:00')
+My_Items[32]['end_time']=parse('17:00')
+My_Items[32]['duration']=My_Items[32]['end_time']-My_Items[32]['start_time']
+My_Items[40]['duration']=My_Items[40]['end_time']-My_Items[40]['start_time']
+My_Items[30]['duration']=My_Items[30]['end_time']-My_Items[30]['start_time']
+
+#session number of items
+my_Sessions=[]          
 for s in Sessions:
     if "Items" in s:
-        if s['Key'] in S_key:
-            num_items=len(s['Items'])
-            Num_itens.append(num_items)    
+        my_s={}
+        num=0
+        for ss in s['Items']:
+            for xx in My_Items:
+                if ss == xx['Key']:
+                   num+=1
+        if num !=0:
+            my_s['key']=s['Key']
+            my_s['number']=num
+            my_s['position']=0
+            my_Sessions.append(my_s)
+        num=0
+        my_s={}
+
+#oeder of the item on session
+for p in My_Items:
+    for t in my_Sessions:
+        if p['S_key']==t['key']:
+            t['position']+=1
+            p['position']=t['position']
+            p['number_itens_session']=t['number']
+
+#single start, end time and duration
+for p in My_Items:
+    #All poster present at same time on Session
+    if (p['Type']!="Poster" and p['number_itens_session']!=1):
+        p['single_duration']=p['duration']/p['number_itens_session']
+        if p['position']==1:
+            p['single_start']=p['start_time']
+            p['single_end']=p['start_time']+p['single_duration']
+        elif p['position']==2:
+            p['single_start']=p['start_time']+p['single_duration']
+            p['single_end']=p['start_time']+2*p['single_duration']
+        elif p['position']==3:
+            p['single_start']=p['start_time']+2*p['single_duration']
+            p['single_end']=p['start_time']+3*p['single_duration']
+        else:
+            p['single_start']=p['start_time']+3*p['single_duration']
+            p['single_end']=p['start_time']+4*p['single_duration']
+    else:
+         p['single_duration']=p['duration']
+         p['single_start']=p['start_time']
+         p['single_end']=(p['end_time'])
+         
+    p['start_time']=p['start_time'].strftime("%H:%M")
+    p['end_time']=(p['end_time']).strftime("%H:%M")
+    p['single_start']=p['single_start'].strftime("%H:%M")
+    p['single_end']=(p['single_end']).strftime("%H:%M")
+    
+#%%
                        
 '''
 Categories // lectures 
@@ -96,21 +153,19 @@ categories = [11, 11, 11, 11, 3, 5, 2, 6, 2, 4, 2, 4, 10, 1, 1, 10, 12, 10, 8, 5
 
 n=0
 while n < len(categories):
-    person=Person[n]
     category=categories[n]
-    title=Titles[n]
-    type=Type[n]
-    abstract=Abstract[n]
-    day=Day[n]
     selected=bool(False)
-    data = {'id': n+1,
-            'speaker': person,
+    data = {'id': n,
+            'speaker': My_Items[n]['Person'],
             'category': category,
-            'title': title,
-            'type': type,
-            'abstract': abstract,
+            'title': My_Items[n]['Title'],
+            'type': My_Items[n]['Type'],
+            'abstract': My_Items[n]['Abstract'],
             'selected': selected,
-            'date': day
+            'date': My_Items[n]['Day'],
+            'duration': str(My_Items[n]['single_duration']),
+            'start': My_Items[n]['single_start'],
+            'end': My_Items[n]['single_end']
             }
     firebase.post('/Program', data)
     n += 1
