@@ -63,18 +63,22 @@ for d in Items:
              My_Items.append(my)
              my={}
              
-#start time correction (exlude day opening)
+#start time correction (exclude day opening)
 My_Items[21]['start_time']=parse('09:00')
 My_Items[26]['start_time']=parse('09:00')
+My_Items[33]['start_time']=parse('09:00')
+My_Items[40]['start_time']=parse('09:00')
 My_Items[21]['duration']=My_Items[21]['end_time']-My_Items[21]['start_time']
 My_Items[26]['duration']=My_Items[26]['end_time']-My_Items[26]['start_time']
+My_Items[33]['duration']=My_Items[33]['end_time']-My_Items[33]['start_time']
+My_Items[40]['duration']=My_Items[40]['end_time']-My_Items[40]['start_time']
 
-#end time correction (exclud day closing)
-My_Items[40]['end_time']=parse('17:00')
+#end time correction (exclude day closing)
+My_Items[39]['end_time']=parse('17:00')
 My_Items[30]['end_time']=parse('17:00')
 My_Items[32]['end_time']=parse('17:00')
 My_Items[32]['duration']=My_Items[32]['end_time']-My_Items[32]['start_time']
-My_Items[40]['duration']=My_Items[40]['end_time']-My_Items[40]['start_time']
+My_Items[39]['duration']=My_Items[39]['end_time']-My_Items[39]['start_time']
 My_Items[30]['duration']=My_Items[30]['end_time']-My_Items[30]['start_time']
 
 #session number of items
@@ -95,7 +99,7 @@ for s in Sessions:
         num=0
         my_s={}
 
-#oeder of the item on session
+#order of the item on session
 for p in My_Items:
     for t in my_Sessions:
         if p['S_key']==t['key']:
@@ -124,11 +128,30 @@ for p in My_Items:
          p['single_duration']=p['duration']
          p['single_start']=p['start_time']
          p['single_end']=(p['end_time'])
-         
+    
+#single start, end time and duration corrections
+My_Items[30]['single_end']=parse('16:30')
+My_Items[30]['single_duration']=My_Items[30]['single_end']-My_Items[30]['single_start']
+My_Items[32]['single_start']=parse('16:30')
+My_Items[32]['single_end']=parse('16:45')
+My_Items[32]['single_duration']=My_Items[32]['single_end']-My_Items[32]['single_start']
+My_Items[39]['single_start']=parse('16:45')
+My_Items[39]['single_duration']=My_Items[39]['single_end']-My_Items[39]['single_start']
+
+My_Items[71]['single_end']=parse('14:15')
+My_Items[71]['single_duration']=My_Items[71]['single_end']-My_Items[71]['single_start']
+My_Items[92]['single_start']=parse('14:15')
+My_Items[92]['single_end']=parse('14:45')
+My_Items[92]['single_duration']=My_Items[92]['single_end']-My_Items[92]['single_start']
+My_Items[98]['single_start']=parse('14:45')
+My_Items[98]['single_duration']=My_Items[98]['single_end']-My_Items[98]['single_start']
+
+for p in My_Items:
     p['start_time']=p['start_time'].strftime("%H:%M")
     p['end_time']=(p['end_time']).strftime("%H:%M")
     p['single_start']=p['single_start'].strftime("%H:%M")
     p['single_end']=(p['single_end']).strftime("%H:%M")
+   
     
 #%%
                        
