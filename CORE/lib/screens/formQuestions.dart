@@ -2104,6 +2104,16 @@ class TenthQuestion extends StatefulWidget {
 }
 
 class Question10 extends State<TenthQuestion> {
+
+  final textController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    textController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -2136,7 +2146,7 @@ class Question10 extends State<TenthQuestion> {
         Padding(
           padding: EdgeInsets.only(left: 40, right: 40, top: 30, bottom: 20),
           child: Text(
-            "ON CONSTRUCTION",
+            "Do you know any speaker you would appreciate to listen to?",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18,
@@ -2144,6 +2154,16 @@ class Question10 extends State<TenthQuestion> {
             ),
           ),
         ),
+        Padding(
+          padding: EdgeInsets.only(left: 40, right: 40, top: 30, bottom: 20),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Speaker's name",
+            ),
+            controller: textController,
+          ),
+        )
       ])),
       bottomNavigationBar: Container(
           child: Padding(
@@ -2176,7 +2196,12 @@ class Question10 extends State<TenthQuestion> {
           RaisedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                widget.answers.add("ON CONSTRUCTION");
+                if(textController.text.isEmpty) {
+                  widget.answers.add("NOT ANSWERED");
+                }
+                else {
+                  widget.answers.add(textController.text);
+                }
                 return FormAnswers(answers: widget.answers);
               }));
             },
@@ -2207,7 +2232,12 @@ class Question10 extends State<TenthQuestion> {
           RaisedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                widget.answers[9] = "ON CONSTRUCTION";
+                if(textController.text.isEmpty) {
+                  widget.answers[9] = "NOT ANSWERED";
+                }
+                else {
+                  widget.answers[9] = textController.text;
+                }
                 return FormAnswers(answers: widget.answers);
               }));
             },
@@ -2236,7 +2266,12 @@ class Question10 extends State<TenthQuestion> {
           RaisedButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                widget.answers[9] = "ON CONSTRUCTION";
+                if(textController.text.isEmpty) {
+                  widget.answers[9] = "NOT ANSWERED";
+                }
+                else {
+                  widget.answers[9] = textController.text;
+                }
                 return FormAnswers(answers: widget.answers);
               }));
             },
