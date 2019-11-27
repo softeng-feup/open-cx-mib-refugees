@@ -2197,7 +2197,7 @@ class Question10 extends State<TenthQuestion> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 if(textController.text.isEmpty) {
-                  widget.answers.add("NOT ANSWERED");
+                  widget.answers.add("-1");
                 }
                 else {
                   widget.answers.add(textController.text);
@@ -2233,7 +2233,7 @@ class Question10 extends State<TenthQuestion> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 if(textController.text.isEmpty) {
-                  widget.answers[9] = "NOT ANSWERED";
+                  widget.answers[9] = "-1";
                 }
                 else {
                   widget.answers[9] = textController.text;
@@ -2267,7 +2267,7 @@ class Question10 extends State<TenthQuestion> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 if(textController.text.isEmpty) {
-                  widget.answers[9] = "NOT ANSWERED";
+                  widget.answers[9] = "-1";
                 }
                 else {
                   widget.answers[9] = textController.text;
