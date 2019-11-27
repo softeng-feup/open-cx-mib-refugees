@@ -13,16 +13,19 @@ class Rankings extends StatefulWidget {
 class _Rankings extends State<Rankings> {
 
   final database = FirebaseDatabase.instance.reference().child("Program");
+  List allLectures= new List();
 
   void getData() async {
+    List allLec= new List();
     database.once().then((snap) {
       Map<dynamic,dynamic> map = snap.value;
       map.forEach((key, value) {
-        var names=snap.value[key].toString();
-          //print(names);
-        });
+        var lecture=snap.value[key];
+        allLec.add(lecture);
+        debugPrint(lecture['title']);
       });
-
+    });
+    allLectures=allLec;
   }
 
   List allItems = [
@@ -239,6 +242,7 @@ class _Rankings extends State<Rankings> {
   }
 
   Widget getRanking() {
+    getData();
     return Container(
       child: ListView(
         children: allItems.map((element) {
