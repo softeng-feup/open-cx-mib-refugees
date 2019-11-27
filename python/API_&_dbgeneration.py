@@ -177,14 +177,12 @@ categories = [11, 11, 11, 11, 3, 5, 2, 6, 2, 4, 2, 4, 10, 1, 1, 10, 12, 10, 8, 5
 n=0
 while n < len(categories):
     category=categories[n]
-    selected=bool(False)
     data = {'id': n,
             'speaker': My_Items[n]['Person'],
             'category': category,
             'title': My_Items[n]['Title'],
             'type': My_Items[n]['Type'],
             'abstract': My_Items[n]['Abstract'],
-            'selected': selected,
             'date': My_Items[n]['Day'],
             'duration': str(My_Items[n]['single_duration']),
             'start': My_Items[n]['single_start'],
