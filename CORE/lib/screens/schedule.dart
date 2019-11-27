@@ -284,7 +284,13 @@ class WeekView extends StatelessWidget {
         // return object of type Dialog
         return AlertDialog(
           title: new Text(title),
-          content: Text('Speaker: ${speaker}\n\n${abstract}'),
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text('Speaker: ${speaker}'),
+              Text(''),
+              Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
+            ],),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
             new FlatButton(
