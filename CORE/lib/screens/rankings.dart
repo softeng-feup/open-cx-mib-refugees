@@ -36,7 +36,7 @@ class _Rankings extends State<Rankings> {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '17/11/2019',
       'start_hour': '09:00',
-      'end_hour': '11:00',
+      'end_hour': '11:15',
       'rank': '97%',
       'selected': false
     },
@@ -46,8 +46,8 @@ class _Rankings extends State<Rankings> {
       'speaker': 'Joao Pereira',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '17/11/2019',
-      'start_hour': '12:00',
-      'end_hour': '13:00',
+      'start_hour': '12:15',
+      'end_hour': '14:30',
       'rank': '93%',
       'selected': false
     },
@@ -57,7 +57,7 @@ class _Rankings extends State<Rankings> {
       'speaker': 'Maria Ribeiro',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '17/11/2019',
-      'start_hour': '16:00',
+      'start_hour': '16:30',
       'end_hour': '18:00',
       'rank': '93%',
       'selected': false
@@ -68,7 +68,7 @@ class _Rankings extends State<Rankings> {
       'speaker': 'Patricia Rocha',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '18/11/2019',
-      'start_hour': '08:00',
+      'start_hour': '08:30',
       'end_hour': '09:00',
       'rank': '86%',
       'selected': false
@@ -92,7 +92,7 @@ class _Rankings extends State<Rankings> {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '18/11/2019',
       'start_hour': '14:00',
-      'end_hour': '17:00',
+      'end_hour': '17:15',
       'rank': '81%',
       'selected': false
     },
@@ -103,7 +103,7 @@ class _Rankings extends State<Rankings> {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '18/11/2019',
       'start_hour': '10:00',
-      'end_hour': '11:00',
+      'end_hour': '10:30',
       'rank': '75%',
       'selected': false
     },
@@ -114,7 +114,7 @@ class _Rankings extends State<Rankings> {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '19/11/2019',
       'start_hour': '14:00',
-      'end_hour': '16:00',
+      'end_hour': '15:45',
       'rank': '75%',
       'selected': false
     },
@@ -124,7 +124,7 @@ class _Rankings extends State<Rankings> {
       'speaker': 'Quim Barreiros',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '19/11/2019',
-      'start_hour': '17:00',
+      'start_hour': '17:15',
       'end_hour': '18:00',
       'rank': '70%',
       'selected': false

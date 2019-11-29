@@ -44,7 +44,7 @@ class WeekView extends StatelessWidget {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '17/11/2019',
       'start_hour': '09:00',
-      'end_hour': '11:00',
+      'end_hour': '11:15',
       'rank': '97%',
       'selected': false
     },
@@ -54,8 +54,8 @@ class WeekView extends StatelessWidget {
       'speaker': 'Joao Pereira',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '17/11/2019',
-      'start_hour': '12:00',
-      'end_hour': '13:00',
+      'start_hour': '12:15',
+      'end_hour': '14:30',
       'rank': '93%',
       'selected': false
     },
@@ -65,7 +65,7 @@ class WeekView extends StatelessWidget {
       'speaker': 'Maria Ribeiro',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '17/11/2019',
-      'start_hour': '16:00',
+      'start_hour': '16:30',
       'end_hour': '18:00',
       'rank': '93%',
       'selected': false
@@ -76,7 +76,7 @@ class WeekView extends StatelessWidget {
       'speaker': 'Patricia Rocha',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '18/11/2019',
-      'start_hour': '08:00',
+      'start_hour': '08:30',
       'end_hour': '09:00',
       'rank': '86%',
       'selected': false
@@ -100,7 +100,7 @@ class WeekView extends StatelessWidget {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '18/11/2019',
       'start_hour': '14:00',
-      'end_hour': '17:00',
+      'end_hour': '17:15',
       'rank': '81%',
       'selected': false
     },
@@ -111,7 +111,7 @@ class WeekView extends StatelessWidget {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '18/11/2019',
       'start_hour': '10:00',
-      'end_hour': '11:00',
+      'end_hour': '10:30',
       'rank': '75%',
       'selected': false
     },
@@ -122,7 +122,7 @@ class WeekView extends StatelessWidget {
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '19/11/2019',
       'start_hour': '14:00',
-      'end_hour': '16:00',
+      'end_hour': '15:45',
       'rank': '75%',
       'selected': false
     },
@@ -132,7 +132,7 @@ class WeekView extends StatelessWidget {
       'speaker': 'Quim Barreiros',
       'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
       'date': '19/11/2019',
-      'start_hour': '17:00',
+      'start_hour': '17:15',
       'end_hour': '18:00',
       'rank': '70%',
       'selected': false
@@ -160,7 +160,43 @@ class WeekView extends StatelessWidget {
       'd3': 'Talk 0',
     },
     {
+      'h': '08:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '08:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '08:45',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
       'h': '09:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '09:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '09:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '09:45',
       'd1': 'Talk 0',
       'd2': 'Talk 0',
       'd3': 'Talk 0',
@@ -172,7 +208,43 @@ class WeekView extends StatelessWidget {
       'd3': 'Talk 0',
     },
     {
+      'h': '10:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '10:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '10:45',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
       'h': '11:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '11:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '11:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '11:45',
       'd1': 'Talk 0',
       'd2': 'Talk 0',
       'd3': 'Talk 0',
@@ -184,7 +256,43 @@ class WeekView extends StatelessWidget {
       'd3': 'Talk 0',
     },
     {
+      'h': '12:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '12:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '12:45',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
       'h': '13:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '13:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '13:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '13:45',
       'd1': 'Talk 0',
       'd2': 'Talk 0',
       'd3': 'Talk 0',
@@ -196,13 +304,68 @@ class WeekView extends StatelessWidget {
       'd3': 'Talk 0',
     },
     {
+      'h': '14:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '14:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },    {
+      'h': '14:45',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+
+    {
       'h': '15:00',
       'd1': 'Talk 0',
       'd2': 'Talk 0',
       'd3': 'Talk 0',
     },
     {
+      'h': '15:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '15:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '15:45',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+
+    {
       'h': '16:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '16:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '16:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '16:45',
       'd1': 'Talk 0',
       'd2': 'Talk 0',
       'd3': 'Talk 0',
@@ -214,7 +377,43 @@ class WeekView extends StatelessWidget {
       'd3': 'Talk 0',
     },
     {
+      'h': '17:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '17:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '17:45',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
       'h': '18:00',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '18:15',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '18:30',
+      'd1': 'Talk 0',
+      'd2': 'Talk 0',
+      'd3': 'Talk 0',
+    },
+    {
+      'h': '18:45',
       'd1': 'Talk 0',
       'd2': 'Talk 0',
       'd3': 'Talk 0',
@@ -237,11 +436,22 @@ class WeekView extends StatelessWidget {
     }
   }
 
+  Map getTalk(String name) {
+    int index = -1;
+    for (int i = 0; i < allItems.length; i++) {
+      if (allItems[i]['name'] == name) {
+        index = i;
+        break;
+      }
+    }
+    return allItems[index];
+  }
+
   void addTalks() {
     getItems();
-    debugPrint(_allItems.toString());
     for (int k = 0; k < allItems.length; k++) {
       for (int i = 0; i < schedule.length; i++) {
+
         if (allItems[k]['start_hour'] == schedule[i]['h']) {
           switch (allItems[k]['date']) {
             case d1:
@@ -258,18 +468,22 @@ class WeekView extends StatelessWidget {
           }
         }
         if (allItems[k]['end_hour'] == schedule[i]['h']) {
-          switch (allItems[k]['date']) {
-            case d1:
-              schedule[i - 1]['d1'] = allItems[k]['name'];
-              break;
-            case d2:
-              schedule[i - 1]['d2'] = allItems[k]['name'];
-              break;
-            case d3:
-              schedule[i - 1]['d3'] = allItems[k]['name'];
-              break;
-            default:
-              break;
+          int n = 0;
+          while(schedule[i-n]['h'] != allItems[k]['start_hour']) {
+            switch (allItems[k]['date']) {
+              case d1:
+                schedule[i - n]['d1'] = allItems[k]['name'];
+                break;
+              case d2:
+                schedule[i - n]['d2'] = allItems[k]['name'];
+                break;
+              case d3:
+                schedule[i - n]['d3'] = allItems[k]['name'];
+                break;
+              default:
+                break;
+            }
+            n=n+1;
           }
         }
       }
@@ -389,484 +603,926 @@ class WeekView extends StatelessWidget {
           ));
     } else {
       if (item['d1'] != 'Talk 0') {
-        return Container(
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  width: 2.0,
-                  color: Colors.grey[700],
+        if(item['h'].toString().substring(3)=='00') {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
                 ),
               ),
-            ),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, left: 10, right: 10, bottom: 40),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              item['h'],
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        int index = -1;
-                        for (int i = 0; i < allItems.length; i++) {
-                          if (allItems[i]['name'] == item['d1']) {
-                            index = i;
-                            break;
-                          }
-                        }
-                        _showDialog(
-                            context,
-                            item['d1'] + " - " + allItems[index]['title'],
-                            allItems[index]['speaker'],
-                            allItems[index]['abstract']);
-                      },
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          border: Border(
-                            left:
-                                BorderSide(width: 2.0, color: Colors.grey[700]),
-                          ),
-                          color: Colors.green[200],
+                          color: Colors.grey[200],
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: 10, left: 10, right: 10, bottom: 20),
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          item = getTalk(item['d1']);
+                          _showDialog(
+                              context,
+                              item['d1'] + " - " + item['title'],
+                              item['speaker'],
+                              item['abstract']);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              left:
+                              BorderSide(width: 2.0, color: Colors.grey[700]),
+                            ),
+                            color: Colors.green[200],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: 0, left: 10, right: 10, bottom: 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0),
+                                  child: Text(
+                                    item['d1'],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d2'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d3'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+        else {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.w100),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          item = getTalk(item['d1']);
+                          _showDialog(
+                              context,
+                              item['d1'] + " - " + item['title'],
+                              item['speaker'],
+                              item['abstract']);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              left:
+                              BorderSide(width: 2.0, color: Colors.grey[700]),
+                            ),
+                            color: Colors.green[200],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: 0, left: 10, right: 10, bottom: 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0),
+                                  child: Text(
+                                    item['d1'],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d2'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d3'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+      } else if (item['d2'] != 'Talk 0' && item['d2'] != day2) {
+
+        if(item['h'].toString().substring(3)=='00') {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d1'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          int index = -1;
+                          for (int i = 0; i < allItems.length; i++) {
+                            if (allItems[i]['name'] == item['d2']) {
+                              index = i;
+                              break;
+                            }
+                          }
+                          _showDialog(
+                              context,
+                              item['d2'] + " - " + allItems[index]['title'],
+                              allItems[index]['speaker'],
+                              allItems[index]['abstract']);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              left:
+                              BorderSide(width: 2.0, color: Colors.grey[700]),
+                            ),
+                            color: Colors.green[200],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: 0, left: 10, right: 10, bottom: 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0),
+                                  child: Text(
+                                    item['d2'],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d3'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+        else {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.w100),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d1'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          int index = -1;
+                          for (int i = 0; i < allItems.length; i++) {
+                            if (allItems[i]['name'] == item['d2']) {
+                              index = i;
+                              break;
+                            }
+                          }
+                          _showDialog(
+                              context,
+                              item['d2'] + " - " + allItems[index]['title'],
+                              allItems[index]['speaker'],
+                              allItems[index]['abstract']);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              left:
+                              BorderSide(width: 2.0, color: Colors.grey[700]),
+                            ),
+                            color: Colors.green[200],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: 0, left: 10, right: 10, bottom: 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0),
+                                  child: Text(
+                                    item['d2'],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d3'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+
+
+      } else if (item['d3'] != 'Talk 0' && item['d3'] != day3) {
+        if(item['h'].toString().substring(3)=='00') {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d1'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d2'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          int index = -1;
+                          for (int i = 0; i < allItems.length; i++) {
+                            if (allItems[i]['name'] == item['d3']) {
+                              index = i;
+                              break;
+                            }
+                          }
+                          _showDialog(
+                              context,
+                              item['d3'] + " - " + allItems[index]['title'],
+                              allItems[index]['speaker'],
+                              allItems[index]['abstract']);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              left:
+                              BorderSide(width: 2.0, color: Colors.grey[700]),
+                            ),
+                            color: Colors.green[200],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: 0, left: 10, right: 10, bottom: 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0),
+                                  child: Text(
+                                    item['d3'],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+        else {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.w100),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d1'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d2'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          int index = -1;
+                          for (int i = 0; i < allItems.length; i++) {
+                            if (allItems[i]['name'] == item['d3']) {
+                              index = i;
+                              break;
+                            }
+                          }
+                          _showDialog(
+                              context,
+                              item['d3'] + " - " + allItems[index]['title'],
+                              allItems[index]['speaker'],
+                              allItems[index]['abstract']);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              left:
+                              BorderSide(width: 2.0, color: Colors.grey[700]),
+                            ),
+                            color: Colors.green[200],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                top: 0, left: 10, right: 10, bottom: 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0),
+                                  child: Text(
+                                    item['d3'],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+
+      } else {
+        if (item['h'].toString().substring(3) == '00') {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(top: 10),
+                                padding: const EdgeInsets.only(top: 0),
                                 child: Text(
                                   item['d1'],
+                                  style: TextStyle(
+                                    color: Colors.grey[200],
+                                  ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Text("B035"),
-                              )
                             ],
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d2'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d3'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ));
-      } else if (item['d2'] != 'Talk 0' && item['d2'] != day2) {
-        return Container(
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  width: 2.0,
-                  color: Colors.grey[700],
-                ),
-              ),
-            ),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, left: 10, right: 10, bottom: 40),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              item['h'],
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d1'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        int index = -1;
-                        for (int i = 0; i < allItems.length; i++) {
-                          if (allItems[i]['name'] == item['d2']) {
-                            index = i;
-                            break;
-                          }
-                        }
-                        _showDialog(
-                            context,
-                            item['d2'] + " - " + allItems[index]['title'],
-                            allItems[index]['speaker'],
-                            allItems[index]['abstract']);
-                      },
+                    Expanded(
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(
-                            left:
-                                BorderSide(width: 2.0, color: Colors.grey[700]),
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
                           ),
-                          color: Colors.green[200],
+                          color: Colors.grey[200],
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: 10, left: 10, right: 10, bottom: 20),
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d2'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d3'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        }
+        else {
+          return Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 2.0,
+                    color: Colors.grey[700],
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                item['h'],
+                                style: TextStyle(fontWeight: FontWeight.w100),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(top: 10),
+                                padding: const EdgeInsets.only(top: 0),
                                 child: Text(
-                                  item['d2'],
+                                  item['d1'],
+                                  style: TextStyle(
+                                    color: Colors.grey[200],
+                                  ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Text("B035"),
-                              )
                             ],
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d3'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ));
-      } else if (item['d3'] != 'Talk 0' && item['d3'] != day3) {
-        return Container(
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  width: 2.0,
-                  color: Colors.grey[700],
-                ),
-              ),
-            ),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, left: 10, right: 10, bottom: 40),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              item['h'],
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d1'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d2'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        int index = -1;
-                        for (int i = 0; i < allItems.length; i++) {
-                          if (allItems[i]['name'] == item['d3']) {
-                            index = i;
-                            break;
-                          }
-                        }
-                        _showDialog(
-                            context,
-                            item['d3'] + " - " + allItems[index]['title'],
-                            allItems[index]['speaker'],
-                            allItems[index]['abstract']);
-                      },
+                    Expanded(
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(
-                            left:
-                                BorderSide(width: 2.0, color: Colors.grey[700]),
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
                           ),
-                          color: Colors.green[200],
+                          color: Colors.grey[200],
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: 10, left: 10, right: 10, bottom: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Text(
-                                  item['d3'],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Text("B035"),
-                              )
-                            ],
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d2'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ));
-      } else {
-        return Container(
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  width: 2.0,
-                  color: Colors.grey[700],
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(width: 2.0, color: Colors.grey[700]),
+                          ),
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: 0, left: 10, right: 10, bottom: 0),
+                          child: Text(
+                            item['d3'],
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, left: 10, right: 10, bottom: 40),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              item['h'],
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Text(
-                                item['d1'],
-                                style: TextStyle(
-                                  color: Colors.grey[200],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Text(
-                                "B035",
-                                style: TextStyle(
-                                  color: Colors.grey[200],
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d2'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(width: 2.0, color: Colors.grey[700]),
-                        ),
-                        color: Colors.grey[200],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 10, left: 10, right: 10, bottom: 55),
-                        child: Text(
-                          item['d3'],
-                          style: TextStyle(
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ));
+              ));
+        }
+
       }
     }
   }
