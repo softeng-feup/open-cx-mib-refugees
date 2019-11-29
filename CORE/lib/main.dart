@@ -1,4 +1,4 @@
-import 'package:core/screens/startForm.dart';
+import 'package:core/screens/initial.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blueGrey
       ),
-      home: StartForm(),
+      home: Initial(),
     );
   }
 }
