@@ -32,14 +32,15 @@ class Question1 extends State<FirstQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.close),
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
               return StartForm();
-            }));
-          },
-        ),
+            }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -228,14 +229,15 @@ class Question2 extends State<SecondQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -439,14 +441,15 @@ class Question3 extends State<ThirdQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -650,14 +653,15 @@ class Question4 extends State<FourthQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -860,15 +864,15 @@ class Question5 extends State<FifthQuestion> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('CORE'),
-        backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -1072,14 +1076,15 @@ class Question6 extends State<SixthQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -1283,14 +1288,15 @@ class Question7 extends State<SeventhQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -1494,14 +1500,15 @@ class Question8 extends State<EighthQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -1877,14 +1884,15 @@ class Question9 extends State<NinethQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
@@ -2121,14 +2129,15 @@ class Question10 extends State<TenthQuestion> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return StartForm();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return StartForm();
+              }))
+          ),
+        ],
       ),
       body: Container(
           child: Column(children: <Widget>[
