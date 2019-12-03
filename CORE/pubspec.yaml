@@ -51,6 +51,7 @@ flutter:
   assets:
     - images/porto.PNG
     - images/cover.png
+    - images/core.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

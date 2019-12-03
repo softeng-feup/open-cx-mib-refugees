@@ -24,8 +24,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void validateAndSubmit() async {
     if (validateAndSave()) {
-      try {
-        // code here
+      try { // code here
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Initial()),
@@ -41,88 +40,116 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+        resizeToAvoidBottomPadding: false,
         appBar: new AppBar(
           title: new Text('Login'),
         ),
-        body: new Container(
-            margin: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8.0),
-                boxShadow: [
-                  BoxShadow(
-                    color:  Colors.black12,
-                    offset: Offset(0.0, 15.0),
-                    blurRadius: 15.0),
-                  BoxShadow(
-                    color: Colors.black12,
-                    offset: Offset(0.0, -10.0),
-                    blurRadius: 10.0),
-                ]),
-            child: Padding(
-              padding: EdgeInsets.all(20.0),
-                child: new Form(
-                  key: formKey,
-                  child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Text("Login",
-                      style: TextStyle(
-                        fontSize: 30,
-                      )),
-                      new TextFormField(
-                        decoration: new InputDecoration(
-                            hintText: 'Enter your email',
-                            hintStyle: TextStyle(
-                              color: Colors.grey, fontSize: 12,
-                            ),
-                            labelText: 'Email'
-                        ),
-                        validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
-                        onSaved: (value) => _email = value,
-                      ),
-                      new TextFormField(
-                        decoration: new InputDecoration(
-                            hintText: 'Enter your password',
-                            hintStyle: TextStyle(
-                              color: Colors.grey, fontSize: 12,
-                            ),
-                            labelText: 'Password'
-                        ),
-                        obscureText: true,
-                        validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
-                        onSaved: (value) => _password = value,
-                      ),
-                      new Container(
-                        margin: EdgeInsets.only(top: 20.0),
-                        child: new RaisedButton(
-                          onPressed: () {
-                            validateAndSubmit();
-                          },
-                          child: new Text('Login', style: new TextStyle(color: Colors.white, fontSize: 20)),
-                          color: Colors.blue,
-                        ),
-                      ),
-                      new Container(
-                        margin: EdgeInsets.only(top: 10.0),
-                        child:
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+        body: Stack(
+          children: <Widget>[
+            Center(
+              child: new Container(
+                  height: MediaQuery.of(context).size.height / 2.6,
+                  margin: EdgeInsets.all(50.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color:  Colors.black12,
+                            offset: Offset(0.0, 15.0),
+                            blurRadius: 15.0),
+                        BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(0.0, -10.0),
+                            blurRadius: 10.0),
+                      ]
+                  ),
+                  child: Padding(
+                      padding: EdgeInsets.all(15.0),
+                      child: new Form(
+                        key: formKey,
+                        child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[
-                            Text(
-                              "New to CORE? Sign Up",
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 12,
+                            new Container(
+                              margin: EdgeInsets.only(top: 15.0),
+                              child: new TextFormField(
+                                decoration: new InputDecoration(
+                                    contentPadding: const EdgeInsets.all(12.0),
+                                    fillColor: Colors.white,
+                                    border: new OutlineInputBorder(
+                                      borderRadius: new BorderRadius.circular(25.0),
+                                      borderSide: new BorderSide(
+                                      ),
+                                    ),
+                                    hintText: 'Enter your email',
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey, fontSize: 12,
+                                    ),
+                                    labelText: 'Email'
+                                ),
+                                validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+                                onSaved: (value) => _email = value,
                               ),
+                            ),
+                            new Container(
+                              margin: EdgeInsets.only(top: 15.0),
+                              child: new TextFormField(
+                                decoration: new InputDecoration(
+                                  contentPadding: const EdgeInsets.all(12.0),
+                                  fillColor: Colors.white,
+                                  border: new OutlineInputBorder(
+                                    borderRadius: new BorderRadius.circular(25.0),
+                                    borderSide: new BorderSide(
+                                    ),
+                                  ),
+                                  hintText: 'Enter your password',
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey, fontSize: 12,
+                                  ),
+                                  labelText: 'Password',
+                                ),
+                                obscureText: true,
+                                validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+                                onSaved: (value) => _password = value,
+                              ),
+                            ),
+                            new Container(
+                              margin: EdgeInsets.only(top: 15.0),
+                              child: new RaisedButton(
+                                padding: EdgeInsets.symmetric(vertical: 12.0),
+                                onPressed: () {
+                                  validateAndSubmit();
+                                },
+                                  shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
+                                child: new Text('Login', style: new TextStyle(color: Colors.white, fontSize: 20)),
+                                color: new Color(0xFF002A72),
+                              ),
+                            ),
+                            new Container(
+                                margin: EdgeInsets.only(top: 20.0),
+                                child:
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: <Widget>[
+                                    Text(
+                                      "New to CORE? Sign Up",
+                                      style: TextStyle(
+                                        color: new Color(0xFF002A72),
+                                        fontSize: 12,
+                                      ),
+                                    )
+                                  ],
+                                )
                             )
                           ],
-                        )
+                        ),
                       )
-                    ],
-                  ),
-                )
-            )
+                  )
+              )
+            ),
+            Image.asset("images/core.png"),
+          ],
         )
     );
   }
