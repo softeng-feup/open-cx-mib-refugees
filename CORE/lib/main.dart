@@ -1,6 +1,7 @@
-import 'package:core/screens/initial.dart';
+//import 'package:core/screens/initial.dart';
+import 'package:core/screens/login.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
+//import 'package:firebase_database/firebase_database.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blueGrey
       ),
-      home: Initial(),
+      //home: Initial(),
+      home: LoginPage(),
     );
   }
 }
