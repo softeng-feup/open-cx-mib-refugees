@@ -3,7 +3,6 @@
 
 import requests
 import re
-#import json
 from firebase import firebase
 from dateutil.parser import parse
 
@@ -16,13 +15,6 @@ if response.status_code == 200:
     print('Success!')
 elif response.status_code == 404:
     print('API not found.')
-
-# Convert into JSON string
-#def jprint(obj):
-    #text = json.dumps(obj, sort_keys=True, indent=4)
-    #print(text)
-
-#jprint(response.json())
 
 Items=response.json()['Items']
 Sessions=response.json()['Sessions']
@@ -192,4 +184,3 @@ while n < len(categories):
     n += 1
 
 db=firebase.get('/Program', None)
-

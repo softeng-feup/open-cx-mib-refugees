@@ -31,9 +31,9 @@ class _Rankings extends State<Rankings> {
   List allItems = [
     {
       'name': 'Talk 1',
-      'title': 'The title of talk 1',
-      'speaker': 'Jose Dias',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'SmaCC',
+      'speaker': 'Jason Lecerf',
+      'abstract': 'SmaCC (Smalltalk Compiler-Compiler) is a freely available parser generator for Smalltalk. It generates LR parsers and is a replacement for the T-Gen parser generator. SmaCC overcomes many of T-Gen’s limitations that make it difficult to produce parsers. SmaCC can generate parsers for ambiguous grammars and grammars with overlapping tokens. ',
       'date': '17/11/2019',
       'start_hour': '09:00',
       'end_hour': '11:15',
@@ -42,9 +42,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 2',
-      'title': 'The title of talk 2',
-      'speaker': 'Joao Pereira',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'PetitParser',
+      'speaker': 'Andrei Chiş',
+      'abstract': 'PetitParser combines ideas from scannerless parsing, parser combinators, parsing expression grammars and packrat parsers to model grammars and parsers as objects that can be reconfigured dynamically. ',
       'date': '17/11/2019',
       'start_hour': '12:15',
       'end_hour': '14:30',
@@ -53,9 +53,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 3',
-      'title': 'The title of talk 3',
-      'speaker': 'Maria Ribeiro',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'Language Engineering with Rascal',
+      'speaker': 'Tijs van der Storm',
+      'abstract': 'Software Language Engineering (SLE) is concerned with the principled techniques and concepts for the construction of software languages. In this tutorial we will explore how the Rascal metaprogramming environment and language workbench addresses aspects of implementing software languages. We will work on a simple DSL for defining questionnaires, called QL, touching upon syntax definition, static analysis, transformation, language extension, and code generation. ',
       'date': '17/11/2019',
       'start_hour': '16:30',
       'end_hour': '18:00',
@@ -64,9 +64,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 4',
-      'title': 'The title of talk 4',
-      'speaker': 'Patricia Rocha',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'Orchestrated Crowdsourced Testing of a Mobile Web Application',
+      'speaker': 'Maurizio Leotta',
+      'abstract': 'Responsive mobile web applications are quite challenging to test, especially if they require heavy interaction with the environment (e.g., through GPS-based location tracking and camera-based QR code acquisition and recognition) and among different users, as in the case of collaborative games support, where the app needs to support the real-time interaction of a large number of users. In this paper, we propose a case study of orchestrated crowdsourced testing of such a mobile web app, as an approach to face such challenges. ',
       'date': '18/11/2019',
       'start_hour': '08:30',
       'end_hour': '09:00',
@@ -75,9 +75,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 5',
-      'title': 'The title of talk 5',
-      'speaker': 'Ines Vilarinho',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'A framework for big-step semantics',
+      'speaker': 'Francesco Dagnino',
+      'abstract': 'No abstract. ',
       'date': '18/11/2019',
       'start_hour': '09:00',
       'end_hour': '11:00',
@@ -87,9 +87,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 6',
-      'title': 'The title of talk 6',
-      'speaker': 'Joao Afonso',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'Quickref: Auto-Documenting the Common Lisp Ecosystem',
+      'speaker': 'Didier Verna',
+      'abstract': 'This demonstration is intended for people interested in software documentation, and more specifically, in what can be achieved with a reflexive language, fully equipped for introspection. Quickref is a global documentation project for the Common Lisp Ecosystem. In a single function call, it builds an entire website containing reference manuals for almost two thousand Common Lisp libraries. The system is unintrusive: library authors do not have anything to do to make their code “Quickref aware”. A public website is maintained with the resulting full documentation, but individuals can also use Quickref to generate a local website, documenting only what is present on their machine. ',
       'date': '18/11/2019',
       'start_hour': '14:00',
       'end_hour': '17:15',
@@ -98,9 +98,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 7',
-      'title': 'The title of talk 7',
-      'speaker': 'Jose Dias',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'Proving Inequational Propositions about Haskell Programs in Coq',
+      'speaker': 'Jan Christiansen and Sandra Dylus',
+      'abstract': 'To prove properties about a Haskell function in Coq, we have to translate the Haskell function to Coq. Proofs about Haskell func- tions are performed in various levels of detail. For example, some- times proofs are performed as if Haskell were a total language and sometimes we are interested in explicitly reasoning about effects like partiality, exceptions or tracing. By translating a Haskell func- tion into a Coq function that is parametrised over a monad, we can model all these cases. ',
       'date': '18/11/2019',
       'start_hour': '10:00',
       'end_hour': '10:30',
@@ -109,9 +109,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 8',
-      'title': 'The title of talk 8',
-      'speaker': 'Ines Vilarinho',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'Lazy, Parallel Multiple Value Reductions in Common Lisp',
+      'speaker': 'Marco Heisig',
+      'abstract': 'No abstract. ',
       'date': '19/11/2019',
       'start_hour': '14:00',
       'end_hour': '15:45',
@@ -120,9 +120,9 @@ class _Rankings extends State<Rankings> {
     },
     {
       'name': 'Talk 9',
-      'title': 'The title of talk 9',
-      'speaker': 'Quim Barreiros',
-      'abstract': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu pellentesque enim. Duis sollicitudin nec nibh non pretium. Ut pharetra porta est, sed pulvinar leo lobortis vel. Morbi vel varius odio. Maecenas tristique quam sit amet orci auctor tristique. Ut justo nisl, porttitor ut massa in, iaculis tincidunt velit. ',
+      'title': 'Efficient Implementation of Smalltalk Activation Records in Language Implementation Frameworks',
+      'speaker': 'Fabio Niephaus',
+      'abstract': 'Language implementation frameworks such as RPython or Truffle help to build runtimes for dynamic languages. For this, they make certain design decisions and trade-offs upfront to make common language concepts easy to implement. Because of this, however, some language-specific concepts may be rather tedious to support, especially the modification of activation records. For example, Smalltalk provides reification of activations through context objects. Since they are used to implement other mechanisms such as exception handling on the language level, contexts need to be entirely supported by the underlying runtime. ',
       'date': '19/11/2019',
       'start_hour': '17:15',
       'end_hour': '18:00',
@@ -130,8 +130,6 @@ class _Rankings extends State<Rankings> {
       'selected': false
     }
   ];
-
-
 
   void _showDialog(String title, String speaker, String date, String start, String end, String abstract) {
     // flutter defined function
@@ -150,7 +148,10 @@ class _Rankings extends State<Rankings> {
               Text(""),
               Text("Hour: " + start + "-" + end),
               Text(""),
-              Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
+              new Expanded(
+                  child: new SingleChildScrollView(
+                    child: new Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
+                  )),
             ],
           ),
           actions: <Widget>[
@@ -187,9 +188,12 @@ class _Rankings extends State<Rankings> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
-                        item['name'],
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Flexible(
+                        child: Text(
+                          item['title'],
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Checkbox(
                         value: item['selected'],
