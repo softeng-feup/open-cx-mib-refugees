@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:core/screens/initial.dart';
+import 'package:core/screens/signup.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             Center(
               child: new Container(
-                  height: MediaQuery.of(context).size.height / 2.6,
+                  height: MediaQuery.of(context).size.height / 2.2,
                   margin: EdgeInsets.all(50.0),
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -132,12 +133,24 @@ class _LoginPageState extends State<LoginPage> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: <Widget>[
-                                    Text(
-                                      "New to CORE? Sign Up",
-                                      style: TextStyle(
-                                        color: new Color(0xFF002A72),
-                                        fontSize: 12,
-                                      ),
+                                new InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => SignUpPage()),
+                                  );
+                            },
+                              child: new Padding(
+                                padding: new EdgeInsets.all(10.0),
+                                child: new Text("New to CORE? Sign Up"),
+                              ),
+                                    //Text(
+                                      //"New to CORE? Sign Up",
+                                      //style: TextStyle(
+                                        //color: new Color(0xFF002A72),
+                                        //fontSize: 12,
+                                      //),
+
                                     )
                                   ],
                                 )
@@ -148,7 +161,13 @@ class _LoginPageState extends State<LoginPage> {
                   )
               )
             ),
-            Image.asset("images/core.png"),
+            Container(
+              alignment: Alignment(0.0, -1.0),
+              child: Image.asset(
+                "images/core.png",
+                width: MediaQuery.of(context).size.width / 1.2,
+              ),
+            )
           ],
         )
     );
