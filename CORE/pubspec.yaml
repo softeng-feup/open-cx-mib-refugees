@@ -26,7 +26,7 @@ dependencies:
 
   firebase_core: any
   firebase_database: ^3.0.9
-
+  google_maps_flutter: ^0.4.0
   grouped_buttons: ^1.0.4
 
   percent_indicator: "^2.1.1"

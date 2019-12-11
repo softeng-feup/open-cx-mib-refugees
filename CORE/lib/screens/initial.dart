@@ -1,5 +1,6 @@
 import 'package:core/screens/startForm.dart';
 import 'package:flutter/material.dart';
+import 'package:core/screens/info.dart';
 
 class Menu{
   static const String SignOut = 'Sign out';
@@ -89,7 +90,9 @@ class FirstScreen extends State<Initial> {
               } else if (position == 3) {
                 print('program');
               } else {
-                print('info');
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Info();
+                }));
               }
             },
             child: Column(
