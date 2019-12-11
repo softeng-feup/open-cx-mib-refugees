@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:core/screens/Initial.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Info extends StatefulWidget {
   @override
@@ -128,9 +130,19 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
                                           new TextSpan(text: 'BY PLANE', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
                                           new TextSpan(text: '\n\nTo Aeroporto Sá Carneiro, and then by car or subway (choose line E, with connection to line D at Trindade, direction "Hospital de São João").'),
                                           new TextSpan(text: '\n\nBY SUBWAY', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
-                                          new TextSpan(text: '\n\nChoose line D (yellow) direction "Hospital de São João" and exit on "IPO". After that, follow Rua Dr. Plácido da Costa on foot to FEUP (5 minutes).\nFor more information, visit: www.metrodoporto.pt'),
+                                          new TextSpan(text: '\n\nChoose line D (yellow) direction "Hospital de São João" and exit on "IPO". After that, follow Rua Dr. Plácido da Costa on foot to FEUP (5 minutes).\nFor more information, visit: '),
+                                          new TextSpan(
+                                              text: 'www.metrodoporto.pt', style: new TextStyle(fontWeight: FontWeight.bold), recognizer: new TapGestureRecognizer()..onTap = () {
+                                            launch('https://www.metrodoporto.pt/');
+                                          }
+                                          ),
                                           new TextSpan(text: '\n\nBY TRAIN', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
-                                          new TextSpan(text: '\n\nArrival at Campanhã station – take lines A,B,C or E of the subway to Trindade and then change to line D, direction "Hospital de São João".Arrival at São Bento station – take the subway (line D), direction "Hospital de São João". \nFor more information, visit: www.cp.pt')
+                                          new TextSpan(text: '\n\nArrival at Campanhã station – take lines A,B,C or E of the subway to Trindade and then change to line D, direction "Hospital de São João".Arrival at São Bento station – take the subway (line D), direction "Hospital de São João". \nFor more information, visit: '),
+                                          new TextSpan(
+                                              text: 'www.cp.pt', style: new TextStyle(fontWeight: FontWeight.bold), recognizer: new TapGestureRecognizer()..onTap = () {
+                                            launch('https://www.cp.pt/passageiros/pt');
+                                          }
+                                          )
                                         ]
                                     ),
                                   )

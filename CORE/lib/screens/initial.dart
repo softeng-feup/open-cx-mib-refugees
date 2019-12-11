@@ -106,7 +106,8 @@ class FirstScreen extends State<Initial> {
                       icon,
                       size: 60.0,
                       color: Color(0xFF002A72),
-                    )),
+                    )
+                ),
                 SizedBox(height: 5.0),
                 new Center(
                   child: new Text(title,
