@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:core/screens/Initial.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:flutter_google_maps_clusters/helpers/map_marker.dart';
-
 
 class Info extends StatefulWidget {
   @override
@@ -67,10 +65,10 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
                   controller: _controller,
                   tabs: [
                     new Tab(
-                      icon: const Icon(Icons.info),
+                      text: 'About',
                     ),
                     new Tab(
-                      icon: const Icon(Icons.location_on),
+                      text: 'Location',
                     ),
                   ],
                 ),
@@ -86,13 +84,19 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
                           child:  Padding(
                               padding: const EdgeInsets.all(20.0),
                               child: new RichText(
-                                  text: TextSpan(
-                                  text: 'The International Conference on the Art, Science, and Engineering of Programming is a new conference focused on programming topics including the experience of programming. We have named it ‹Programming› for short. \n\nAfter Brussels, Nice, and Genova, this fourth edition will take place in Porto, Portugal, Mon 23 - Thu 26 March, 2020, a charming city that will embrace you as soon as you arrive! ',
-                                    style: TextStyle(
+                                textAlign: TextAlign.justify,
+                                  text: new TextSpan(
+                                      style: new TextStyle(
+                                        fontSize: 20.0,
                                         color: Colors.black,
-                                        decorationStyle: TextDecorationStyle.wavy,
-                                        fontSize: 20
-                                    ),
+                                      ),
+                                    children: <TextSpan>[
+                                      new TextSpan(text: 'The International Conference on the Art, Science, and Engineering of Programming is a new conference focused on programming topics including the experience of programming. We have named it '),
+                                      new TextSpan(text: '<Programming> ', style: new TextStyle(fontWeight: FontWeight.bold)),
+                                      new TextSpan(text: 'for short. \n\nAfter Brussels, Nice, and Genova, this fourth edition will take place in '),
+                                      new TextSpan(text: 'Porto, Portugal, Mon 23 - Thu 26 March, 2020', style: new TextStyle(fontWeight: FontWeight.bold)),
+                                      new TextSpan(text: ', a charming city that will embrace you as soon as you arrive!')
+                                    ]
                                   ),
                               )
                           )
@@ -110,7 +114,7 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
                             mapController.complete(controller);
                           },
                         ),
-                      )
+                      ),
                     ),
                   ],
                 ),
