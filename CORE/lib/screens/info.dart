@@ -79,8 +79,7 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
                 child: new TabBarView(
                   controller: _controller,
                   children: <Widget>[
-                    new Card(
-                      child: Container(
+                    new Container(
                           child:  Padding(
                               padding: const EdgeInsets.all(20.0),
                               child: new RichText(
@@ -100,22 +99,46 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
                                   ),
                               )
                           )
-                      )
                     ),
-                    new Card(
-                      child: Container(
-                        child: GoogleMap(
-                          // 2
-                          initialCameraPosition: _myLocation,
-                          // 3
-                          mapType: MapType.normal,
-                          // 4
-                          onMapCreated: (GoogleMapController controller) {
-                            mapController.complete(controller);
-                          },
-                        ),
+                    new SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            padding: const EdgeInsets.all(20.0),
+                            height: 250,
+                            width: MediaQuery.of(context).size.width,
+                            child: GoogleMap(
+                              initialCameraPosition: _myLocation,
+                              mapType: MapType.normal,
+                              onMapCreated: (GoogleMapController controller) {
+                                mapController.complete(controller);
+                              },
+                            ),
+                          ),
+                          Container(
+                              child:  Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: new RichText(
+                                    text: new TextSpan(
+                                        style: new TextStyle(
+                                          fontSize: 16.0,
+                                          color: Colors.black,
+                                        ),
+                                        children: <TextSpan>[
+                                          new TextSpan(text: 'BY PLANE', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
+                                          new TextSpan(text: '\n\nTo Aeroporto Sá Carneiro, and then by car or subway (choose line E, with connection to line D at Trindade, direction "Hospital de São João").'),
+                                          new TextSpan(text: '\n\nBY SUBWAY', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
+                                          new TextSpan(text: '\n\nChoose line D (yellow) direction "Hospital de São João" and exit on "IPO". After that, follow Rua Dr. Plácido da Costa on foot to FEUP (5 minutes).\nFor more information, visit: www.metrodoporto.pt'),
+                                          new TextSpan(text: '\n\nBY TRAIN', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
+                                          new TextSpan(text: '\n\nArrival at Campanhã station – take lines A,B,C or E of the subway to Trindade and then change to line D, direction "Hospital de São João".Arrival at São Bento station – take the subway (line D), direction "Hospital de São João". \nFor more information, visit: www.cp.pt')
+                                        ]
+                                    ),
+                                  )
+                              )
+                          )
+                        ],
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
