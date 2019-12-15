@@ -53,7 +53,7 @@ const adminBro = new AdminBro({
     },
   ],
   branding: {
-    companyName: 'NeTinder',
+    companyName: 'Core',
     softwareBrothers: false
   },
   actions: {

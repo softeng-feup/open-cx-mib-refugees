@@ -2,11 +2,35 @@ import 'package:core/screens/login.dart';
 import 'package:core/screens/initial.dart';
 import 'package:flutter/material.dart';
 
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<String>newUser(String fullname, String email, String password) async {
+  String url = 'http://10.0.2.2:5000/users/register';
+
+  final response = await http.post(url,
+        headers: {
+          "Accept": "application/json"
+        },
+        body:
+        {'fullname': fullname,
+          'password': password,
+          'email': email
+        }
+      );
+
+  final responseJson = json.decode(response.body);
+
+  return responseJson;
+}
+
 class SignUpPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new _SignUpPageState();
 
 }
+
 
 class _SignUpPageState extends State<SignUpPage> {
 
@@ -25,9 +49,11 @@ class _SignUpPageState extends State<SignUpPage> {
     return false;
   }
 
-  void validateAndSubmit() async {
+  void validateAndSubmit( String this_email,  String this_password, String this_confirmed_password) async {
     if (validateAndSave()) {
       try { // code here
+        Future<String >response= newUser(this_confirmed_password, this_email, this_password);
+        debugPrint('This is the API response: $response');
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Initial()),
@@ -136,7 +162,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   ),
                                   obscureText: true,
                                   validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
-                                  onSaved: (value) => _password = value,
+                                  onSaved: (value) => _confirmed_password = value,
                                 ),
                               ),
                               new Container(
@@ -144,7 +170,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 child: new RaisedButton(
                                   padding: EdgeInsets.symmetric(vertical: 12.0),
                                   onPressed: () {
-                                    validateAndSubmit();
+                                    validateAndSubmit(_email, _password, _confirmed_password);
                                   },
                                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
                                   child: new Text('Sign Up', style: new TextStyle(color: Colors.white, fontSize: 20)),

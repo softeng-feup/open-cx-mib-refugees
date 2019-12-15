@@ -88,7 +88,7 @@ class FirstScreen extends State<Initial> {
               } else if (position == 2) {
                 print('schedule');
               } else if (position == 3) {
-                print('program');
+                print('prigram');
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Info();
