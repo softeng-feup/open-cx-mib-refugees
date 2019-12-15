@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
+final _scaffoldKey = GlobalKey<ScaffoldState>();
+
 Future<String> newUser(String fullname, String email, String password) async {
   String url = 'http://10.0.2.2:5000/users/register';
 
@@ -34,8 +36,6 @@ class _SignUpPageState extends State<SignUpPage> {
   String _password;
   String _confirmed_password;
 
-  final GlobalKey<ScaffoldState> _buttonkey = new GlobalKey<ScaffoldState>();
-
   final formKey = new GlobalKey<FormState>();
 
   bool validateAndSave() {
@@ -47,36 +47,53 @@ class _SignUpPageState extends State<SignUpPage> {
     return false;
   }
 
-  void validateAndSubmit(String this_fullname, String this_email,  String this_password, String this_confirmed_password) async {
+  void validateAndSubmit(context, String this_fullname, String this_email,  String this_password, String this_confirmed_password) async {
+    String message;
     if (this_fullname.length >= 6) {
-      if (this_password == this_confirmed_password) {
-        try {
-          Future<String>response = newUser(
-              this_fullname, this_email, this_password);
-          if (await response == 'User registered successfully') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Initial()),
-            );
-          } else if (await response == 'Email already exists') {
-            print('Email already exists');
-          }
+      if (this_password == this_confirmed_password &&
+          this_password.length >= 8) {
+        if (RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+            .hasMatch(this_email)) {
+          try {
+            Future<String>response = newUser(
+                this_fullname, this_email, this_password);
+            if (await response == 'User registered successfully') {
 
-        }
-        catch (e) {
-          print('Erros: $e');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Initial()),
+              );
+            } else if (await response == 'Email already exists') {
+              message=('Email already exists');
+              print(message);
+            }
+          }
+          catch (e) {
+            print('Erros: $e');
+          }
+        } else {
+          message=('Invalid email');
+          print(message);
         }
       } else {
-        print('Passwords don\'t match');
+        message=('Passwords don\'t match or don\'t have at least 8 characters');
+        print(message);
       }
     } else {
-      print('Fullname must have at leat 6 characters');
+      message=('Fullname must have at leat 6 characters');
+      print(message);
     }
+    if (message!=null){
+      _displaySnackBar(context,message);
+    }
+
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+        key: _scaffoldKey,
         resizeToAvoidBottomPadding: false,
         appBar: new AppBar(
           title: new Text('Sign Up'),
@@ -197,11 +214,10 @@ class _SignUpPageState extends State<SignUpPage> {
                               new Container(
                                 margin: EdgeInsets.only(top: 15.0),
                                 child: new RaisedButton(
-                                  key: _buttonkey,
                                   padding: EdgeInsets.symmetric(vertical: 12.0),
                                   onPressed: () {
                                     if (validateAndSave()) {
-                                      validateAndSubmit(_fullname, _email, _password, _confirmed_password);
+                                      validateAndSubmit(context, _fullname, _email, _password, _confirmed_password);
                                     }
                                   },
                                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
@@ -247,4 +263,10 @@ class _SignUpPageState extends State<SignUpPage> {
         )
     );
   }
+
+  _displaySnackBar(BuildContext context,text) {
+    final snackBar = SnackBar(content: Text(text));
+    _scaffoldKey.currentState.showSnackBar(snackBar);
+  }
+
 }
