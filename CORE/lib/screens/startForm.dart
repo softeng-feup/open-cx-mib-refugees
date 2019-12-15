@@ -1,6 +1,6 @@
 import 'package:core/screens/formQuestions.dart';
 import 'package:flutter/material.dart';
-import 'package:core/screens/Initial.dart';
+import 'package:core/screens/initial.dart';
 
 class StartForm extends StatefulWidget {
   @override
