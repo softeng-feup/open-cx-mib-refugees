@@ -1,6 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:core/screens/initial.dart';
 import 'package:core/screens/signup.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+
+final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+Future<String> logUser(String email, String password) async {
+  String url = 'http://10.0.2.2:5000/users/login';
+
+  final response = await http.post(url,
+      headers: {
+        "Accept": "application/json"
+      },
+      body:
+      { 'email': email,
+        'password': password
+      }
+  );
+  return response.body;
+
+}
 
 class LoginPage extends StatefulWidget {
   @override
@@ -23,24 +43,42 @@ class _LoginPageState extends State<LoginPage> {
     return false;
   }
 
-  void validateAndSubmit() async {
-    if (validateAndSave()) {
-      try { // code here
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Initial()),
-        );
-        print('Signed in');
+  void validateAndSubmit(context, String this_email, String this_password) async {
+    String message;
+    if (this_password.length >= 8) {
+          try {
+            Future<String> response = logUser(this_email, this_password);
+            if (await response == 'User logged in successfully.') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Initial()),
+              );
+
+            } else if (await response == 'Invalid email') {
+              message=('Invalid email');
+              print(message);
+            } else if (await response == 'Invalid password'){
+              message=('Invalid password');
+              print(message);
+            }
+          }
+          catch (e) {
+            print('Erros: $e');
+          }
+      } else {
+        message=('Passwords don\'t have at least 8 characters');
+        print(message);
       }
-      catch(e) {
-        print('Erros: $e');
-      }
+    
+    if (message!=null){
+      _displaySnackBar(context,message);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+        key: _scaffoldKey,
         resizeToAvoidBottomPadding: false,
         appBar: new AppBar(
           title: new Text('Login'),
@@ -120,7 +158,9 @@ class _LoginPageState extends State<LoginPage> {
                               child: new RaisedButton(
                                 padding: EdgeInsets.symmetric(vertical: 12.0),
                                 onPressed: () {
-                                  validateAndSubmit();
+                                  if (validateAndSave()) {
+                                    validateAndSubmit(context, _email, _password);
+                                  }
                                 },
                                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
                                 child: new Text('Login', style: new TextStyle(color: Colors.white, fontSize: 20)),
@@ -172,4 +212,11 @@ class _LoginPageState extends State<LoginPage> {
         )
     );
   }
+
+  _displaySnackBar(BuildContext context,text) {
+    final snackBar = SnackBar(content: Text(text));
+    _scaffoldKey.currentState.showSnackBar(snackBar);
+  }
+
+
 }
