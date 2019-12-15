@@ -1,12 +1,10 @@
 import 'package:core/screens/login.dart';
 import 'package:core/screens/initial.dart';
 import 'package:flutter/material.dart';
-
 import 'dart:async';
-import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<String>newUser(String fullname, String email, String password) async {
+Future<String> newUser(String fullname, String email, String password) async {
   String url = 'http://10.0.2.2:5000/users/register';
 
   final response = await http.post(url,
@@ -20,23 +18,23 @@ Future<String>newUser(String fullname, String email, String password) async {
         }
       );
 
-  final responseJson = json.decode(response.body);
+  return response.body;
 
-  return responseJson;
 }
 
 class SignUpPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new _SignUpPageState();
-
 }
-
 
 class _SignUpPageState extends State<SignUpPage> {
 
+  String _fullname;
   String _email;
   String _password;
   String _confirmed_password;
+
+  final GlobalKey<ScaffoldState> _buttonkey = new GlobalKey<ScaffoldState>();
 
   final formKey = new GlobalKey<FormState>();
 
@@ -49,20 +47,30 @@ class _SignUpPageState extends State<SignUpPage> {
     return false;
   }
 
-  void validateAndSubmit( String this_email,  String this_password, String this_confirmed_password) async {
-    if (validateAndSave()) {
-      try { // code here
-        Future<String >response= newUser(this_confirmed_password, this_email, this_password);
-        debugPrint('This is the API response: $response');
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Initial()),
-        );
-        print('Signed in');
+  void validateAndSubmit(String this_fullname, String this_email,  String this_password, String this_confirmed_password) async {
+    if (this_fullname.length >= 6) {
+      if (this_password == this_confirmed_password) {
+        try {
+          Future<String>response = newUser(
+              this_fullname, this_email, this_password);
+          if (await response == 'User registered successfully') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Initial()),
+            );
+          } else if (await response == 'Email already exists') {
+            print('Email already exists');
+          }
+
+        }
+        catch (e) {
+          print('Erros: $e');
+        }
+      } else {
+        print('Passwords don\'t match');
       }
-      catch(e) {
-        print('Erros: $e');
-      }
+    } else {
+      print('Fullname must have at leat 6 characters');
     }
   }
 
@@ -77,7 +85,7 @@ class _SignUpPageState extends State<SignUpPage> {
           children: <Widget>[
             Center(
                 child: new Container(
-                    height: MediaQuery.of(context).size.height / 2,
+                    height: MediaQuery.of(context).size.height / 1.7,
                     margin: EdgeInsets.all(50.0),
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -111,13 +119,34 @@ class _SignUpPageState extends State<SignUpPage> {
                                         borderSide: new BorderSide(
                                         ),
                                       ),
+                                      hintText: 'Enter your fullname',
+                                      hintStyle: TextStyle(
+                                        color: Colors.grey, fontSize: 12,
+                                      ),
+                                      labelText: 'Fullname'
+                                  ),
+                                  //validator: (value) => value.isEmpty ? 'Fullname can\'t be empty' : null,
+                                  onSaved: (value) => _fullname = value,
+                                ),
+                              ),
+                              new Container(
+                                margin: EdgeInsets.only(top: 15.0),
+                                child: new TextFormField(
+                                  decoration: new InputDecoration(
+                                      contentPadding: const EdgeInsets.all(12.0),
+                                      fillColor: Colors.white,
+                                      border: new OutlineInputBorder(
+                                        borderRadius: new BorderRadius.circular(25.0),
+                                        borderSide: new BorderSide(
+                                        ),
+                                      ),
                                       hintText: 'Enter your email',
                                       hintStyle: TextStyle(
                                         color: Colors.grey, fontSize: 12,
                                       ),
                                       labelText: 'Email'
                                   ),
-                                  validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+                                  //validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
                                   onSaved: (value) => _email = value,
                                 ),
                               ),
@@ -139,7 +168,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     labelText: 'Password',
                                   ),
                                   obscureText: true,
-                                  validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+                                  //validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
                                   onSaved: (value) => _password = value,
                                 ),
                               ),
@@ -161,16 +190,19 @@ class _SignUpPageState extends State<SignUpPage> {
                                     labelText: 'Confirmed Password',
                                   ),
                                   obscureText: true,
-                                  validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+                                  //validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
                                   onSaved: (value) => _confirmed_password = value,
                                 ),
                               ),
                               new Container(
                                 margin: EdgeInsets.only(top: 15.0),
                                 child: new RaisedButton(
+                                  key: _buttonkey,
                                   padding: EdgeInsets.symmetric(vertical: 12.0),
                                   onPressed: () {
-                                    validateAndSubmit(_email, _password, _confirmed_password);
+                                    if (validateAndSave()) {
+                                      validateAndSubmit(_fullname, _email, _password, _confirmed_password);
+                                    }
                                   },
                                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
                                   child: new Text('Sign Up', style: new TextStyle(color: Colors.white, fontSize: 20)),
@@ -194,13 +226,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                           padding: new EdgeInsets.all(10.0),
                                           child: new Text("Sign in instead"),
                                         ),
-                                        //Text(
-                                        //"New to CORE? Sign Up",
-                                        //style: TextStyle(
-                                        //color: new Color(0xFF002A72),
-                                        //fontSize: 12,
-                                        //),
-
                                       )
                                     ],
                                   )
@@ -215,12 +240,11 @@ class _SignUpPageState extends State<SignUpPage> {
               alignment: Alignment(0.0, -1.0),
               child: Image.asset(
                 "images/core.png",
-                width: MediaQuery.of(context).size.width / 1.2,
+                width: MediaQuery.of(context).size.width / 1.5,
               ),
             )
           ],
         )
     );
   }
-
 }

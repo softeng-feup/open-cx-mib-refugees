@@ -66,7 +66,7 @@ singleUser.post("/register", async (req, res) => {
 
   try {
     const savedPost = await user.save();
-    res.send("User registred successfully");
+    res.send("User registered successfully");
   } catch (err) {
     res.status(400).send(err);
   }
