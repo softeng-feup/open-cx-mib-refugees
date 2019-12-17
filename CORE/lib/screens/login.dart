@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
         message=('Passwords don\'t have at least 8 characters');
         print(message);
       }
-    
+
     if (message!=null){
       _displaySnackBar(context,message);
     }
