@@ -72,9 +72,9 @@ In this section, we describe the requirements for our module: functional and non
 ---
 
 ### Mockups
+![use_case](images/mockups.png)
 
-
-From left to right and top to bottom: 
+Mockups can also be found as attachments in the user stories on [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib).
 
 ### Domain model
 
