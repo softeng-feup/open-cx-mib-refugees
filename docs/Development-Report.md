@@ -40,9 +40,9 @@ Patrícia Ferreira Rocha
 
 ## Product Vision
 
-Mobile app for conference agenda/logistics. 
-- **Save Time** by choosing the lectures you want to go within a list tailored for you
-- **Get Feedback** from the attendees to build an even better conference
+Our vision is to help conference attendees manage their time by telling them which lectures are more interesting for them according to their interests and building a customized schedule that fits their preferences.
+
+This way, CORE is an app for conference agenda/logistics that helps attendees **save time** by choosing the lectures they want to attend within a tailored list.
 
 ---
 
@@ -50,11 +50,11 @@ Mobile app for conference agenda/logistics.
 
 Our platform concerns two stages:
 
-First, the attendee answers a survey with personal information such as his/her interests or preferences. Based on this information, a clustering algorithm suggests lectures that match those interests and the attendee is able to choose the ones he/she is truly interested in attending.
+First, the attendee answers a survey with personal information such as his/her interests or preferences. Based on this information, a recommendation algorithm suggests lectures that match those interests and the attendee is able to choose the ones he/she is truly interested in attending.
 
 In the following stage, the organizers have access to the number of interested people for each lecture and plan the schedule or group lectures with similar topics.
 
-Once the schedule is closed, the attendee has access to a schedule with the lectures he/she previously chose.
+Finally, the attendee has access to a schedule with the lectures he/she previously chose.
 
 ---
 
