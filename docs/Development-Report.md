@@ -152,5 +152,5 @@ The software that have been developed follows the MVC (Model-View-Controller) ar
 ![deployment_diagram](images/Deployment.png)
 
 ### Test
-### Configuration and change management
-### Project-management
+### Configuration and Change Management
+### Project Management
