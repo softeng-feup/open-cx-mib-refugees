@@ -90,12 +90,33 @@ In this section, we describe the requirements for our module: functional and non
 | -- | -- | -- | -- |
 | US13 | M | Must have | As an organizer, I want to authenticate into the system to have access to my account. |
 | US14 | M | Must have | As an organizer, I want to check the user preferences to plan the schedule. |
-| US15 | M | Must have | As an organizer, I want to plan the conference schedule to close the program. |
+| US15 | M | Must have | As an organizer, I want to plan the conference schedule. |
 | US16 | S | Should have | As an organizer, I want to reach the menu. |
 | US17 | S | Could have | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme. |
-| US18 | M | Could have | As an organizer, I want to consult the complete program of the conference.
+| US18 | M | Could have | As an organizer, I want to consult the complete program of the conference. |
 
 All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
+
+---
+
+### Acceptance tests using the Gherkin syntax
+
+| Feature | Acceptance test |
+| -- | -- |
+| Fill the survey | **Given** I am on the survey **and** I answered the question **when** I click the "Next" button **then** I should see the next question. |
+| Submit answers | **Given** I am on the survey **and** I answered all questions **when** I click the "Submit" button **then** I should see my matched lectures. |
+| Choose lectures | **Given** I am on the lectures ranking **when** I select some lectures **then** I should see the lectures I selected. |
+| Check schedule | **Given** I am on the menu **and** I already completed the survey **when** I click the schedule option **then** I should see my personal schedule. |
+| Sign-up | **Given** I am on the sign up **and** I enter a valid fullname, email, password and confirm the password **when** I click the "Sign up" button **then** I should see the sign up confirmation **and** go to the main page. |
+| Sign in | **Given** I am on the sign in **and** I enter a registered email and corresponding password **when** I click the "Sign in" button **then** I should see the sign in confirmation **and** go to the main page. |
+| Access menu | **Given** I am on the main page **when** I click the menu button **then** I should see all the navigation options. |
+| Review survey | **Given** I am on the surver **when** I complete the surver **then** I can review my answers **and** correct them. |
+| Check program | **Given** I am on the menu **when** I choose to check the program **then** I should see a list of all the lectures organized by day. |
+| Check schedule | **Given** I am on the menu **and** I already did the survey **when** I choose to check the schedule **then** I should see the lectures I want to attend. |
+| Check conference information | **Given** I am on the menu **when** I choose to check conference information **then** I should see the conference location, date, and other details. |
+| Cancel survey | **Given** I am on the survey **when** I click the "Cancel" button **then** I should return to the main page. |
+| Check preferences | **Given** I am on the menu **when** I choose to check preferences **then** I should see a summary of the attendees' preferences. |
+| Plan schedule | **Given** I am on the user preferences **when** I select a lecture and change the start/end time **then** I should see the change on the schedule. |
 
 ---
 
