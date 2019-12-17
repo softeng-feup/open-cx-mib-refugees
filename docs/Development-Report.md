@@ -40,7 +40,7 @@ Patrícia Ferreira Rocha
 
 ## Product Vision
 
-Our vision is to help conference attendees manage their time by telling them which lectures are more interesting for them according to their interests and building a customized schedule that fit their preferences.
+Our vision is to help conference attendees manage their time by telling them which lectures are more interesting for them according to their interests and building a customized schedule that fits their preferences.
 
 This way, CORE is an app for conference agenda/logistics that helps attendees **save time** by choosing the lectures they want to attend within a tailored list.
 
