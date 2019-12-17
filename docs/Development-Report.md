@@ -62,7 +62,9 @@ In this section, we describe the requirements for our module: functional and non
 
 ---
 
-### User stories for the attendee
+### User Stories 
+
+#### User stories for the attendee
 
 | Identifier | Effort to implement | Importance | Description |
 | -- | -- | -- | -- |
@@ -79,7 +81,7 @@ In this section, we describe the requirements for our module: functional and non
 | US11 | M | Could have | As an attendee, I want to check conference information. |
 | US12 | S | Could have | As an attendee, I want to cancel the survey to stop answering the form. |
 
-### User stories for the organizer
+#### User stories for the organizer
 
 | Identifier | Effort to implement | Importance | Description |
 | -- | -- | -- | -- |
