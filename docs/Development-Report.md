@@ -137,6 +137,13 @@ as well as the attributes and the relationships between them.
 ---
 ## Architecture and Design
 
+### Logical Architecture
+The software that have been developed follows the MVC (Model-View-Controller) architectural pattern by structuring the system into three logical parts that interact with each other.
+
+![package_diagram](images/package_diagram.png)
+
+### Physical Architecture
+
 ### Component Diagram
 ![component_diagram](images/Component.vpd.png)
 
