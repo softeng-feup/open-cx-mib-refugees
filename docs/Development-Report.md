@@ -122,6 +122,8 @@ All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fu
 
 Mockups can also be found as attachments in the user stories on [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib).
 
+---
+
 ### Domain Model
 
 The Conceptual Data Model describes the relationships between all entities in a UML class diagram.
