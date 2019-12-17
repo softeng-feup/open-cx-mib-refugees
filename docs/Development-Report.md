@@ -144,8 +144,13 @@ The software that have been developed follows the MVC (Model-View-Controller) ar
 
 ### Physical Architecture
 
-### Component Diagram
+
+#### Component Diagram
 ![component_diagram](images/Component.vpd.png)
 
-### Deployment Diagram
+#### Deployment Diagram
 ![deployment_diagram](images/Deployment.png)
+
+### Test
+### Configuration and change management
+### Project-management
