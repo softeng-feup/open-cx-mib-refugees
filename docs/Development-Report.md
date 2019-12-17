@@ -143,7 +143,7 @@ The software that have been developed follows the MVC (Model-View-Controller) ar
 ![package_diagram](images/package_diagram.png)
 
 ### Physical Architecture
-
+Our projected is fully developed using Flutter - an emerging framework for mobile development that supprots both iOS and Android combined with ESOF's backend. 
 
 #### Component Diagram
 ![component_diagram](images/Component.vpd.png)
