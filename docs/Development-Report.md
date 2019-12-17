@@ -90,7 +90,7 @@ In this section, we describe the requirements for our module: functional and non
 | US14 | M | Must have | As an organizer, I want to check the user preferences to plan the schedule. |
 | US15 | M | Must have | As an organizer, I want to plan the conference schedule. |
 | US16 | S | Should have | As an organizer, I want to reach the menu. |
-| US17 | S | Could have | As an organizer, I want to consult the complete program of the conference. |
+| US17 | S | Could have | As an organizer, I want to consult the conference lectures to know the program. |
 
 All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
 
