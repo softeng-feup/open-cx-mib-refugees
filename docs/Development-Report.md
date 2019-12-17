@@ -71,30 +71,29 @@ In this section, we describe the requirements for our module: functional and non
 
 | Identifier | Effort to implement | Importance | Description |
 | -- | -- | -- | -- |
-| US06 | S | Must have | As an attendee, I want to start the survey. |
-| US05 | L | Must have | As an attendee, I want to fill a form to provide my informations. |
-| US07 | XL | Must have | As an attendee, I want to submit my answers to obtain a list of matches. |
-| US02 | M | Must have | As an attendee, I want to choose the lectures I want to attend to provide that information to the system. |
-| US01 | M | Must have | As an attendee, I want to check my personal schedule to see when/where are the lectures I intend to go. |
-| US03 | M | Must have | As an attendee, I want to sign-up to create an account in the platform. |
-| US04 | M | Must have | As an attendee, I want to authenticate into the system to have access to my account. |
-| US08 | S | Should have | As an attendee, I want to reach the menu. |
-| US09 | M | Should have | As an attendee, I want to review the survey to correct answers. |
-| US10 | S | Could have | As an attendee, I want to consult the conference lectures to know the program. |
-| US11 | S | Could have | As an attendee, I want to consult my schedule to see the lectures I will attend. |
-| US12 | M | Could have | As an attendee, I want to check conference information. |
-| US13 | S | Could have | As an attendee, I want to cancel the survey to stop answering the form. |
+| US01 | L | Must have | As an attendee, I want to fill a form to provide my informations. |
+| US02 | XL | Must have | As an attendee, I want to submit my answers to obtain a list of matches. |
+| US03 | M | Must have | As an attendee, I want to choose the lectures I want to attend to provide that information to the system. |
+| US04 | M | Must have | As an attendee, I want to check my personal schedule to see when/where are the lectures I intend to go. |
+| US05 | M | Must have | As an attendee, I want to sign-up to create an account in the platform. |
+| US06 | M | Must have | As an attendee, I want to authenticate into the system to have access to my account. |
+| US07 | S | Should have | As an attendee, I want to reach the menu. |
+| US08 | M | Should have | As an attendee, I want to review the survey to correct answers. |
+| US09 | S | Could have | As an attendee, I want to consult the conference lectures to know the program. |
+| US10 | S | Could have | As an attendee, I want to consult my schedule to see the lectures I will attend. |
+| US11 | M | Could have | As an attendee, I want to check conference information. |
+| US12 | S | Could have | As an attendee, I want to cancel the survey to stop answering the form. |
 
 ### User stories for the organizer
 
 | Identifier | Effort to implement | Importance | Description |
 | -- | -- | -- | -- |
-| US14 | M | Must have | As an organizer, I want to authenticate into the system to have access to my account. |
-| US15 | M | Must have | As an organizer, I want to check the user preferences to plan the schedule. |
-| US16 | M | Must have | As an organizer, I want to plan the conference schedule to close the program. |
-| US17 | S | Should have | As an organizer, I want to reach the menu. |
-| US18 | S | Could have | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme. |
-| US19 | M | Could have | As an organizer, I want to consult the complete program of the conference.
+| US13 | M | Must have | As an organizer, I want to authenticate into the system to have access to my account. |
+| US14 | M | Must have | As an organizer, I want to check the user preferences to plan the schedule. |
+| US15 | M | Must have | As an organizer, I want to plan the conference schedule to close the program. |
+| US16 | S | Should have | As an organizer, I want to reach the menu. |
+| US17 | S | Could have | As an organizer, I want to group lectures with similar topics to create sessions with a specific theme. |
+| US18 | M | Could have | As an organizer, I want to consult the complete program of the conference.
 
 All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
 
