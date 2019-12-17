@@ -8,17 +8,18 @@ You can find here detailed information about the project's module, from a high-l
   * [Product Vision](#Product-Vision)
   * [Elevator Pitch](#Elevator-Pitch)
 * Requirements
-  * [Use Case Diagram](#Use-case-diagram)
-  * [User stories](#User-stories)
-  * [Domain model](#Domain-model)
+  * [Use Case Diagram](#Use-Case-Diagram)
+  * [User Stories](#User-Stories)
+  * [Acceptance Tests](#Acceptance-Tests)
+  * [Mockups](#Mockups)
+  * [Domain Model](#Domain-Model)
 * Architecture and Design
-  * [Logical architecture](#Logical-architecture)
-  * [Physical architecture](#Physical-architecture)
+  * [Logical Architecture](#Logical-Architecture)
+  * [Physical Architecture](#Physical-Architecture)
   * [Prototype](#Prototype)
-* [Implementation](#Implementation)
 * [Test](#Test)
-* [Configuration and change management](#Configuration-and-change-management)
-* [Project management](#Project-management)
+* [Configuration and Change Management](#Configuration-and-change-management)
+* [Project Management](#Project-management)
 
 So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
@@ -57,14 +58,14 @@ Finally, the attendee has access to a schedule with the lectures he/she previous
 
 In this section, we describe the requirements for our module: functional and non-functional requirements.
 
-### Use case diagram
+### Use Case Diagram
 ![use_case](images/use_case.png)
 
 ---
 
 ### User Stories 
 
-#### User stories for the attendee
+#### User Stories For The Attendee
 
 | Identifier | Effort to implement | Importance | Description |
 | -- | -- | -- | -- |
@@ -81,7 +82,7 @@ In this section, we describe the requirements for our module: functional and non
 | US11 | M | Could have | As an attendee, I want to check conference information. |
 | US12 | S | Could have | As an attendee, I want to cancel the survey to stop answering the form. |
 
-#### User stories for the organizer
+#### User Stories For The Organizer
 
 | Identifier | Effort to implement | Importance | Description |
 | -- | -- | -- | -- |
@@ -96,7 +97,7 @@ All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fu
 
 ---
 
-### Acceptance tests using the Gherkin syntax
+### Acceptance Tests
 
 | Feature | Acceptance test |
 | -- | -- |
@@ -122,11 +123,11 @@ All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fu
 
 Mockups can also be found as attachments in the user stories on [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib).
 
-### Domain model
+### Domain Model
 
 The Conceptual Data Model describes the relationships between all entities in a UML class diagram.
 
-#### Class diagram
+#### Class Diagram
 On that premise, in order to organize and structure our database, a UML class diagram was built,
 as well as the attributes and the relationships between them.
 
