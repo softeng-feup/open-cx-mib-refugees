@@ -58,7 +58,6 @@ class _SignUpPageState extends State<SignUpPage> {
             Future<String>response = newUser(
                 this_fullname, this_email, this_password);
             if (await response == 'User registered successfully') {
-
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Initial()),
@@ -80,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
         print(message);
       }
     } else {
-      message=('Fullname must have at leat 6 characters');
+      message=('Fullname must have at least 6 characters');
       print(message);
     }
     if (message!=null){

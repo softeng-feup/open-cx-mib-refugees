@@ -17,6 +17,7 @@ Future<String> logUser(String email, String password) async {
         'password': password
       }
   );
+
   return response.body;
 
 }
@@ -49,15 +50,15 @@ class _LoginPageState extends State<LoginPage> {
           try {
             Future<String> response = logUser(this_email, this_password);
             if (await response == 'User logged in successfully.') {
+              print(response);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Initial()),
               );
-
             } else if (await response == 'Invalid email') {
               message=('Invalid email');
               print(message);
-            } else if (await response == 'Invalid password'){
+            } else if (await response == 'Invalid pRassword'){
               message=('Invalid password');
               print(message);
             }
@@ -66,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
             print('Erros: $e');
           }
       } else {
-        message=('Passwords don\'t have at least 8 characters');
+        message=('Password doesn\'t have at least 8 characters');
         print(message);
       }
 
