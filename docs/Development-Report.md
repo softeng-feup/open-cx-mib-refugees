@@ -153,6 +153,13 @@ The software that has been developed follows the MVC (Model-View-Controller) arc
 
 Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android - combined with the open-cx backend.
 
+Concerning the architecture itself, it has 2 main parts:
+* The server-side component.
+* The smartphone-based components including attendee and organizer devices. 
+
+Therefore, focusing on principal features, through the UI screens the attendee fill the survey, access to personal ranking and then choose the lectures he/she attendee to go. All the information are provide/saved through database server. The organizer access to new information from attendee and plan conference according to that. The following UML component and deployment diagrams reflet the above logic.
+
+
 #### Component Diagram
 ![component_diagram](images/component.png)
 
@@ -164,6 +171,8 @@ Our project was fully developed using Flutter - an emerging framework for mobile
 ---
 
 At the end of iteration 0, the technologies had already been chosen. All user stories were carefully described, ordered by importance and labeled according to the effort it would take to implement. After this, the first tasks were assigned to each group member and kept being updated on Trello. Finally, a first prototype of the survey was developed as well. 
+
+---
 
 ### Test
 To assure the quality of the features developed, we intend to test:
