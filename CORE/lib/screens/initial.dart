@@ -1,6 +1,8 @@
 import 'package:core/screens/startForm.dart';
 import 'package:flutter/material.dart';
 import 'package:core/screens/info.dart';
+import 'package:core/screens/login.dart';
+import 'package:http/http.dart' as http;
 
 class Menu{
   static const String SignOut = 'Sign out';
@@ -21,7 +23,11 @@ class FirstScreen extends State<Initial> {
 
   void choiceAction(String choice){
     if(choice == Menu.SignOut){
-      print('SignOut');
+      Navigator.push(context, MaterialPageRoute(builder: (context)
+      {
+        return LoginPage();
+      })
+      );
     }
   }
 

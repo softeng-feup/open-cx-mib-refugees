@@ -103,7 +103,7 @@ In the following sections, all user stories are separated by user (attendee and 
 
 ### Acceptance Tests
 
-Acceptance testing consists of formal testing with respect to the user needs, requirements, and business processes conducted to determine whether or not a system satisfied the acceptance criteria. Follows a description of the acceptance tests:
+Acceptance testing consists of formal testing with respect to the user needs, requirements, and business processes conducted to determine whether or not a system satisfied the acceptance criteria. Follows a description of the acceptance tests using the Gherkin syntax:
 
 | User Story(ies) | Scenario | Acceptance test |
 | -- | -- | -- |

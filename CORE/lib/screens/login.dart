@@ -4,9 +4,8 @@ import 'package:core/screens/signup.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
-final _scaffoldKey = GlobalKey<ScaffoldState>();
-
 Future<String> logUser(String email, String password) async {
+
   String url = 'http://10.0.2.2:5000/users/login';
 
   final response = await http.post(url,
@@ -31,6 +30,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
   final formKey = new GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   String _email;
   String _password;
