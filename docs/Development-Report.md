@@ -137,12 +137,13 @@ as well as the attributes and the relationships between them.
 ## Architecture and Design
 
 ### Logical Architecture
-The software that have been developed follows the MVC (Model-View-Controller) architectural pattern by structuring the system into three logical parts that interact with each other.
+The software that has been developed follows the MVC (Model-View-Controller) architectural pattern by structuring the system into three logical parts that interact with each other.
 
 ![package_diagram](images/package_diagram.png)
 
 ### Physical Architecture
-Our projected is fully developed using Flutter - an emerging framework for mobile development that supprots both iOS and Android combined with ESOF's backend. 
+
+Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android combined with open-cx backend.
 
 #### Component Diagram
 ![component_diagram](images/Component.vpd.png)
@@ -154,16 +155,16 @@ Our projected is fully developed using Flutter - an emerging framework for mobil
 
 ---
 ### Test
-To assure the quality of the features developed, we pretend to test (unit testing):
+To assure the quality of the features developed, we intend to test:
 - Sign-in and Sign-up: by data verification and validity;
-- Menu: verify if each menu option redirects to specific intend feature;
-- Survey: check if the selected answer correctly appears in the review UI screen;
-- Schedule: verify if a lecture is correctly assigned to schedule when the attendee select it in ranking UI screen;
-- Program: check if the lecture starts and end time updated in program when organizer changes it.
+- Menu: check if each menu option redirects to the correct feature;
+- Survey: check if the selected answers appear correctly in the review UI screen;
+- Schedule: check if a lecture is correctly assigned to the schedule when the attendee selects it in the ranking UI screen;
+- Program: check if the lecture's start and end time is updated in the program when the organizer changes it.
 
-* Acceptances tests have been already described above.
+* Acceptance tests have already been described above.
 
 ---
 ### Project Management
 
-Project management is a crucial point when leading with developing software projects. For this intend, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy to use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, allows image annexing and tasks labelling.
+Project management is a crucial point when leading with developing software projects. For this intend, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy-to-use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, it allows to attach images and label tasks.
