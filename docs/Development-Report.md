@@ -64,6 +64,9 @@ In this section, we describe the requirements for our module: functional and non
 
 ### User Stories 
 
+All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
+In the following sections, all user stories are separated by user (attendee and organizer) and ordered by importance.
+
 #### User Stories For The Attendee
 
 | Identifier | Effort to implement | Importance | Description |
@@ -77,7 +80,7 @@ In this section, we describe the requirements for our module: functional and non
 | US07 | S | Should have | As an attendee, I want to reach the menu. |
 | US08 | M | Should have | As an attendee, I want to review the survey to correct answers. |
 | US09 | S | Could have | As an attendee, I want to consult the conference lectures to know the program. |
-| US10 | S | Could have | As an attendee, I want to consult my schedule to see the lectures I will attend. |
+| US10 | S | Could have | As an attendee, I want to consult my schedule again to see the lectures I will attend. |
 | US11 | M | Could have | As an attendee, I want to check conference information. |
 | US12 | S | Could have | As an attendee, I want to cancel the survey to stop answering the form. |
 
@@ -91,28 +94,28 @@ In this section, we describe the requirements for our module: functional and non
 | US16 | S | Should have | As an organizer, I want to reach the menu. |
 | US17 | S | Could have | As an organizer, I want to consult the conference lectures to know the program. |
 
-All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
-
 ---
 
 ### Acceptance Tests
 
-| Feature | Acceptance test |
-| -- | -- |
-| Fill the survey | **Given** I am on the survey **and** I answered the question **when** I click the "Next" button **then** I should see the next question. |
-| Submit answers | **Given** I am on the survey **and** I answered all questions **when** I click the "Submit" button **then** I should see my matched lectures. |
-| Choose lectures | **Given** I am on the lectures ranking **when** I select some lectures **then** I should see the lectures I selected. |
-| Check schedule | **Given** I am on the menu **and** I already completed the survey **when** I click the schedule option **then** I should see my personal schedule. |
-| Sign-up | **Given** I am on the sign up **and** I enter a valid fullname, email, password and confirm the password **when** I click the "Sign up" button **then** I should see the sign up confirmation **and** go to the main page. |
-| Sign in | **Given** I am on the sign in **and** I enter a registered email and corresponding password **when** I click the "Sign in" button **then** I should see the sign in confirmation **and** go to the main page. |
-| Access menu | **Given** I am on the main page **when** I click the menu button **then** I should see all the navigation options. |
-| Review survey | **Given** I am on the surver **when** I complete the surver **then** I can review my answers **and** correct them. |
-| Check program | **Given** I am on the menu **when** I choose to check the program **then** I should see a list of all the lectures organized by day. |
-| Check schedule | **Given** I am on the menu **and** I already did the survey **when** I choose to check the schedule **then** I should see the lectures I want to attend. |
-| Check conference information | **Given** I am on the menu **when** I choose to check conference information **then** I should see the conference location, date, and other details. |
-| Cancel survey | **Given** I am on the survey **when** I click the "Cancel" button **then** I should return to the main page. |
-| Check preferences | **Given** I am on the menu **when** I choose to check preferences **then** I should see a summary of the attendees' preferences. |
-| Plan schedule | **Given** I am on the user preferences **when** I select a lecture and change the start/end time **then** I should see the change on the schedule. |
+Acceptance testing consists of formal testing with respect to the user needs, requirements, and business processes conducted to determine whether or not a system satisfied the acceptance criteria. Follows a description of the acceptance tests:
+
+| User Story(ies) | Scenario | Acceptance test |
+| -- | -- | -- |
+| US01 | Fill the survey | **Given** I am on the survey **and** I answered the question **when** I click the "Next" button **then** I should see the next question. |
+| US02 | Submit answers | **Given** I am on the survey **and** I answered all questions **when** I click the "Submit" button **then** I should see my matched lectures. |
+| US03 | Choose lectures | **Given** I am on the lectures ranking **when** I select some lectures **then** I should see the lectures I selected. |
+| US04 | Check schedule | **Given** I already completed the survey **and** I selected the lectures I want to go **when** I click the confirmation button **then** I should see my personal schedule. |
+| US05 | Sign-up | **Given** I am on the sign up **and** I enter a valid fullname, email, password and confirm the password **when** I click the "Sign up" button **then** I should see the sign up confirmation **and** go to the main page. |
+| US06, US13 | Sign in | **Given** I am on the sign in **and** I enter a registered email and corresponding password **when** I click the "Sign in" button **then** I should see the sign in confirmation **and** go to the main page. |
+| US07, US16 | Access menu | **Given** I am on the main page **when** I click the menu button **then** I should see all the navigation options. |
+| US08 | Review survey | **Given** I am on the surver **when** I complete the surver **then** I can review my answers **and** correct them. |
+| US09, US17 | Check program | **Given** I am on the menu **when** I choose to check the program **then** I should see a list of all the lectures organized by day. |
+| US10 | Check schedule | **Given** I am on the menu **and** I already did the survey **when** I choose to check the schedule **then** I should see the lectures I want to attend. |
+| US11 | Check conference information | **Given** I am on the menu **when** I choose to check conference information **then** I should see the conference location, date, and other details. |
+| US12 | Cancel survey | **Given** I am on the survey **when** I click the "Cancel" button **then** I should return to the main page. |
+| US14 | Check preferences | **Given** I am on the menu **when** I choose to check preferences **then** I should see a summary of the attendees' preferences. |
+| US15 | Plan schedule | **Given** I am on the user preferences **when** I select a lecture and change the start/end time **then** I should see the change on the schedule. |
 
 ---
 
