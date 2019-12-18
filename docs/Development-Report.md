@@ -155,11 +155,13 @@ Our projected is fully developed using Flutter - an emerging framework for mobil
 ---
 ### Test
 To assure the quality of the features developed, we pretend to test (unit testing):
-- Sign: in and Sign-up: by data verification and validity;
+- Sign-in and Sign-up: by data verification and validity;
 - Menu: verify if each menu option redirects to specific intend feature;
 - Survey: check if the selected answer correctly appears in the review UI screen;
 - Schedule: verify if a lecture is correctly assigned to schedule when the attendee select it in ranking UI screen;
 - Program: check if the lecture starts and end time updated in program when organizer changes it.
+
+* Acceptances tests have been already described above.
 
 ---
 ### Project Management
