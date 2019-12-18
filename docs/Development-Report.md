@@ -108,8 +108,8 @@ Acceptance testing consists of formal testing with respect to the user needs, re
 | US04 | Check schedule | **Given** I already completed the survey **and** I selected the lectures I want to go **when** I click the confirmation button **then** I should see my personal schedule. |
 | US05 | Sign-up | **Given** I am on the sign up **and** I enter a valid fullname, email, password and confirm the password **when** I click the "Sign up" button **then** I should see the sign up confirmation **and** go to the main page. |
 | US06, US13 | Sign in | **Given** I am on the sign in **and** I enter a registered email and corresponding password **when** I click the "Sign in" button **then** I should see the sign in confirmation **and** go to the main page. |
-| US07, US16 | Access menu | **Given** I am on the main page **when** I click the menu button **then** I should see all the navigation options. |
-| US08 | Review survey | **Given** I am on the surver **when** I complete the surver **then** I can review my answers **and** correct them. |
+| US07, US16 | Access menu | **Given** I am authenticated **when** I am on the menu page **then** I should see all the navigation options. |
+| US08 | Review survey | **Given** I am on the survey **when** I complete the survey **then** I can review my answers **and** correct them. |
 | US09, US17 | Check program | **Given** I am on the menu **when** I choose to check the program **then** I should see a list of all the lectures organized by day. |
 | US10 | Check schedule | **Given** I am on the menu **and** I already did the survey **when** I choose to check the schedule **then** I should see the lectures I want to attend. |
 | US11 | Check conference information | **Given** I am on the menu **when** I choose to check conference information **then** I should see the conference location, date, and other details. |
