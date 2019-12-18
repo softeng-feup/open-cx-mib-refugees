@@ -157,7 +157,7 @@ Our project was fully developed using Flutter - an emerging framework for mobile
 ![component_diagram](images/component.png)
 
 #### Deployment Diagram
-![deployment_diagram](images/deployment.png)
+![deployment_diagram](images/Deployment.png)
 
 ### Prototype
 
