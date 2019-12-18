@@ -153,8 +153,8 @@ The software that has been developed follows the MVC (Model-View-Controller) arc
 
 Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android - combined with the open-cx backend.
 
-Concerning the architecture itself, it has 2 main parts
-* The server-side component
+Concerning the architecture itself, it has 2 main parts:
+* The server-side component.
 * The smartphone-based components including attendee and organizer devices. 
 
 Therefore, focusing on principal features, through the UI screens the attendee fill the survey, access to personal ranking and then choose the lectures he/she attendee to go. All the information are provide/saved through database server. The organizer access to new information from attendee and plan conference according to that. The following UML diagram reflet the above logic.
