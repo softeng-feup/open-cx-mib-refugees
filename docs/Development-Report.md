@@ -154,14 +154,17 @@ The software that has been developed follows the MVC (Model-View-Controller) arc
 Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android - combined with the open-cx backend.
 
 #### Component Diagram
-![component_diagram](images/Component.vpd.png)
+![component_diagram](images/component.png)
 
 #### Deployment Diagram
-![deployment_diagram](images/Deployment.png)
+![deployment_diagram](images/deployment.png)
 
 ### Prototype
 
 ---
+
+At the end of iteration 0, the technologies had already been chosen. All user stories were carefully described, ordered by importance and labeled according to the effort it would take to implement. After this, the first tasks were assigned to each group member and kept being updated on Trello. Finally, a first prototype of the survey was developed as well. 
+
 ### Test
 To assure the quality of the features developed, we intend to test:
 - Sign-in and Sign-up: by data verification and validity;
