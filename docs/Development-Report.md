@@ -58,11 +58,19 @@ Finally, the attendee has access to a schedule with the lectures he/she previous
 In this section, we describe the requirements for our module: functional and non-functional requirements.
 
 ### Use Case Diagram
+
+Our use case aims at specifying the expected system behavior from the end user's perspective. This way, we describe the relationships between the system and our two actors: the attendee - a generic participant - and the organizer of the conference.
+
+The organizer already has an account. Therefore, the sign up is exclusive for participants. Both actors can authenticate into the system. After this, depending on the actor a different menu is showed. Although the design remains the same different navigation options are presented: from the menu, the attendee is able to fill the survey, check his/her customized schedule, see conference information and consult the program; on the other hand, the organizer is able to plan the schedule, check the attendees' preferences and see conference information, as well. After filling the survey, the attendee is given a ranking of lectures and is able to select lectures within that list. After choosing the lectures, his/her schedule is build. 
+
 ![use_case](images/use_case.png)
 
 ---
 
 ### User Stories 
+
+All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
+In the following sections, all user stories are separated by user (attendee and organizer) and ordered by importance.
 
 #### User Stories For The Attendee
 
@@ -77,7 +85,7 @@ In this section, we describe the requirements for our module: functional and non
 | US07 | S | Should have | As an attendee, I want to reach the menu. |
 | US08 | M | Should have | As an attendee, I want to review the survey to correct answers. |
 | US09 | S | Could have | As an attendee, I want to consult the conference lectures to know the program. |
-| US10 | S | Could have | As an attendee, I want to consult my schedule to see the lectures I will attend. |
+| US10 | S | Could have | As an attendee, I want to consult my schedule again to see the lectures I will attend. |
 | US11 | M | Could have | As an attendee, I want to check conference information. |
 | US12 | S | Could have | As an attendee, I want to cancel the survey to stop answering the form. |
 
@@ -91,28 +99,28 @@ In this section, we describe the requirements for our module: functional and non
 | US16 | S | Should have | As an organizer, I want to reach the menu. |
 | US17 | S | Could have | As an organizer, I want to consult the conference lectures to know the program. |
 
-All user stories can be found [here on Trello.](https://trello.com/b/tP9QxHeT/fugitivos-do-mib)
-
 ---
 
 ### Acceptance Tests
 
-| Feature | Acceptance test |
-| -- | -- |
-| Fill the survey | **Given** I am on the survey **and** I answered the question **when** I click the "Next" button **then** I should see the next question. |
-| Submit answers | **Given** I am on the survey **and** I answered all questions **when** I click the "Submit" button **then** I should see my matched lectures. |
-| Choose lectures | **Given** I am on the lectures ranking **when** I select some lectures **then** I should see the lectures I selected. |
-| Check schedule | **Given** I am on the menu **and** I already completed the survey **when** I click the schedule option **then** I should see my personal schedule. |
-| Sign-up | **Given** I am on the sign up **and** I enter a valid fullname, email, password and confirm the password **when** I click the "Sign up" button **then** I should see the sign up confirmation **and** go to the main page. |
-| Sign in | **Given** I am on the sign in **and** I enter a registered email and corresponding password **when** I click the "Sign in" button **then** I should see the sign in confirmation **and** go to the main page. |
-| Access menu | **Given** I am on the main page **when** I click the menu button **then** I should see all the navigation options. |
-| Review survey | **Given** I am on the surver **when** I complete the surver **then** I can review my answers **and** correct them. |
-| Check program | **Given** I am on the menu **when** I choose to check the program **then** I should see a list of all the lectures organized by day. |
-| Check schedule | **Given** I am on the menu **and** I already did the survey **when** I choose to check the schedule **then** I should see the lectures I want to attend. |
-| Check conference information | **Given** I am on the menu **when** I choose to check conference information **then** I should see the conference location, date, and other details. |
-| Cancel survey | **Given** I am on the survey **when** I click the "Cancel" button **then** I should return to the main page. |
-| Check preferences | **Given** I am on the menu **when** I choose to check preferences **then** I should see a summary of the attendees' preferences. |
-| Plan schedule | **Given** I am on the user preferences **when** I select a lecture and change the start/end time **then** I should see the change on the schedule. |
+Acceptance testing consists of formal testing with respect to the user needs, requirements, and business processes conducted to determine whether or not a system satisfied the acceptance criteria. Follows a description of the acceptance tests:
+
+| User Story(ies) | Scenario | Acceptance test |
+| -- | -- | -- |
+| US01 | Fill the survey | **Given** I am on the survey **and** I answered the question **when** I click the "Next" button **then** I should see the next question. |
+| US02 | Submit answers | **Given** I am on the survey **and** I answered all questions **when** I click the "Submit" button **then** I should see my matched lectures. |
+| US03 | Choose lectures | **Given** I am on the lectures ranking **when** I select some lectures **then** I should see the lectures I selected. |
+| US04 | Check schedule | **Given** I already completed the survey **and** I selected the lectures I want to go **when** I click the confirmation button **then** I should see my personal schedule. |
+| US05 | Sign-up | **Given** I am on the sign up **and** I enter a valid fullname, email, password and confirm the password **when** I click the "Sign up" button **then** I should see the sign up confirmation **and** go to the main page. |
+| US06, US13 | Sign in | **Given** I am on the sign in **and** I enter a registered email and corresponding password **when** I click the "Sign in" button **then** I should see the sign in confirmation **and** go to the main page. |
+| US07, US16 | Access menu | **Given** I am authenticated **when** I am on the menu page **then** I should see all the navigation options. |
+| US08 | Review survey | **Given** I am on the survey **when** I complete the survey **then** I can review my answers **and** correct them. |
+| US09, US17 | Check program | **Given** I am on the menu **when** I choose to check the program **then** I should see a list of all the lectures organized by day. |
+| US10 | Check schedule | **Given** I am on the menu **and** I already did the survey **when** I choose to check the schedule **then** I should see the lectures I want to attend. |
+| US11 | Check conference information | **Given** I am on the menu **when** I choose to check conference information **then** I should see the conference location, date, and other details. |
+| US12 | Cancel survey | **Given** I am on the survey **when** I click the "Cancel" button **then** I should return to the main page. |
+| US14 | Check preferences | **Given** I am on the menu **when** I choose to check preferences **then** I should see a summary of the attendees' preferences. |
+| US15 | Plan schedule | **Given** I am on the user preferences **when** I select a lecture and change the start/end time **then** I should see the change on the schedule. |
 
 ---
 
@@ -137,12 +145,13 @@ as well as the attributes and the relationships between them.
 ## Architecture and Design
 
 ### Logical Architecture
-The software that have been developed follows the MVC (Model-View-Controller) architectural pattern by structuring the system into three logical parts that interact with each other.
+The software that has been developed follows the MVC (Model-View-Controller) architectural pattern by structuring the system into three logical parts that interact with each other.
 
 ![package_diagram](images/package_diagram.png)
 
 ### Physical Architecture
-Our projected is fully developed using Flutter - an emerging framework for mobile development that supprots both iOS and Android combined with ESOF's backend. 
+
+Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android - combined with the open-cx backend.
 
 #### Component Diagram
 ![component_diagram](images/Component.vpd.png)
@@ -154,16 +163,16 @@ Our projected is fully developed using Flutter - an emerging framework for mobil
 
 ---
 ### Test
-To assure the quality of the features developed, we pretend to test (unit testing):
+To assure the quality of the features developed, we intend to test:
 - Sign-in and Sign-up: by data verification and validity;
-- Menu: verify if each menu option redirects to specific intend feature;
-- Survey: check if the selected answer correctly appears in the review UI screen;
-- Schedule: verify if a lecture is correctly assigned to schedule when the attendee select it in ranking UI screen;
-- Program: check if the lecture starts and end time updated in program when organizer changes it.
+- Menu: check if each menu option redirects to the correct feature;
+- Survey: check if the selected answers appear correctly in the review UI screen;
+- Schedule: check if a lecture is correctly assigned to the schedule when the attendee selects it in the ranking UI screen;
+- Program: check if the lecture's start and end time is updated in the program when the organizer changes it.
 
-* Acceptances tests have been already described above.
+* Acceptance tests have already been described above.
 
 ---
 ### Project Management
 
-Project management is a crucial point when leading with developing software projects. For this intend, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy to use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, allows image annexing and tasks labelling.
+Project management is a crucial point when leading with developing software projects. This way, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy-to-use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, it allows to attach images and label tasks.
