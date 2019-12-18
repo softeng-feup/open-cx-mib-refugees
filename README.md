@@ -9,4 +9,4 @@ Maria João Mendes Ribeiro\
 Patrícia Ferreira Rocha
 
 ---
-You can find our **Development report** [here.](https://github.com/softeng-feup/open-cx-mib-refugees/blob/master/docs/Development-Report.md)
+You can find our **Development Report** [here.](https://github.com/softeng-feup/open-cx-mib-refugees/blob/master/docs/Development-Report.md)
