@@ -143,7 +143,7 @@ The software that have been developed follows the MVC (Model-View-Controller) ar
 ![package_diagram](images/package_diagram.png)
 
 ### Physical Architecture
-
+Our projected is fully developed using Flutter - an emerging framework for mobile development that supprots both iOS and Android combined with ESOF's backend. 
 
 #### Component Diagram
 ![component_diagram](images/Component.vpd.png)
@@ -151,6 +151,19 @@ The software that have been developed follows the MVC (Model-View-Controller) ar
 #### Deployment Diagram
 ![deployment_diagram](images/Deployment.png)
 
+### Prototype
+
+---
 ### Test
+To assure the quality of the features developed, we pretend to test (unit testing):
+- Sign: in and Sign-up: by data verification and validity;
+- Menu: verify if each menu option redirects to specific intend feature;
+- Survey: check if the selected answer correctly appears in the review UI screen;
+- Schedule: verify if a lecture is correcty assigned to schedule when the attendee select it in ranking UI screen;
+- Program: check if the lecture start and end time updated in program when organizer change it.
+
+---
 ### Configuration and Change Management
+
+---
 ### Project Management
