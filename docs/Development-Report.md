@@ -18,7 +18,6 @@ You can find here detailed information about the project's module, from a high-l
   * [Physical Architecture](#Physical-Architecture)
   * [Prototype](#Prototype)
 * [Test](#Test)
-* [Configuration and Change Management](#Configuration-and-change-management)
 * [Project Management](#Project-management)
 
 So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
@@ -159,11 +158,10 @@ To assure the quality of the features developed, we pretend to test (unit testin
 - Sign: in and Sign-up: by data verification and validity;
 - Menu: verify if each menu option redirects to specific intend feature;
 - Survey: check if the selected answer correctly appears in the review UI screen;
-- Schedule: verify if a lecture is correcty assigned to schedule when the attendee select it in ranking UI screen;
-- Program: check if the lecture start and end time updated in program when organizer change it.
-
----
-### Configuration and Change Management
+- Schedule: verify if a lecture is correctly assigned to schedule when the attendee select it in ranking UI screen;
+- Program: check if the lecture starts and end time updated in program when organizer changes it.
 
 ---
 ### Project Management
+
+Project management is a crucial point when leading with developing software projects. For this intend, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy to use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, allows image annexing and tasks labelling.
