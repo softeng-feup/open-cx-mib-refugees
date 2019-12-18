@@ -4,6 +4,7 @@ const singleUser = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { registerValidation, loginValidation } = require("../../validation");
+const env = require("../../.env");
 
 /**
  * Logs a user in by sending back the user's corresponding JWT
