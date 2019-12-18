@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
-final _scaffoldKey = GlobalKey<ScaffoldState>();
-
 Future<String> newUser(String fullname, String email, String password) async {
   String url = 'http://10.0.2.2:5000/users/register';
 
@@ -37,6 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String _confirmed_password;
 
   final formKey = new GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   bool validateAndSave() {
     final form = formKey.currentState;
