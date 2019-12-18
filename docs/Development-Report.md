@@ -58,6 +58,11 @@ Finally, the attendee has access to a schedule with the lectures he/she previous
 In this section, we describe the requirements for our module: functional and non-functional requirements.
 
 ### Use Case Diagram
+
+Our use case aims at specifying the expected system behavior from the end user's perspective. This way, we describe the relationships between the system and our two actors: the attendee - a generic participant - and the organizer of the conference.
+
+The organizer already has an account. Therefore, the sign up is exclusive for participants. Both actors can authenticate into the system. After this, depending on the actor a different menu is showed. Although the design remains the same different navigation options are presented: from the menu, the attendee is able to fill the survey, check his/her customized schedule, see conference information and consult the program; on the other hand, the organizer is able to plan the schedule, check the attendees' preferences and see conference information, as well. After filling the survey, the attendee is given a ranking of lectures and is able to select lectures within that list. After choosing the lectures, his/her schedule is build. 
+
 ![use_case](images/use_case.png)
 
 ---
