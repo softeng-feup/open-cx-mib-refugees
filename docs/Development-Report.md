@@ -151,6 +151,19 @@ Our projected is fully developed using Flutter - an emerging framework for mobil
 #### Deployment Diagram
 ![deployment_diagram](images/Deployment.png)
 
+### Prototype
+
+---
 ### Test
+To assure the quality of the features developed, we pretend to test (unit testing):
+- Sign: in and Sign-up: by data verification and validity;
+- Menu: verify if each menu option redirects to specific intend feature;
+- Survey: check if the selected answer correctly appears in the review UI screen;
+- Schedule: verify if a lecture is correcty assigned to schedule when the attendee select it in ranking UI screen;
+- Program: check if the lecture start and end time updated in program when organizer change it.
+
+---
 ### Configuration and Change Management
+
+---
 ### Project Management
