@@ -143,7 +143,7 @@ The software that has been developed follows the MVC (Model-View-Controller) arc
 
 ### Physical Architecture
 
-Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android combined with open-cx backend.
+Our project was fully developed using Flutter - an emerging framework for mobile development that supports both iOS and Android - combined with the open-cx backend.
 
 #### Component Diagram
 ![component_diagram](images/Component.vpd.png)
