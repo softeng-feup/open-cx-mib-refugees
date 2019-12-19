@@ -175,12 +175,13 @@ At the end of iteration 0, the technologies had already been chosen. All user st
 
 ### Test
 To assure the quality of the features developed, we intend to test:
-- Sign-in and Sign-up: check if the data are valid;
-- Survey: check if the selected answers appear correctly in the review UI screen;
-- Schedule: check if a lecture is correctly assigned to the schedule when the attendee selects it in the ranking UI screen;
-- Program: check if the lecture's start and end time is updated in the program when the organizer changes it.
 
-* Acceptance tests have already been described above.
+* Sign-in and Sign-up: check if the data are valid;
+* Survey: check if the selected answers appear correctly in the review UI screen;
+* Schedule: check if a lecture is correctly assigned to the schedule when the attendee selects it in the ranking UI screen;
+* Program: check if the lecture's start and end time is updated in the program when the organizer changes it.
+
+Acceptance tests have already been described above.
 
 ---
 ### Project Management
