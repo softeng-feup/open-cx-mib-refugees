@@ -4,9 +4,7 @@ import 'package:core/screens/signup.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
-Future<String> logUser(String email, String password) async {
-
-  String url = 'http://10.0.2.2:5000/users/login';
+Future<String> logUser(String email, String password, {String url='http://10.0.2.2:5000/users/login'}) async {
 
   final response = await http.post(url,
       headers: {
@@ -49,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
           try {
             Future<String> response = logUser(this_email, this_password);
             if (await response == 'User logged in successfully.') {
-              print(response);
+              print(await response);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Initial()),
