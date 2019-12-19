@@ -19,7 +19,6 @@ Future<String> logUser(String email, String password) async {
   );
 
   return response.body;
-
 }
 
 class LoginPage extends StatefulWidget {
@@ -58,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
             } else if (await response == 'Invalid email') {
               message=('Invalid email');
               print(message);
-            } else if (await response == 'Invalid pRassword'){
+            } else if (await response == 'Invalid password'){
               message=('Invalid password');
               print(message);
             }
