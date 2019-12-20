@@ -23,7 +23,7 @@ const userSchema = mongoose.Schema({
   },
   description: String,
   tags: [String],
-  conferences: [String],
+  conferences: [Number],
   points: {
     type: Number,
     min: 0

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:async';
 
+import 'package:core/screens/initial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -18,7 +19,7 @@ class _Program extends State<Program>{
 
   var allItems;
 
-  dynamic getTalks() async {
+  Future<List> getTalks() async {
 
     String url = 'http://10.0.2.2:5000/talks/';
 
@@ -28,27 +29,9 @@ class _Program extends State<Program>{
 
     allItems = r;
 
-    print(r);
-
-    return r;
+    return allItems;
 
   }
-/*
-  @override
-  void initState() {
-
-    getTalks().then((result) {
-      // If we need to rebuild the widget with the resulting data,
-      // make sure to use `setState`
-      setState(() {
-        talks = result;
-        //print(result);
-        time = result[0]['final_time'];
-      });
-    });
-
-  }
-*/
 
   void _showDialog(String title, String speaker, String date, String start, String end, String abstract) {
     // flutter defined function
@@ -65,7 +48,7 @@ class _Program extends State<Program>{
               Text(""),
               Text("Date: " + date),
               Text(""),
-              Text("Hour: " + start + "-" + end),
+              Text("Hour: " + start + " - " + end),
               Text(""),
               new Expanded(
                   child: new SingleChildScrollView(
@@ -87,10 +70,23 @@ class _Program extends State<Program>{
     );
   }
 
+  Widget getTitle(index) {
+    if(allItems[index]['title'].length > 24) {
+      return Text(
+          allItems[index]['title'].toString().substring(0,25) + "...",
+          style: TextStyle(
+              color: Color(0xFF002A72)));
+    }
+    else {
+      return Text(
+          allItems[index]['title'],
+          style: TextStyle(
+              color: Color(0xFF002A72)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-
-    getTalks();
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -98,92 +94,106 @@ class _Program extends State<Program>{
             title: Text("CORE"),
             backgroundColor: new Color(0xFF002A72),
             leading: IconButton(
-                icon: const Icon(Icons.arrow_back), onPressed: () {})),
-        body: Builder
-          (builder: (context)=> Center(
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top:10,bottom: 10),
-                    child: Container(
-                      width: (MediaQuery
-                          .of(context)
-                          .size
-                          .width )  ,
-                      child: ListView.builder(
-                          itemCount: allItems.length,
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              title: InkWell(
-                                onTap: () {
-                                  _showDialog(allItems[index]['title'], allItems[0]['speaker'][0], allItems[index]['date'].toString().substring(0,10), allItems[index]['initial_time'].toString().substring(0,10), allItems[index]['final_time'].toString().substring(0,10), allItems[index]['description']);
-                                },
-                                child: Container(
-                                    child: Card(
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(top:10,bottom:20 ),
-                                          child: Column(
-                                            children: <Widget>[
-                                              Center(
-                                                child: Padding(
-                                                  padding:
-                                                  EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
-                                                  child: Row(
-                                                      mainAxisAlignment: MainAxisAlignment.start,
-                                                      children: <Widget>[
-                                                        Text(
-                                                            allItems[index]['title'].toString().substring(0,26) + "(...)",
-                                                            style: TextStyle(
-                                                                color: Color(0xFF002A72))),
-                                                      ]
-                                                  ),
-                                                ),
+                icon: const Icon(Icons.arrow_back), onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Initial();
+              }));
+            })),
+        body: FutureBuilder<List>(
+            future: getTalks(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return Padding(
+                  padding: const EdgeInsets.only(top:10,bottom: 10),
+                  child: Container(
+                    width: (MediaQuery
+                        .of(context)
+                        .size
+                        .width )  ,
+                    child: ListView.builder(
+                        itemCount: allItems.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: InkWell(
+                              onTap: () {
+                                _showDialog(allItems[index]['title'], allItems[0]['speaker'][0], allItems[index]['date'].toString().substring(0,10), allItems[index]['initial_time'].toString().substring(11,16), allItems[index]['final_time'].toString().substring(11,16), allItems[index]['description']);
+                              },
+                              child: Container(
+                                child: Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top:10,bottom:20 ),
+                                      child: Column(
+                                        children: <Widget>[
+                                          Center(
+                                            child: Padding(
+                                              padding:
+                                              EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
+                                              child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    getTitle(index),
+                                                  ]
                                               ),
-                                              Padding(
-                                                padding: EdgeInsets.only(bottom: 10),
-                                                child: Padding(
-                                                  padding: EdgeInsets.only(
-                                                      left: 30, right: 30),
-                                                  child: Row(
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                    children: <Widget>[
-                                                      Text(
-                                                          allItems[index]['date'].toString().substring(0,10),
-                                                          style: TextStyle(
-                                                              color: Color(0xFF002A72))),
-                                                      Text(
-                                                          allItems[index]['initial_time'].toString().substring(11,16) + " - " + allItems[index]['final_time'].toString().substring(11,16),
-                                                          style: TextStyle(
-                                                              color: Color(0xFF002A72))),
-                                                      Text("---",
-                                                          style: TextStyle(
-                                                              color: Color(0xFF002A72))
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
+                                            ),
                                           ),
-                                        )),
-                                    decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(color: Colors.black12,
-                                              blurRadius: 7.0)
-                                        ]),
-                                  ),
+                                          Padding(
+                                            padding: EdgeInsets.only(bottom: 10),
+                                            child: Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 30, right: 30),
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: <Widget>[
+                                                  Text(
+                                                      allItems[index]['date'].toString().substring(0,10),
+                                                      style: TextStyle(
+                                                          color: Color(0xFF002A72))),
+                                                  Text(
+                                                      allItems[index]['initial_time'].toString().substring(11,16) + " - " + allItems[index]['final_time'].toString().substring(11,16),
+                                                      style: TextStyle(
+                                                          color: Color(0xFF002A72))),
+                                                  Text("---",
+                                                      style: TextStyle(
+                                                          color: Color(0xFF002A72))
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(color: Colors.black12,
+                                          blurRadius: 7.0)
+                                    ]),
                               ),
-                              );
-                          }
+                            ),
+                          );
+                        }
 
 
-                      ),
                     ),
                   ),
-                ]
-            )))
-
+                );
+              } else {
+                return Container(
+                  child: Center(
+                    child:
+                          SizedBox(
+                            child: CircularProgressIndicator(
+                              valueColor: new AlwaysStoppedAnimation<Color>(new Color(0xFF002A72)),
+                              strokeWidth: 8,
+                            ),
+                            width: 80,
+                            height: 80,
+                          ),
+                  ),
+                );
+              }
+            }
+        )
     );
 
 
