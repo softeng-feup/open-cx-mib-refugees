@@ -24,6 +24,14 @@ const talkSchema = mongoose.Schema({
     type: [String],
     required: true
   },
+  category: {
+    type: Number,
+    required: true
+  },
+  type: {
+    type: String,
+    require: true
+  },
   rank: {
     type: Number
   },

@@ -20,6 +20,8 @@ allTalks.get('/', async (req, res) => {
       description: req.body.description,
       title: req.body.title,
       speaker: req.body.speaker,
+      category: req.body.category,
+      type: req.body.type,
       rank: req.body.rank,
       attendance: req.body.attendance
     });

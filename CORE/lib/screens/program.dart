@@ -115,60 +115,65 @@ class _Program extends State<Program>{
                           itemCount: allItems.length,
                           itemBuilder: (context, index) {
                             return ListTile(
-                              title: Container(
-                                  child: Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(top:10,bottom:20 ),
-                                        child: Column(
-                                          children: <Widget>[
-                                            Center(
-                                              child: Padding(
-                                                padding:
-                                                EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
-                                                child: Row(
-                                                    mainAxisAlignment: MainAxisAlignment.start,
+                              title: InkWell(
+                                onTap: () {
+                                  _showDialog(allItems[index]['title'], allItems[0]['speaker'][0], allItems[index]['date'].toString().substring(0,10), allItems[index]['initial_time'].toString().substring(0,10), allItems[index]['final_time'].toString().substring(0,10), allItems[index]['description']);
+                                },
+                                child: Container(
+                                    child: Card(
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(top:10,bottom:20 ),
+                                          child: Column(
+                                            children: <Widget>[
+                                              Center(
+                                                child: Padding(
+                                                  padding:
+                                                  EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
+                                                  child: Row(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: <Widget>[
+                                                        Text(
+                                                            allItems[index]['title'].toString().substring(0,26) + "(...)",
+                                                            style: TextStyle(
+                                                                color: Color(0xFF002A72))),
+                                                      ]
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.only(bottom: 10),
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 30, right: 30),
+                                                  child: Row(
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                     children: <Widget>[
                                                       Text(
-                                                          allItems[index]['title'],
+                                                          allItems[index]['date'].toString().substring(0,10),
                                                           style: TextStyle(
                                                               color: Color(0xFF002A72))),
-                                                    ]
+                                                      Text(
+                                                          allItems[index]['initial_time'].toString().substring(11,16) + " - " + allItems[index]['final_time'].toString().substring(11,16),
+                                                          style: TextStyle(
+                                                              color: Color(0xFF002A72))),
+                                                      Text("---",
+                                                          style: TextStyle(
+                                                              color: Color(0xFF002A72))
+                                                      )
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.only(bottom: 10),
-                                              child: Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: 30, right: 30),
-                                                child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: <Widget>[
-                                                    Text(
-                                                        allItems[index]['initial_time'].toString().substring(0,10),
-                                                        style: TextStyle(
-                                                            color: Color(0xFF002A72))),
-                                                    Text(
-                                                        allItems[index]['initial_time'].toString().substring(11,16) + " - " + allItems[index]['final_time'].toString().substring(11,16),
-                                                        style: TextStyle(
-                                                            color: Color(0xFF002A72))),
-                                                    Text("69",
-                                                        style: TextStyle(
-                                                            color: Color(0xFF002A72))
-                                                    )
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )),
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(color: Colors.black12,
-                                            blurRadius: 7.0)
-                                      ]),
-                                ),
+                                            ],
+                                          ),
+                                        )),
+                                    decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(color: Colors.black12,
+                                              blurRadius: 7.0)
+                                        ]),
+                                  ),
+                              ),
                               );
                           }
 
