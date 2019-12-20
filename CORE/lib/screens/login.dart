@@ -3,6 +3,7 @@ import 'package:core/screens/initial.dart';
 import 'package:core/screens/signup.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> logUser(String email, String password, {String url='http://10.0.2.2:5000/users/login'}) async {
 
@@ -15,6 +16,9 @@ Future<String> logUser(String email, String password, {String url='http://10.0.2
         'password': password
       }
   );
+
+  final prefs = await SharedPreferences.getInstance();
+  prefs.setString('email', email);
 
   return response.body;
 }
@@ -47,7 +51,6 @@ class _LoginPageState extends State<LoginPage> {
           try {
             Future<String> response = logUser(this_email, this_password);
             if (await response == 'User logged in successfully.') {
-              print(await response);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Initial()),

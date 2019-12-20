@@ -3,6 +3,7 @@ import 'package:core/screens/initial.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> newUser(String fullname, String email, String password, {String url='http://10.0.2.2:5000/users/register'}) async {
 
@@ -16,6 +17,9 @@ Future<String> newUser(String fullname, String email, String password, {String u
           'email': email
         }
       );
+
+  final prefs = await SharedPreferences.getInstance();
+  prefs.setString('email', email);
 
   return response.body;
 

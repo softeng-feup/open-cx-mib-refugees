@@ -2,9 +2,17 @@ import 'package:core/screens/startForm.dart';
 import 'package:flutter/material.dart';
 import 'package:core/screens/info.dart';
 import 'package:core/screens/login.dart';
-import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Menu{
+Future<String> getEmailValue() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String email = prefs.getString('email');
+  if (email == 'admin@admin.com')
+    return email;
+  return null;
+}
+
+class Menu {
   static const String SignOut = 'Sign out';
 
   static const List<String> choices = <String>[
@@ -31,7 +39,7 @@ class FirstScreen extends State<Initial> {
     }
   }
 
-  @override
+  /*@override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
@@ -77,6 +85,84 @@ class FirstScreen extends State<Initial> {
             )
         )
     );
+  }*/
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text('CORE'),
+          backgroundColor: new Color(0xFF002A72),
+          actions: <Widget>[
+            PopupMenuButton<String>(
+              onSelected: choiceAction,
+              itemBuilder: (BuildContext context){
+                return Menu.choices.map((String choice){
+                  return PopupMenuItem<String>(
+                    value: choice,
+                    child: Text(choice),
+                  );
+                }).toList();
+              },
+            )
+          ],
+        ),
+        body: FutureBuilder<String>(
+          future: getEmailValue(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return DecoratedBox(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/cover.png"), fit: BoxFit.cover),
+                  ),
+                  child: Align(
+                      child: Container(
+                        margin: EdgeInsets.all(15.0),
+                        padding: EdgeInsets.only(top: 185.0),
+                        alignment: Alignment.bottomCenter,
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          padding: EdgeInsets.all(30.0),
+                          children: <Widget>[
+                            makeDashboardItem("Plan", Icons.calendar_today, 5),
+                            makeDashboardItem("Program", Icons.library_books, 6),
+                            makeDashboardItem("Info", Icons.info, 7)
+                          ],
+                        ),
+                      )
+                  )
+              );
+            } else {
+              return DecoratedBox(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/cover.png"), fit: BoxFit.cover),
+                  ),
+                  child: Align(
+                      child: Container(
+                        margin: EdgeInsets.all(15.0),
+                        padding: EdgeInsets.only(top: 185.0),
+                        alignment: Alignment.bottomCenter,
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          padding: EdgeInsets.all(30.0),
+                          children: <Widget>[
+                            makeDashboardItem("Form", Icons.assignment, 1),
+                            makeDashboardItem("Schedule", Icons.calendar_today, 2),
+                            makeDashboardItem("Program", Icons.library_books, 3),
+                            makeDashboardItem("Info", Icons.info, 4)
+                          ],
+                        ),
+                      )
+                  )
+              );
+            }
+          }
+        )
+    );
   }
 
   Card makeDashboardItem(String title, IconData icon, int position) {
@@ -94,7 +180,7 @@ class FirstScreen extends State<Initial> {
               } else if (position == 2) {
                 print('schedule');
               } else if (position == 3) {
-                print('prigram');
+                print('program');
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Info();
