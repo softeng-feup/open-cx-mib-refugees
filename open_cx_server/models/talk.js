@@ -14,8 +14,22 @@ const talkSchema = mongoose.Schema({
     required: true
   },
   description: {
-    type: [String]
-  }
+    type: String
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  speaker: {
+    type: [String],
+    required: true
+  },
+  rank: {
+    type: Number
+  },
+  attendance: {
+    type: Number
+  },
 });
 
 module.exports = talk = mongoose.model('Talk', talkSchema);

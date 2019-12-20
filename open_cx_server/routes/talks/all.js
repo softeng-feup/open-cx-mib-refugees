@@ -17,7 +17,11 @@ allTalks.get('/', async (req, res) => {
       date: req.body.date,
       initial_time: req.body.initial_time,
       final_time: req.body.final_time,
-      description: req.body.description
+      description: req.body.description,
+      title: req.body.title,
+      speaker: req.body.speaker,
+      rank: req.body.rank,
+      attendance: req.body.attendance
     });
   
     try {

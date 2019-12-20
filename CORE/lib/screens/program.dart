@@ -28,6 +28,8 @@ class _Program extends State<Program>{
 
     allItems = r;
 
+    print(r);
+
     return r;
 
   }
@@ -47,6 +49,44 @@ class _Program extends State<Program>{
 
   }
 */
+
+  void _showDialog(String title, String speaker, String date, String start, String end, String abstract) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text(title),
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text("Speaker: " + speaker),
+              Text(""),
+              Text("Date: " + date),
+              Text(""),
+              Text("Hour: " + start + "-" + end),
+              Text(""),
+              new Expanded(
+                  child: new SingleChildScrollView(
+                    child: new Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
+                  )),
+            ],
+          ),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text("Close"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -89,7 +129,7 @@ class _Program extends State<Program>{
                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                     children: <Widget>[
                                                       Text(
-                                                          allItems[index]['_id'],
+                                                          allItems[index]['title'],
                                                           style: TextStyle(
                                                               color: Color(0xFF002A72))),
                                                     ]
@@ -105,11 +145,11 @@ class _Program extends State<Program>{
                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: <Widget>[
                                                     Text(
-                                                        "date",
+                                                        allItems[index]['initial_time'].toString().substring(0,10),
                                                         style: TextStyle(
                                                             color: Color(0xFF002A72))),
                                                     Text(
-                                                        allItems[index]['initial_time'].toString().substring(14,19) + " - " + allItems[index]['final_time'].toString().substring(14,19),
+                                                        allItems[index]['initial_time'].toString().substring(11,16) + " - " + allItems[index]['final_time'].toString().substring(11,16),
                                                         style: TextStyle(
                                                             color: Color(0xFF002A72))),
                                                     Text("69",

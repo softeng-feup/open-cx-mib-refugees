@@ -3,9 +3,9 @@ import 'package:core/screens/initial.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
-Future<String> newUser(String fullname, String email, String password) async {
-  String url = 'http://10.0.2.2:5000/users/register';
+Future<String> newUser(String fullname, String email, String password, {String url='http://10.0.2.2:5000/users/register'}) async {
 
   final response = await http.post(url,
         headers: {
@@ -17,6 +17,9 @@ Future<String> newUser(String fullname, String email, String password) async {
           'email': email
         }
       );
+
+  final prefs = await SharedPreferences.getInstance();
+  prefs.setString('email', email);
 
   return response.body;
 
@@ -55,8 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
             .hasMatch(this_email)) {
           try {
-            Future<String>response = newUser(
-                this_fullname, this_email, this_password);
+            Future<String>response = newUser(this_fullname, this_email, this_password);
             if (await response == 'User registered successfully') {
               Navigator.push(
                 context,
