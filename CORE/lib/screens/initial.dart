@@ -156,7 +156,7 @@ class FirstScreen extends State<Initial> {
                 Center(
                     child: Icon(
                       icon,
-                      size: 60.0,
+                      size: 50.0,
                       color: Color(0xFF002A72),
                     )
                 ),
