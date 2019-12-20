@@ -41,54 +41,6 @@ class FirstScreen extends State<Initial> {
     }
   }
 
-  /*@override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text('CORE'),
-          backgroundColor: new Color(0xFF002A72),
-          actions: <Widget>[
-            PopupMenuButton<String>(
-              onSelected: choiceAction,
-              itemBuilder: (BuildContext context){
-                return Menu.choices.map((String choice){
-                  return PopupMenuItem<String>(
-                    value: choice,
-                    child: Text(choice),
-                  );
-                }).toList();
-              },
-            )
-          ],
-        ),
-        body: DecoratedBox(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("images/cover.png"), fit: BoxFit.cover),
-            ),
-            child: Align(
-                child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  padding: EdgeInsets.only(top: 185.0),
-                  alignment: Alignment.bottomCenter,
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    padding: EdgeInsets.all(30.0),
-                    children: <Widget>[
-                      makeDashboardItem("Form", Icons.assignment, 1),
-                      makeDashboardItem("Schedule", Icons.calendar_today, 2),
-                      makeDashboardItem("Program", Icons.library_books, 3),
-                      makeDashboardItem("Info", Icons.info, 4)
-                    ],
-                  ),
-                )
-            )
-        )
-    );
-  }*/
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -180,12 +132,11 @@ class FirstScreen extends State<Initial> {
                   return StartForm();
                 }));
               } else if (position == 2) {
-                print('schedule');
+                //cenas
               } else if (position == 3) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Program();
                 }));
-                print('program');
               } else if (position == 4){
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Info();
