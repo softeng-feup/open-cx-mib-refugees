@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:core/screens/info.dart';
 import 'package:core/screens/program.dart';
 import 'package:core/screens/login.dart';
+import 'package:core/screens/plan.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> getEmailValue() async {
@@ -129,8 +130,8 @@ class FirstScreen extends State<Initial> {
                           padding: EdgeInsets.all(30.0),
                           children: <Widget>[
                             makeDashboardItem("Plan", Icons.calendar_today, 5),
-                            makeDashboardItem("Program", Icons.library_books, 6),
-                            makeDashboardItem("Info", Icons.info, 7)
+                            makeDashboardItem("Program", Icons.library_books, 3),
+                            makeDashboardItem("Info", Icons.info, 4)
                           ],
                         ),
                       )
@@ -181,15 +182,17 @@ class FirstScreen extends State<Initial> {
               } else if (position == 2) {
                 print('schedule');
               } else if (position == 3) {
-
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Program();
                 }));
                 print('program');
-
-              } else {
+              } else if (position == 4){
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Info();
+                }));
+              } else {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return PlanPage();
                 }));
               }
             },
