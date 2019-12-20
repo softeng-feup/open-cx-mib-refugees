@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                       ]
                   ),
                   child: Padding(
-                      padding: EdgeInsets.all(15.0),
+                      padding: EdgeInsets.all(25.0),
                       child: new Form(
                         key: formKey,
                         child: new Column(
@@ -201,13 +201,6 @@ class _LoginPageState extends State<LoginPage> {
                       )
                   )
               )
-            ),
-            Container(
-              alignment: Alignment(0.0, -1.0),
-              child: Image.asset(
-                "images/core.png",
-                width: MediaQuery.of(context).size.width / 1.2,
-              ),
             )
           ],
         )

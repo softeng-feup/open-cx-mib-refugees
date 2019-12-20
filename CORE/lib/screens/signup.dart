@@ -102,7 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
           children: <Widget>[
             Center(
                 child: new Container(
-                    margin: EdgeInsets.all(50.0),
+                    margin: EdgeInsets.all(40.0),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8.0),
@@ -118,7 +118,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ]
                     ),
                     child: Padding(
-                        padding: EdgeInsets.all(15.0),
+                        padding: EdgeInsets.all(25.0),
                         child: new Form(
                           key: formKey,
                           child: new Column(
@@ -250,13 +250,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         )
                     )
                 )
-            ),
-            Container(
-              alignment: Alignment(0.0, -1.0),
-              child: Image.asset(
-                "images/core.png",
-                width: MediaQuery.of(context).size.width / 1.5,
-              ),
             )
           ],
         )
