@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             Center(
               child: new Container(
-                  height: MediaQuery.of(context).size.height / 2.2,
+                  height: MediaQuery.of(context).size.height / 2.1,
                   margin: EdgeInsets.all(50.0),
                   decoration: BoxDecoration(
                       color: Colors.white,

@@ -100,7 +100,6 @@ class _SignUpPageState extends State<SignUpPage> {
           children: <Widget>[
             Center(
                 child: new Container(
-                    height: MediaQuery.of(context).size.height / 1.7,
                     margin: EdgeInsets.all(50.0),
                     decoration: BoxDecoration(
                         color: Colors.white,

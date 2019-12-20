@@ -1,6 +1,7 @@
 import 'package:core/screens/startForm.dart';
 import 'package:flutter/material.dart';
 import 'package:core/screens/info.dart';
+import 'package:core/screens/program.dart';
 import 'package:core/screens/login.dart';
 import 'package:http/http.dart' as http;
 
@@ -94,7 +95,9 @@ class FirstScreen extends State<Initial> {
               } else if (position == 2) {
                 print('schedule');
               } else if (position == 3) {
-                print('prigram');
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Program();
+                }));
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Info();
