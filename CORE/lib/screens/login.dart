@@ -82,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
         key: _scaffoldKey,
         resizeToAvoidBottomPadding: false,
         appBar: new AppBar(
+          automaticallyImplyLeading: false,
           title: new Text('Login'),
         ),
         body: Stack(

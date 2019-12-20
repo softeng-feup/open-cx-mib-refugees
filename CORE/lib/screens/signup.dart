@@ -96,6 +96,15 @@ class _SignUpPageState extends State<SignUpPage> {
         key: _scaffoldKey,
         resizeToAvoidBottomPadding: false,
         appBar: new AppBar(
+          automaticallyImplyLeading: false,
+          actions: <Widget>[
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return LoginPage();
+                }))
+            ),
+          ],
           title: new Text('Sign Up'),
         ),
         body: Stack(
