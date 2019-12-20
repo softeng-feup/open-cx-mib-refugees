@@ -4,6 +4,7 @@ import 'package:core/screens/info.dart';
 import 'package:core/screens/program.dart';
 import 'package:core/screens/login.dart';
 import 'package:core/screens/plan.dart';
+import 'package:core/screens/schedule.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> getEmailValue() async {
@@ -132,7 +133,9 @@ class FirstScreen extends State<Initial> {
                   return StartForm();
                 }));
               } else if (position == 2) {
-                //cenas
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Schedule();
+                }));
               } else if (position == 3) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Program();

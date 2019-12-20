@@ -156,7 +156,8 @@ class Answers extends State<FormAnswers> {
         if (missing_answer == false) {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) {
-                return Rankings();
+                debugPrint(widget.answers.toString());
+                return Rankings(answers: widget.answers,);
               }));
         } else {
           Scaffold.of(context).showSnackBar(SnackBar(

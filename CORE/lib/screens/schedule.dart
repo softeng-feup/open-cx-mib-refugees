@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:core/screens/rankings.dart';
+import 'package:core/screens/initial.dart';
 
 class Schedule extends StatefulWidget {
 
-  List<int> items;
-
-  Schedule({Key key, this.items}) : super(key: key);
 
 
   @override
@@ -21,20 +18,28 @@ class _Schedule extends State<Schedule> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          title: Text('CORE'),
-          backgroundColor: new Color(0xFF002A72),),
-      body: WeekView(items: widget.items),
+        title: Text('CORE'),
+        backgroundColor: new Color(0xFF002A72),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Initial();
+              }))
+          ),
+        ],
+      ),
+      body: WeekView(),
     );
   }
 }
 
 class WeekView extends StatelessWidget {
 
-  List<int> items;
+  List<int> items = [3, 6, 8];
 
   List allItems = [];
-
-  WeekView({Key key, this.items}) : super(key: key);
 
   List _allItems = [
     {
@@ -503,7 +508,10 @@ class WeekView extends StatelessWidget {
             children: <Widget>[
               Text('Speaker: ${speaker}'),
               Text(''),
-              Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
+              new Expanded(
+                  child: new SingleChildScrollView(
+                    child: new Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
+                  )),
             ],),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog

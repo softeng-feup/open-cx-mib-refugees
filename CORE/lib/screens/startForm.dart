@@ -16,14 +16,15 @@ class Start extends State<StartForm> {
       appBar: AppBar(
         title: Text('CORE'),
         backgroundColor: new Color(0xFF002A72),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Initial();
-            }));
-          },
-        ),
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Initial();
+              }))
+          ),
+        ],
       ),
       body: DecoratedBox(
           decoration: BoxDecoration(

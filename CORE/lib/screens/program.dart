@@ -75,13 +75,18 @@ class _Program extends State<Program>{
       return Text(
           allItems[index]['title'].toString().substring(0,25) + "...",
           style: TextStyle(
-              color: Color(0xFF002A72)));
+              color: Color(0xFF002A72),
+              fontSize: 16,
+              fontWeight: FontWeight.bold
+          ));
     }
     else {
       return Text(
           allItems[index]['title'],
           style: TextStyle(
-              color: Color(0xFF002A72)));
+              color: Color(0xFF002A72),
+            fontSize: 16,
+          fontWeight: FontWeight.bold));
     }
   }
 
@@ -93,12 +98,16 @@ class _Program extends State<Program>{
         appBar: AppBar(
             title: Text("CORE"),
             backgroundColor: new Color(0xFF002A72),
-            leading: IconButton(
-                icon: const Icon(Icons.arrow_back), onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Initial();
-              }));
-            })),
+          automaticallyImplyLeading: false,
+          actions: <Widget>[
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Initial();
+                }))
+            ),
+          ],
+            ),
         body: FutureBuilder<List>(
             future: getTalks(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -116,7 +125,7 @@ class _Program extends State<Program>{
                           return ListTile(
                             title: InkWell(
                               onTap: () {
-                                _showDialog(allItems[index]['title'], allItems[0]['speaker'][0], allItems[index]['date'].toString().substring(0,10), allItems[index]['initial_time'].toString().substring(11,16), allItems[index]['final_time'].toString().substring(11,16), allItems[index]['description']);
+                                _showDialog(allItems[index]['title'], allItems[index]['speaker'][0], allItems[index]['date'].toString().substring(0,10), allItems[index]['initial_time'].toString().substring(11,16), allItems[index]['final_time'].toString().substring(11,16), allItems[index]['description']);
                               },
                               child: Container(
                                 child: Card(
@@ -152,10 +161,6 @@ class _Program extends State<Program>{
                                                       allItems[index]['initial_time'].toString().substring(11,16) + " - " + allItems[index]['final_time'].toString().substring(11,16),
                                                       style: TextStyle(
                                                           color: Color(0xFF002A72))),
-                                                  Text("---",
-                                                      style: TextStyle(
-                                                          color: Color(0xFF002A72))
-                                                  )
                                                 ],
                                               ),
                                             ),

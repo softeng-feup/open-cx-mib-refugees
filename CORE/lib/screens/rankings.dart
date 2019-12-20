@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:firebase_database/firebase_database.dart';
+import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:core/screens/schedule.dart';
+import 'package:http/http.dart' as http;
 
 class Rankings extends StatefulWidget {
+  final List<String> answers;
+
+  Rankings({Key key, this.answers}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _Rankings();
@@ -11,127 +17,89 @@ class Rankings extends StatefulWidget {
 }
 
 class _Rankings extends State<Rankings> {
+  var allItems;
+  List ranking;
+  List orderedItems;
+  List<bool> selection = List.filled(1000, false);
 
-  final database = FirebaseDatabase.instance.reference().child("Program");
-  List allLectures= new List();
+  Future<List> getTalks() async {
+    String url = 'http://10.0.2.2:5000/talks/';
 
-  void getData() async {
-    List allLec= new List();
-    database.once().then((snap) {
-      Map<dynamic,dynamic> map = snap.value;
-      map.forEach((key, value) {
-        var lecture=snap.value[key];
-        allLec.add(lecture);
-        debugPrint(lecture['title']);
-      });
-    });
-    allLectures=allLec;
+    final response = await http.get(url);
+
+    var r = jsonDecode(response.body);
+
+    allItems = r;
+
+    print(allItems.runtimeType);
+
+    return allItems;
   }
 
-  List allItems = [
-    {
-      'name': 'Talk 1',
-      'title': 'SmaCC',
-      'speaker': 'Jason Lecerf',
-      'abstract': 'SmaCC (Smalltalk Compiler-Compiler) is a freely available parser generator for Smalltalk. It generates LR parsers and is a replacement for the T-Gen parser generator. SmaCC overcomes many of T-Gen’s limitations that make it difficult to produce parsers. SmaCC can generate parsers for ambiguous grammars and grammars with overlapping tokens. ',
-      'date': '17/11/2019',
-      'start_hour': '09:00',
-      'end_hour': '11:15',
-      'rank': '97%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 2',
-      'title': 'PetitParser',
-      'speaker': 'Andrei Chiş',
-      'abstract': 'PetitParser combines ideas from scannerless parsing, parser combinators, parsing expression grammars and packrat parsers to model grammars and parsers as objects that can be reconfigured dynamically. ',
-      'date': '17/11/2019',
-      'start_hour': '12:15',
-      'end_hour': '14:30',
-      'rank': '93%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 3',
-      'title': 'Language Engineering with Rascal',
-      'speaker': 'Tijs van der Storm',
-      'abstract': 'Software Language Engineering (SLE) is concerned with the principled techniques and concepts for the construction of software languages. In this tutorial we will explore how the Rascal metaprogramming environment and language workbench addresses aspects of implementing software languages. We will work on a simple DSL for defining questionnaires, called QL, touching upon syntax definition, static analysis, transformation, language extension, and code generation. ',
-      'date': '17/11/2019',
-      'start_hour': '16:30',
-      'end_hour': '18:00',
-      'rank': '93%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 4',
-      'title': 'Orchestrated Crowdsourced Testing of a Mobile Web Application',
-      'speaker': 'Maurizio Leotta',
-      'abstract': 'Responsive mobile web applications are quite challenging to test, especially if they require heavy interaction with the environment (e.g., through GPS-based location tracking and camera-based QR code acquisition and recognition) and among different users, as in the case of collaborative games support, where the app needs to support the real-time interaction of a large number of users. In this paper, we propose a case study of orchestrated crowdsourced testing of such a mobile web app, as an approach to face such challenges. ',
-      'date': '18/11/2019',
-      'start_hour': '08:30',
-      'end_hour': '09:00',
-      'rank': '86%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 5',
-      'title': 'A framework for big-step semantics',
-      'speaker': 'Francesco Dagnino',
-      'abstract': 'No abstract. ',
-      'date': '18/11/2019',
-      'start_hour': '09:00',
-      'end_hour': '11:00',
-      'rank': '86%',
-      'rank': '85%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 6',
-      'title': 'Quickref: Auto-Documenting the Common Lisp Ecosystem',
-      'speaker': 'Didier Verna',
-      'abstract': 'This demonstration is intended for people interested in software documentation, and more specifically, in what can be achieved with a reflexive language, fully equipped for introspection. Quickref is a global documentation project for the Common Lisp Ecosystem. In a single function call, it builds an entire website containing reference manuals for almost two thousand Common Lisp libraries. The system is unintrusive: library authors do not have anything to do to make their code “Quickref aware”. A public website is maintained with the resulting full documentation, but individuals can also use Quickref to generate a local website, documenting only what is present on their machine. ',
-      'date': '18/11/2019',
-      'start_hour': '14:00',
-      'end_hour': '17:15',
-      'rank': '81%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 7',
-      'title': 'Proving Inequational Propositions about Haskell Programs in Coq',
-      'speaker': 'Jan Christiansen and Sandra Dylus',
-      'abstract': 'To prove properties about a Haskell function in Coq, we have to translate the Haskell function to Coq. Proofs about Haskell func- tions are performed in various levels of detail. For example, some- times proofs are performed as if Haskell were a total language and sometimes we are interested in explicitly reasoning about effects like partiality, exceptions or tracing. By translating a Haskell func- tion into a Coq function that is parametrised over a monad, we can model all these cases. ',
-      'date': '18/11/2019',
-      'start_hour': '10:00',
-      'end_hour': '10:30',
-      'rank': '75%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 8',
-      'title': 'Lazy, Parallel Multiple Value Reductions in Common Lisp',
-      'speaker': 'Marco Heisig',
-      'abstract': 'No abstract. ',
-      'date': '19/11/2019',
-      'start_hour': '14:00',
-      'end_hour': '15:45',
-      'rank': '75%',
-      'selected': false
-    },
-    {
-      'name': 'Talk 9',
-      'title': 'Efficient Implementation of Smalltalk Activation Records in Language Implementation Frameworks',
-      'speaker': 'Fabio Niephaus',
-      'abstract': 'Language implementation frameworks such as RPython or Truffle help to build runtimes for dynamic languages. For this, they make certain design decisions and trade-offs upfront to make common language concepts easy to implement. Because of this, however, some language-specific concepts may be rather tedious to support, especially the modification of activation records. For example, Smalltalk provides reification of activations through context objects. Since they are used to implement other mechanisms such as exception handling on the language level, contexts need to be entirely supported by the underlying runtime. ',
-      'date': '19/11/2019',
-      'start_hour': '17:15',
-      'end_hour': '18:00',
-      'rank': '70%',
-      'selected': false
-    }
-  ];
+  void rankingAlgorithm(allItems, answers) {
 
-  void _showDialog(String title, String speaker, String date, String start, String end, String abstract) {
+    List ranks = List(allItems.length);
+
+    debugPrint("Running ranking...");
+
+    List<double> typeScoresLabel = [100, 80, 60, 40, 20];
+    List<double> categoryScoresLabel = [0, 15, 50, 85, 100];
+
+    double categoryScore;
+    double typeScore;
+    double speakerScore;
+
+    //CATEGORY -------------------------------------------------
+    for (int i = 0; i < allItems.length; i++) {
+      if (allItems[i]['category'] == 1 ||
+          allItems[i]['category'] == 9 ||
+          allItems[i]['category'] == 10 ||
+          allItems[i]['category'] == 11 ||
+          allItems[i]['category'] == 12) {
+        categoryScore = 50;
+      } else {
+        int cat = allItems[i]['category'];
+        int ans = int.parse(answers[cat - 1]);
+        categoryScore = categoryScoresLabel[ans];
+      }
+
+      //TYPE -------------------------------------------------
+      List<String> order =
+          answers[8].substring(1, answers[8].length - 1).split(', ');
+      String type = allItems[i]['type'];
+
+      int index = -1;
+      for (int k = 0; k < order.length; k++) {
+        if (type.toUpperCase() == order[k].toUpperCase()) {
+          index = k;
+        }
+      }
+
+      if (index == -1) {
+        typeScore = 50;
+      } else {
+        typeScore = typeScoresLabel[index];
+      }
+
+      //SPEAKER -------------------------------------------------
+      String wantedSpeaker = answers[9];
+      String speaker = allItems[i]['speaker'][0];
+      if (speaker.toUpperCase() == wantedSpeaker.toUpperCase()) {
+        speakerScore = 100;
+      } else {
+        speakerScore = 0;
+      }
+
+      double rank =
+          categoryScore * 0.45 + typeScore * 0.45 + speakerScore * 0.1;
+      ranks[i] = rank.round();
+    }
+
+    ranking = ranks;
+  }
+
+  void _showDialog(String title, String speaker, String date, String start,
+      String end, String abstract) {
     // flutter defined function
     showDialog(
       context: context,
@@ -150,8 +118,11 @@ class _Rankings extends State<Rankings> {
               Text(""),
               new Expanded(
                   child: new SingleChildScrollView(
-                    child: new Text(abstract, style: TextStyle(fontWeight: FontWeight.w300),),
-                  )),
+                child: new Text(
+                  abstract,
+                  style: TextStyle(fontWeight: FontWeight.w300),
+                ),
+              )),
             ],
           ),
           actions: <Widget>[
@@ -168,123 +139,224 @@ class _Rankings extends State<Rankings> {
     );
   }
 
-  Widget getCards(item) {
-    var sel = false;
-
-    return Padding(
-      padding: EdgeInsets.only(top: 20, right: 30, left: 30),
-      child: InkWell(
-        onTap: () {
-          _showDialog(item['title'], item['speaker'], item['date'], item['start_hour'], item['end_hour'], item['abstract']);
-        },
-        child: Container(
-          child: Card(
-              child: Column(
-            children: <Widget>[
-              Center(
-                child: Padding(
-                  padding:
-                      EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Flexible(
-                        child: Text(
-                          item['title'],
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Checkbox(
-                        value: item['selected'],
-                        onChanged: (bool value) {
-                          setState(() {
-                            item['selected'] = value;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Icon(Icons.person),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Text(item['speaker']),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Icon(Icons.favorite),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Text(item['rank']),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          )),
-          decoration: BoxDecoration(
-              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10.0)]),
-        ),
-      ),
-    );
+  Widget getTitle(index) {
+    if (allItems[index]['title'].length > 24) {
+      return Text(allItems[index]['title'].toString().substring(0, 25) + "...",
+          style: TextStyle(color: Color(0xFF002A72)));
+    } else {
+      return Text(allItems[index]['title'],
+          style: TextStyle(color: Color(0xFF002A72)));
+    }
   }
 
-  Widget getRanking() {
-    getData();
-    return Container(
-      child: ListView(
-        children: allItems.map((element) {
-          return getCards(element);
-        }).toList(),
-      ),
-    );
+  List sortByRank() {
+    List orderedLectures = [];
+
+    List ranks = Set.of(ranking).toList();
+    ranks.sort();
+    ranks = ranks.reversed.toList();
+
+    List r = [];
+
+    for (int i = 0; i < ranks.length; i++) {
+      for (int j = 0; j < ranking.length; j++) {
+        if (ranking[j] == ranks[i]) {
+          orderedLectures.add(allItems[j]);
+          r.add(ranking[j]);
+        }
+      }
+    }
+
+    ranking = r;
+
+    return orderedLectures;
+  }
+
+  List addChosenTalks() {
+    List chosen = [];
+    for (int i = 0; i < orderedItems.length; i++) {
+      if(selection[i] == true) {
+        chosen.add(orderedItems[i]['_id']);
+      }
+    }
+    return chosen;
   }
 
   @override
   Widget build(BuildContext context) {
-    getData();
+
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-            title: Text('CORE'),
-            backgroundColor: new Color(0xFF002A72),),
-        body: Center(child: getRanking()),
+          title: Text('CORE'),
+          backgroundColor: new Color(0xFF002A72),
+        ),
+        body: FutureBuilder<List>(
+            future: getTalks(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                rankingAlgorithm(allItems, widget.answers);
+                orderedItems = sortByRank();
+                return Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 10),
+                  child: Container(
+                    width: (MediaQuery.of(context).size.width),
+                    child: ListView.builder(
+                        itemCount: orderedItems.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: InkWell(
+                              onTap: () {
+                                _showDialog(
+                                    orderedItems[index]['title'],
+                                    orderedItems[index]['speaker'][0],
+                                    orderedItems[index]['date']
+                                        .toString()
+                                        .substring(0, 10),
+                                    orderedItems[index]['initial_time']
+                                        .toString()
+                                        .substring(11, 16),
+                                    orderedItems[index]['final_time']
+                                        .toString()
+                                        .substring(11, 16),
+                                    orderedItems[index]['description']);
+                              },
+                              child: Container(
+                                child: Card(
+                                    child: Column(
+                                  children: <Widget>[
+                                    Center(
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 20,
+                                            bottom: 20,
+                                            left: 20,
+                                            right: 20),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Flexible(
+                                              child: Text(
+                                                orderedItems[index]['title'],
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            Checkbox(
+                                              activeColor: Colors.blueGrey[400],
+                                              value: selection[index],
+                                              onChanged: (bool value) {
+                                                setState(() {
+                                                  selection[index] = value;
+                                                });
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 20),
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 20, right: 20),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Row(
+                                              children: <Widget>[
+                                                Icon(Icons.person),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 5),
+                                                  child: Text(
+                                                      orderedItems[index]
+                                                          ['speaker'][0]),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: <Widget>[
+                                                Icon(Icons.favorite),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 5),
+                                                  child: Text(ranking[index]
+                                                          .toString() +
+                                                      "%"),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                                decoration: BoxDecoration(boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black12, blurRadius: 10.0)
+                                ]),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                );
+              } else {
+                return Container(
+                  child: Center(
+                    child: SizedBox(
+                      child: CircularProgressIndicator(
+                        valueColor: new AlwaysStoppedAnimation<Color>(
+                            new Color(0xFF002A72)),
+                        strokeWidth: 8,
+                      ),
+                      width: 80,
+                      height: 80,
+                    ),
+                  ),
+                );
+              }
+            }),
         bottomNavigationBar: Container(
-            margin: EdgeInsets.only(left: 100, right: 100, bottom: 20),
+            margin: EdgeInsets.only(left: 100, right: 100, bottom: 10),
             child: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: RaisedButton(
-                  onPressed: () {
-                    List<int> items = [];
-                    for(var i=0; i<allItems.length; i++) {
-                      if(allItems[i]['selected'] == true) {
-                        items.add(i);
-                      }
-                    }
-                    debugPrint("Talks selected: " + items.toString());
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return Schedule(items: items);
-                    }));
-                  },
-                  child: Text("Done", style: TextStyle(color: Colors.white)),
-                  color: new Color(0xFF002A72),
-                  elevation: 5,
+                padding: EdgeInsets.only(top: 0),
+                child: ButtonBar(
+                  alignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    FlatButton(
+                      onPressed: () {
+                        setState(() {
+                          selection = List.filled(1000, false);
+                        });
+                      },
+                      child: Text(
+                        "Reset",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: new Color(0xFF002A72)),
+                      ),
+                      color: Colors.white,
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                        List chosen = addChosenTalks();
+                        debugPrint(chosen.toString());
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return Schedule();
+                        }));
+                      },
+                      child: Text("Done", style: TextStyle(color: Colors.white)),
+                      color: new Color(0xFF002A72),
+                    )
+                  ],
                 ))));
   }
 }

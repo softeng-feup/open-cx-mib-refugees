@@ -42,17 +42,12 @@ class _Info extends State<Info> with SingleTickerProviderStateMixin{
           title: Text('CORE'),
           backgroundColor: new Color(0xFF002A72),
           actions: <Widget>[
-            PopupMenuButton<String>(
-              onSelected: choiceAction,
-              itemBuilder: (BuildContext context){
-                return Menu.choices.map((String choice){
-                  return PopupMenuItem<String>(
-                    value: choice,
-                    child: Text(choice),
-                  );
-                }).toList();
-              },
-            )
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Initial();
+                }))
+            ),
           ],
         ),
       body:  new ListView(
