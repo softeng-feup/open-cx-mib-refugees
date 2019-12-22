@@ -186,4 +186,4 @@ Acceptance tests have already been described above.
 ---
 ### Project Management
 
-Project management is a crucial point when leading with developing software projects. This way, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy-to-use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, it allows to attach images and label tasks.
+Project management is a crucial point when dealing with developing software projects. This way, we used [Trello](https://trello.com/b/tP9QxHeT/fugitivos-do-mib), an easy-to-use project management tool capable of registering tasks, assign them to different members and monitor progress (To Do, Doing, Done). Besides that, it allows to attach images and label tasks.
